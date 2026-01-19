@@ -1,0 +1,66 @@
+record(mbbi, "$(P)$(R)CARD$(CARD):TYPE") {
+  field(DTYP, "$(DTYP)")
+  field(SDIS, "$(P)$(R)DISABLE")
+  field(SCAN, "Passive")
+  field(PINI, "YES")
+  field(INP,  "$(INP)")
+  field(FLNK, "$(P)$(R)CARD_$(CARD)_NINP PP")
+  field(ZRVL, "0") field(ZRST, "Empty")
+  field(ONVL, "1") field(ONST, "Scanner")
+  field(TWVL, "2") field(TWST, "<unknown>")
+  field(THVL, "3") field(THST, "<unknown>")
+  field(FRVL, "4") field(FRST, "Thermocouple")
+
+  # Fake type for "cards" A and B with a single input
+  field(FVVL, "254") field(FVST, "BuiltinAB")
+
+  # Fake type for "cards" C and D with four inputs
+  field(SXVL, "255") field(SXST, "BuiltinCD")
+
+  field(PHAS, "-100")
+  field(FLNK, "$(P)$(R)CARD$(CARD):NUMINP PP")
+}
+
+record(calc, "$(P)$(R)CARD$(CARD):NUMINP") {
+  field(SDIS, "$(P)$(R)DISABLE")
+  field(INPA, "$(P)$(R)CARD$(CARD):TYPE.RVAL")
+  field(CALC, "A=1?4:(A=4?2:(A=254?1:(A=255?4:0)))")
+  field(FLNK, "$(P)$(R)CARD$(CARD):INP0:VALID PP")
+}
+
+record(calc, "$(P)$(R)CARD$(CARD):INP0:VALID") {
+  field(SDIS, "$(P)$(R)DISABLE")
+
+  # Input index
+  field(INPA, { const: 0 })
+
+  # Number of inputs for this card
+  field(INPB, "$(P)$(R)CARD$(CARD):NUMINP")
+
+  # 1 if this input is valid (within the number of inputs for this card)
+  field(CALC, "A<B")
+  field(FLNK, "$(P)$(R)CARD$(CARD):INP1:VALID PP")
+}
+
+record(calc, "$(P)$(R)CARD$(CARD):INP1:VALID") {
+  field(SDIS, "$(P)$(R)DISABLE")
+  field(INPA, { const: 1 })
+  field(INPB, "$(P)$(R)CARD$(CARD):NUMINP")
+  field(CALC, "A<B")
+  field(FLNK, "$(P)$(R)CARD$(CARD):INP2:VALID PP")
+}
+
+record(calc, "$(P)$(R)CARD$(CARD):INP2:VALID") {
+  field(SDIS, "$(P)$(R)DISABLE")
+  field(INPA, { const: 2 })
+  field(INPB, "$(P)$(R)CARD$(CARD):NUMINP")
+  field(CALC, "A<B")
+  field(FLNK, "$(P)$(R)CARD$(CARD):INP3:VALID PP")
+}
+
+record(calc, "$(P)$(R)CARD$(CARD):INP3:VALID") {
+  field(SDIS, "$(P)$(R)DISABLE")
+  field(INPA, { const: 3 })
+  field(INPB, "$(P)$(R)CARD$(CARD):NUMINP")
+  field(CALC, "A<B")
+}

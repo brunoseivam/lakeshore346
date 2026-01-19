@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Input Settings Line</name>
+  <width>1265</width>
+  <height>60</height>
+  <actions>
+  </actions>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <text></text>
+    <x>35</x>
+    <width>1225</width>
+    <height>55</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <rules>
+      <rule name="No Input-No Card (text)" prop_id="text" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>No card in this slot</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>No input</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+      <rule name="No Input-No Card (background)" prop_id="background_color" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>
+            <color name="Read_Background" red="240" green="240" blue="240">
+            </color>
+          </value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>
+            <color name="Read_Background" red="240" green="240" blue="240">
+            </color>
+          </value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+      <rule name="No Input-No Card (transparent)" prop_id="transparent" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry</name>
+    <pv_name>$(P)$(R)INP$(INP):INNAME_S</pv_name>
+    <x>35</x>
+    <y>30</y>
+    <width>140</width>
+    <height>25</height>
+    <rules>
+      <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+      <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value></value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_42</name>
+    <text>$(INP)</text>
+    <width>30</width>
+    <height>55</height>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_272</name>
+    <pv_name>$(P)$(R)INP$(INP):INNAME</pv_name>
+    <x>35</x>
+    <width>140</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+      <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value></value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_231</name>
+    <pv_name>$(P)$(R)INP$(INP):INCRV</pv_name>
+    <x>180</x>
+    <width>50</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+      <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value></value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_239</name>
+    <pv_name>$(P)$(R)INP$(INP):INTYPE_S</pv_name>
+    <x>235</x>
+    <width>130</width>
+    <height>55</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+      <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value></value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_247</name>
+    <pv_name>$(P)$(R)INP$(INP):INTYPE_AR</pv_name>
+    <x>370</x>
+    <width>90</width>
+    <height>55</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+      <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value></value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_255</name>
+    <pv_name>$(P)$(R)INP$(INP):INTYPE_R</pv_name>
+    <x>465</x>
+    <width>160</width>
+    <height>55</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+      <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value></value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_263</name>
+    <pv_name>$(P)$(R)INP$(INP):INTYPE_C</pv_name>
+    <x>630</x>
+    <width>80</width>
+    <height>55</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+      <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value></value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_271</name>
+    <pv_name>$(P)$(R)INP$(INP):INTYPE_U</pv_name>
+    <x>715</x>
+    <width>80</width>
+    <height>55</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+      <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value></value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_1</name>
+    <pv_name>$(P)$(R)INP$(INP):INCRV_S</pv_name>
+    <x>180</x>
+    <y>30</y>
+    <width>50</width>
+    <height>25</height>
+    <rules>
+      <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+      <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value></value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_273</name>
+    <pv_name>$(P)$(R)INP$(INP):TLIMIT</pv_name>
+    <x>800</x>
+    <width>80</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+      <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value></value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_2</name>
+    <pv_name>$(P)$(R)INP$(INP):TLIMIT_S</pv_name>
+    <x>800</x>
+    <y>30</y>
+    <width>80</width>
+    <height>25</height>
+    <rules>
+      <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+      <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value></value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box</name>
+    <pv_name>$(P)$(R)INP$(INP):FILTER_EN_S</pv_name>
+    <x>885</x>
+    <y>30</y>
+    <height>25</height>
+    <rules>
+      <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+      <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value></value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_274</name>
+    <pv_name>$(P)$(R)INP$(INP):FILTER_EN</pv_name>
+    <x>885</x>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+      <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value></value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_275</name>
+    <pv_name>$(P)$(R)INP$(INP):FILTER_NPTS</pv_name>
+    <x>990</x>
+    <width>80</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+      <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value></value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_3</name>
+    <pv_name>$(P)$(R)INP$(INP):FILTER_NPTS_S</pv_name>
+    <x>990</x>
+    <y>30</y>
+    <width>80</width>
+    <height>25</height>
+    <rules>
+      <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+      <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value></value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_276</name>
+    <pv_name>$(P)$(R)INP$(INP):FILTER_WND</pv_name>
+    <x>1075</x>
+    <width>80</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+      <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value></value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_4</name>
+    <pv_name>$(P)$(R)INP$(INP):FILTER_WND_S</pv_name>
+    <x>1075</x>
+    <y>30</y>
+    <width>80</width>
+    <height>25</height>
+    <rules>
+      <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+      <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value></value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_277</name>
+    <pv_name>$(P)$(R)INP$(INP):DISABLE</pv_name>
+    <x>1160</x>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+      <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value></value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box_1</name>
+    <pv_name>$(P)$(R)INP$(INP):DISABLE</pv_name>
+    <x>1160</x>
+    <y>30</y>
+    <height>25</height>
+    <rules>
+      <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+      <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value></value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+      </rule>
+    </rules>
+  </widget>
+</display>

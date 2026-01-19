@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Lake Shore 346 Alarms $(P)$(R)</name>
+  <width>1475</width>
+  <height>1880</height>
+  <actions>
+  </actions>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="label" version="2.0.0">
+    <name>Label_85</name>
+    <text>Input alarm summary PV looks at: Input Status, Software Limits, Alarm Status</text>
+    <x>1485</x>
+    <y>170</y>
+    <width>1465</width>
+    <height>30</height>
+    <font>
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Header</name>
+    <macros>
+      <HEADER>Lake Shore 346 - Alarms</HEADER>
+    </macros>
+    <file>lakeshore346_header.bob</file>
+    <width>1475</width>
+    <height>80</height>
+    <resize>4</resize>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Alarms</name>
+    <x>5</x>
+    <y>85</y>
+    <width>1465</width>
+    <height>1400</height>
+    <style>1</style>
+    <font>
+      <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>Labels</name>
+      <x>5</x>
+      <y>15</y>
+      <width>1455</width>
+      <height>50</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_1</name>
+        <text>Temperature</text>
+        <x>45</x>
+        <y>25</y>
+        <width>90</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_3</name>
+        <text>Inp</text>
+        <y>25</y>
+        <width>30</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_87</name>
+        <text>Polling</text>
+        <x>140</x>
+        <y>25</y>
+        <width>90</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group</name>
+        <x>235</x>
+        <width>1100</width>
+        <height>50</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>Label_56</name>
+          <text>Input Status</text>
+          <y>25</y>
+          <width>114</width>
+          <height>25</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_82</name>
+          <text>Low</text>
+          <x>130</x>
+          <y>25</y>
+          <width>80</width>
+          <height>25</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_81</name>
+          <text>Software Limits</text>
+          <x>130</x>
+          <width>165</width>
+          <height>25</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_83</name>
+          <text>High</text>
+          <x>215</x>
+          <y>25</y>
+          <width>80</width>
+          <height>25</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_46</name>
+          <text>Low</text>
+          <x>310</x>
+          <y>25</y>
+          <width>55</width>
+          <height>25</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_84</name>
+          <text>Alarm Status</text>
+          <x>310</x>
+          <width>115</width>
+          <height>25</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_47</name>
+          <text>High</text>
+          <x>370</x>
+          <y>25</y>
+          <width>55</width>
+          <height>25</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_55</name>
+          <text>Enabled</text>
+          <x>440</x>
+          <y>25</y>
+          <width>90</width>
+          <height>25</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_48</name>
+          <text>Low Val</text>
+          <x>535</x>
+          <y>25</y>
+          <width>55</width>
+          <height>25</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_49</name>
+          <text>High Val</text>
+          <x>595</x>
+          <y>25</y>
+          <width>55</width>
+          <height>25</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_50</name>
+          <text>Deadband</text>
+          <x>655</x>
+          <y>25</y>
+          <width>55</width>
+          <height>25</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_51</name>
+          <text>Latch </text>
+          <x>715</x>
+          <y>25</y>
+          <width>125</width>
+          <height>25</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_52</name>
+          <text>Audible</text>
+          <x>845</x>
+          <y>25</y>
+          <width>125</width>
+          <height>25</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_53</name>
+          <text>Visible</text>
+          <x>975</x>
+          <y>25</y>
+          <width>125</width>
+          <height>25</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_86</name>
+          <text>Alarm Settings</text>
+          <x>440</x>
+          <width>660</width>
+          <height>25</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>$(INPGRP)</name>
+      <macros>
+        <INPGRP>C</INPGRP>
+      </macros>
+      <x>5</x>
+      <y>165</y>
+      <width>1460</width>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="template" version="2.0.0">
+        <name>$(INPGRP)</name>
+        <file>lakeshore346_input_alarm_line.bob</file>
+        <instances>
+          <instance>
+            <macros>
+              <INPNUM>1</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <INPNUM>2</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <INPNUM>3</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <INPNUM>4</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+        </instances>
+        <width>1460</width>
+        <height>200</height>
+        <gap>0</gap>
+        <transparent>true</transparent>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>$(INPGRP)</name>
+      <macros>
+        <INPGRP>D</INPGRP>
+      </macros>
+      <x>5</x>
+      <y>365</y>
+      <width>1460</width>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="template" version="2.0.0">
+        <name>$(INPGRP)</name>
+        <file>lakeshore346_input_alarm_line.bob</file>
+        <instances>
+          <instance>
+            <macros>
+              <INPNUM>1</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <INPNUM>2</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <INPNUM>3</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <INPNUM>4</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+        </instances>
+        <width>1460</width>
+        <height>200</height>
+        <gap>0</gap>
+        <transparent>true</transparent>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>$(INPGRP)</name>
+      <macros>
+        <INPGRP>E</INPGRP>
+      </macros>
+      <x>5</x>
+      <y>565</y>
+      <width>1460</width>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="template" version="2.0.0">
+        <name>$(INPGRP)</name>
+        <file>lakeshore346_input_alarm_line.bob</file>
+        <instances>
+          <instance>
+            <macros>
+              <INPNUM>1</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <INPNUM>2</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <INPNUM>3</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <INPNUM>4</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+        </instances>
+        <width>1460</width>
+        <height>200</height>
+        <gap>0</gap>
+        <transparent>true</transparent>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>$(INPGRP)</name>
+      <macros>
+        <INPGRP>F</INPGRP>
+      </macros>
+      <x>5</x>
+      <y>765</y>
+      <width>1460</width>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="template" version="2.0.0">
+        <name>$(INPGRP)_1</name>
+        <file>lakeshore346_input_alarm_line.bob</file>
+        <instances>
+          <instance>
+            <macros>
+              <INPNUM>1</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <INPNUM>2</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <INPNUM>3</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <INPNUM>4</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+        </instances>
+        <width>1460</width>
+        <height>200</height>
+        <gap>0</gap>
+        <transparent>true</transparent>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>$(INPGRP)</name>
+      <macros>
+        <INPGRP>G</INPGRP>
+      </macros>
+      <x>5</x>
+      <y>965</y>
+      <width>1460</width>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="template" version="2.0.0">
+        <name>$(INPGRP)_2</name>
+        <file>lakeshore346_input_alarm_line.bob</file>
+        <instances>
+          <instance>
+            <macros>
+              <INPNUM>1</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <INPNUM>2</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <INPNUM>3</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <INPNUM>4</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+        </instances>
+        <width>1460</width>
+        <height>200</height>
+        <gap>0</gap>
+        <transparent>true</transparent>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>$(INPGRP)</name>
+      <macros>
+        <INPGRP>H</INPGRP>
+      </macros>
+      <x>5</x>
+      <y>1165</y>
+      <width>1460</width>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="template" version="2.0.0">
+        <name>$(INPGRP)_3</name>
+        <file>lakeshore346_input_alarm_line.bob</file>
+        <instances>
+          <instance>
+            <macros>
+              <INPNUM>1</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <INPNUM>2</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <INPNUM>3</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <INPNUM>4</INPNUM>
+              <INP>$(INPGRP)$(INPNUM)</INP>
+            </macros>
+          </instance>
+        </instances>
+        <width>1460</width>
+        <height>200</height>
+        <gap>0</gap>
+        <transparent>true</transparent>
+      </widget>
+    </widget>
+    <widget type="template" version="2.0.0">
+      <name>AB</name>
+      <file>lakeshore346_input_alarm_line.bob</file>
+      <instances>
+        <instance>
+          <macros>
+            <INPGRP>A</INPGRP>
+            <INPNUM>1</INPNUM>
+            <INP>A</INP>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <INPGRP>B</INPGRP>
+            <INPNUM>1</INPNUM>
+            <INP>B</INP>
+          </macros>
+        </instance>
+      </instances>
+      <x>5</x>
+      <y>65</y>
+      <width>1460</width>
+      <height>100</height>
+      <gap>0</gap>
+      <transparent>true</transparent>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>1560</x>
+    <y>325</y>
+    <width>465</width>
+    <height>25</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_88</name>
+      <text>Enable/Disable Overall Alarm</text>
+      <width>260</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_9</name>
+      <pv_name>$(P)$(R)DISABLE_ALARM</pv_name>
+      <x>265</x>
+      <width>200</width>
+      <height>25</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+</display>

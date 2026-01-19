@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Lake Shore 346 Zone Output $(OUTNUM) $(P)$(R)</name>
+  <width>950</width>
+  <height>850</height>
+  <actions>
+  </actions>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="label" version="2.0.0">
+    <name>Label_21</name>
+    <text>Output:</text>
+    <x>5</x>
+    <y>55</y>
+    <width>80</width>
+    <height>25</height>
+    <font>
+      <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_13</name>
+    <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+    <x>90</x>
+    <y>55</y>
+    <width>80</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <description>Read Latest ZONE Settings</description>
+        <pv_name>$(S):Z:READ$(OUT).PROC</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <x>190</x>
+    <y>55</y>
+    <width>225</width>
+    <height>25</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Header</name>
+    <width>950</width>
+    <height>45</height>
+    <style>3</style>
+    <foreground_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </background_color>
+    <widget type="label" version="2.0.0">
+      <name>Label_2</name>
+      <text>Lake Shore 346 Zone Settings - Output $(OUTNUM)</text>
+      <x>5</x>
+      <y>5</y>
+      <width>800</width>
+      <height>35</height>
+      <font>
+        <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Header_ForeGround" red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>5</x>
+    <y>90</y>
+    <width>940</width>
+    <height>745</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="template" version="2.0.0">
+      <name>Template/Instance</name>
+      <file>lakeshore346_zone_line.bob</file>
+      <instances>
+        <instance>
+          <macros>
+            <ZONE>1</ZONE>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <ZONE>2</ZONE>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <ZONE>3</ZONE>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <ZONE>4</ZONE>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <ZONE>5</ZONE>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <ZONE>6</ZONE>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <ZONE>7</ZONE>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <ZONE>8</ZONE>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <ZONE>9</ZONE>
+          </macros>
+        </instance>
+        <instance>
+          <macros>
+            <ZONE>10</ZONE>
+          </macros>
+        </instance>
+      </instances>
+      <y>55</y>
+      <width>940</width>
+      <height>690</height>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Labels</name>
+      <width>870</width>
+      <height>50</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_25</name>
+        <text>RATE</text>
+        <x>770</x>
+        <y>25</y>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>2</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_24</name>
+        <text>INPUT</text>
+        <x>665</x>
+        <y>25</y>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>2</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_23</name>
+        <text>RANGE</text>
+        <x>560</x>
+        <y>25</y>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>2</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_13</name>
+        <text>MOUT</text>
+        <x>455</x>
+        <y>25</y>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>2</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_15</name>
+        <text>D</text>
+        <x>350</x>
+        <y>25</y>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>2</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_16</name>
+        <text>I</text>
+        <x>245</x>
+        <y>25</y>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>2</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_14</name>
+        <text>P</text>
+        <x>140</x>
+        <y>25</y>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>2</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_1</name>
+        <text>Upper Boundary</text>
+        <x>35</x>
+        <height>50</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>2</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_26</name>
+        <text>Zone</text>
+        <y>25</y>
+        <width>35</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>2</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+    </widget>
+  </widget>
+</display>

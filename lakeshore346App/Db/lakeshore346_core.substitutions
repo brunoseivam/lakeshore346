@@ -1,0 +1,115 @@
+file lakeshore346_base.template { {} }
+
+# We use a few tricks here to uniformize the treatment for cards
+# We consider cards A and B of being of the fake type '254', hard-coded in the INP field
+# We consider cards C and D of being of the fake type '255', hard-coded in the INP field
+# Card E reads the types of the real cards inserted into the available slots
+# The type of cards F, G and H are populated by the stream protocol called from Card E's record.
+file lakeshore346_card.template {
+pattern
+{ CARD, DTYP,               INP                                                       }
+{ "A",  "Raw Soft Channel", "{ const: 254 }"                                          }
+{ "B",  "Raw Soft Channel", "{ const: 254 }"                                          }
+{ "C",  "Raw Soft Channel", "{ const: 255 }"                                          }
+{ "D",  "Raw Soft Channel", "{ const: 255 }"                                          }
+{ "E",  "stream",           "@ls346.proto getCARDS(\$(P)\$(R)CARD) \$(PORT) \$(ADDR)" }
+{ "F",  "Raw Soft Channel", ""                                                        }
+{ "G",  "Raw Soft Channel", ""                                                        }
+{ "H",  "Raw Soft Channel", ""                                                        }
+}
+
+# The Model 346 supports a variety of temperature input
+# configurations across the ten built in inputs, plus
+# additional option card inputs. The two dedicated inputs,
+# A and B, have a 10 Hz update rate, while the remaining
+# inputs C1 to D4, can have a variable update rate, ranging
+# from 10 Hz with only one input per card enabled, to 2.5 Hz
+# with all four inputs enabled. This update rate variance is
+# mirrored for any additional installed scanner option cards.
+
+file lakeshore346_input_fanout.template { {} }
+
+# Core cards
+file lakeshore346_input.template {
+pattern
+{ INPUT, CARD, CARDINP, DISABLED }
+{ "A",   "A",  "0",     "0"      }
+{ "B",   "B",  "0",     "0"      }
+{ "C1",  "C",  "0",     "0"      }
+{ "C2",  "C",  "1",     "0"      }
+{ "C3",  "C",  "2",     "0"      }
+{ "C4",  "C",  "3",     "0"      }
+{ "D1",  "D",  "0",     "0"      }
+{ "D2",  "D",  "1",     "0"      }
+{ "D3",  "D",  "2",     "0"      }
+{ "D4",  "D",  "3",     "0"      }
+}
+
+# Heater outputs 1-4
+# Analog outputs 5-8
+# Virtual outputs 9-10
+
+# Common records for all outputs
+file lakeshore346_output.template {
+pattern
+{ OUTNUM, HTROUT_VAL_EGU }
+{ "1",  "A" } { "2",  "A" } { "3", "A" } { "4", "A" }
+{ "5",  "V" } { "6",  "V" } { "7", "V" } { "8", "V" }
+{ "9",  "A" } { "10", "A" }
+}
+
+# Heater outputs (outputs 1-4, 9-10)
+file lakeshore346_output_heater.template {
+pattern
+{ OUTNUM }
+{ "1" } { "2" } { "3" } { "4" }
+{ "9" } { "10" }
+}
+
+# Heater real outputs (outputs 1-4)
+file lakeshore346_output_heater_real.template {
+pattern
+{ OUTNUM }
+{ "1" } { "2" } { "3" } { "4" }
+}
+
+# Analog outputs (outputs 5-8)
+file lakeshore346_output_analog.template {
+pattern
+{ OUTNUM }
+{ "5" } { "6" } { "7" } { "8" }
+}
+
+# Records for HTRST (outputs 1-8)
+file lakeshore346_output_htrst.template {
+pattern
+{ OUTNUM }
+{ "1" } { "2" } { "3" } { "4" }
+{ "5" } { "6" } { "7" } { "8" }
+}
+
+# Zones (for heaters, outputs 1-4 and 9-10, 10 zones per output)
+file lakeshore346_output_heater_zone.template {
+pattern
+{ OUTNUM, ZONE }
+{ "1",  "1"  } { "2",  "1"  } { "3",  "1"  } { "4",  "1"  } { "9",  "1"  } { "10", "1"  }
+{ "1",  "2"  } { "2",  "2"  } { "3",  "2"  } { "4",  "2"  } { "9",  "2"  } { "10", "2"  }
+{ "1",  "3"  } { "2",  "3"  } { "3",  "3"  } { "4",  "3"  } { "9",  "3"  } { "10", "3"  }
+{ "1",  "4"  } { "2",  "4"  } { "3",  "4"  } { "4",  "4"  } { "9",  "4"  } { "10", "4"  }
+{ "1",  "5"  } { "2",  "5"  } { "3",  "5"  } { "4",  "5"  } { "9",  "5"  } { "10", "5"  }
+{ "1",  "6"  } { "2",  "6"  } { "3",  "6"  } { "4",  "6"  } { "9",  "6"  } { "10", "6"  }
+{ "1",  "7"  } { "2",  "7"  } { "3",  "7"  } { "4",  "7"  } { "9",  "7"  } { "10", "7"  }
+{ "1",  "8"  } { "2",  "8"  } { "3",  "8"  } { "4",  "8"  } { "9",  "8"  } { "10", "8"  }
+{ "1",  "9"  } { "2",  "9"  } { "3",  "9"  } { "4",  "9"  } { "9",  "9"  } { "10", "9"  }
+{ "1",  "10" } { "2",  "10" } { "3",  "10" } { "4",  "10" } { "9",  "10" } { "10", "10" }
+}
+
+file lakeshore346_relay.template {
+pattern
+{ RELAY }
+{ "1" } { "2" }
+}
+
+file lakeshore346_digin.template { {} }
+
+file lakeshore346_curve.template { {} }

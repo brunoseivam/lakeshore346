@@ -1,0 +1,20 @@
+record(waveform, "$(P)$(R)DIGINALL:STATE") {
+    field(DTYP, "stream")
+    field(INP,  "@ls346.proto getDIGIN() $(PORT) $(ADDR)")
+    field(NELM, "2")
+    field(FTVL, "UCHAR")
+    field(PINI, "YES")
+    field(SCAN, "$(SCAN) second")
+}
+
+record(bi, "$(P)$(R)DIGIN1:STATE") {
+    field(INP,  "$(P)$(R)DIGINALL:STATE.VAL[0] CP")
+    field(ZNAM, "Low")
+    field(ONAM, "High")
+}
+
+record(bi, "$(P)$(R)DIGIN2:STATE") {
+    field(INP,  "$(P)$(R)DIGINALL:STATE.VAL[1] CP")
+    field(ZNAM, "Low")
+    field(ONAM, "High")
+}

@@ -1,0 +1,83 @@
+record(waveform, "$(P)$(R)INPALL:KRDG") {
+    field(DTYP, "stream")
+    field(DESC, "Read all temperatures")
+    field(INP,  "@ls346.proto getKRDGALL() $(PORT) $(ADDR)")
+    field(PREC, "3")
+    field(SCAN, "$(TEMPSCAN) second")
+    field(NELM, "32")
+    field(FTVL, "DOUBLE")
+    field(FLNK, "$(P)$(R)INPALL:KRDG_FOUT PP")
+}
+
+record(aSub, "$(P)$(R)INPALL:KRDG_FOUT") {
+    field(INAM, "temp_fanout_init")
+    field(SNAM, "temp_fanout_proc")
+    field(PREC, "3")
+
+    # Number of inputs for Card A-H
+    field(FTA, "UCHAR") field(NOA, "1") field(INPA, "$(P)$(R)CARDA:NUMINP")
+    field(FTB, "UCHAR") field(NOB, "1") field(INPB, "$(P)$(R)CARDB:NUMINP")
+    field(FTC, "UCHAR") field(NOC, "1") field(INPC, "$(P)$(R)CARDC:NUMINP")
+    field(FTD, "UCHAR") field(NOD, "1") field(INPD, "$(P)$(R)CARDD:NUMINP")
+    field(FTE, "UCHAR") field(NOE, "1") field(INPE, "$(P)$(R)CARDE:NUMINP")
+    field(FTF, "UCHAR") field(NOF, "1") field(INPF, "$(P)$(R)CARDF:NUMINP")
+    field(FTG, "UCHAR") field(NOG, "1") field(INPG, "$(P)$(R)CARDG:NUMINP")
+    field(FTH, "UCHAR") field(NOH, "1") field(INPH, "$(P)$(R)CARDH:NUMINP")
+
+    # Raw input as a string of comma-separated floats
+    field(FTI,  "DOUBLE")
+    field(NOI,  "32")
+    field(INPI, "$(P)$(R)INPALL:KRDG")
+
+    # Extracted Temps for Cards A-H
+    field(FTVA, "DOUBLE") field(NOVA, "4")
+    field(FTVB, "DOUBLE") field(NOVB, "4")
+    field(FTVC, "DOUBLE") field(NOVC, "4")
+    field(FTVD, "DOUBLE") field(NOVD, "4")
+    field(FTVE, "DOUBLE") field(NOVE, "4")
+    field(FTVF, "DOUBLE") field(NOVF, "4")
+    field(FTVG, "DOUBLE") field(NOVG, "4")
+    field(FTVH, "DOUBLE") field(NOVH, "4")
+}
+
+record(waveform, "$(P)$(R)INPALL:SRDG") {
+    field(DTYP, "stream")
+    field(DESC, "Read all voltages")
+    field(INP,  "@ls346.proto getSRDGALL() $(PORT) $(ADDR)")
+    field(PREC, "3")
+    field(SCAN, "$(TEMPSCAN) second")
+    field(NELM, "32")
+    field(FTVL, "DOUBLE")
+    field(FLNK, "$(P)$(R)INPALL:SRDG_FOUT PP")
+}
+
+record(aSub, "$(P)$(R)INPALL:SRDG_FOUT") {
+    field(INAM, "temp_fanout_init")
+    field(SNAM, "temp_fanout_proc")
+    field(PREC, "3")
+
+    # Number of inputs for Card A-H
+    field(FTA, "UCHAR") field(NOA, "1") field(INPA, "$(P)$(R)CARDA:NUMINP")
+    field(FTB, "UCHAR") field(NOB, "1") field(INPB, "$(P)$(R)CARDB:NUMINP")
+    field(FTC, "UCHAR") field(NOC, "1") field(INPC, "$(P)$(R)CARDC:NUMINP")
+    field(FTD, "UCHAR") field(NOD, "1") field(INPD, "$(P)$(R)CARDD:NUMINP")
+    field(FTE, "UCHAR") field(NOE, "1") field(INPE, "$(P)$(R)CARDE:NUMINP")
+    field(FTF, "UCHAR") field(NOF, "1") field(INPF, "$(P)$(R)CARDF:NUMINP")
+    field(FTG, "UCHAR") field(NOG, "1") field(INPG, "$(P)$(R)CARDG:NUMINP")
+    field(FTH, "UCHAR") field(NOH, "1") field(INPH, "$(P)$(R)CARDH:NUMINP")
+
+    # Raw input as a string of comma-separated floats
+    field(FTI,  "DOUBLE")
+    field(NOI,  "32")
+    field(INPI, "$(P)$(R)INPALL:SRDG")
+
+    # Extracted Voltages for Cards A-H
+    field(FTVA, "DOUBLE") field(NOVA, "4")
+    field(FTVB, "DOUBLE") field(NOVB, "4")
+    field(FTVC, "DOUBLE") field(NOVC, "4")
+    field(FTVD, "DOUBLE") field(NOVD, "4")
+    field(FTVE, "DOUBLE") field(NOVE, "4")
+    field(FTVF, "DOUBLE") field(NOVF, "4")
+    field(FTVG, "DOUBLE") field(NOVG, "4")
+    field(FTVH, "DOUBLE") field(NOVH, "4")
+}

@@ -1,0 +1,2289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Lake Shore 346 Output $(OUTNUM) $(P)$(R)</name>
+  <width>880</width>
+  <height>690</height>
+  <actions>
+  </actions>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="group" version="3.0.0">
+    <name>Header</name>
+    <width>880</width>
+    <height>80</height>
+    <style>3</style>
+    <foreground_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </background_color>
+    <widget type="label" version="2.0.0">
+      <name>Label</name>
+      <text>Lake Shore 346 Output $(OUTNUM)</text>
+      <x>5</x>
+      <y>5</y>
+      <width>380</width>
+      <height>35</height>
+      <font>
+        <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Header_ForeGround" red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Button_3</name>
+      <actions>
+        <action type="open_display">
+          <description>Out 1</description>
+          <file>lakeshore346_output.bob</file>
+          <macros>
+            <OUTNUM>1</OUTNUM>
+          </macros>
+          <target>replace</target>
+        </action>
+      </actions>
+      <x>5</x>
+      <y>45</y>
+      <width>65</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Button_4</name>
+      <actions>
+        <action type="open_display">
+          <description>Out 2</description>
+          <file>lakeshore346_output.bob</file>
+          <macros>
+            <OUTNUM>2</OUTNUM>
+          </macros>
+          <target>replace</target>
+        </action>
+      </actions>
+      <x>75</x>
+      <y>45</y>
+      <width>65</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Button_5</name>
+      <actions>
+        <action type="open_display">
+          <description>Out 3</description>
+          <file>lakeshore346_output.bob</file>
+          <macros>
+            <OUTNUM>3</OUTNUM>
+          </macros>
+          <target>replace</target>
+        </action>
+      </actions>
+      <x>145</x>
+      <y>45</y>
+      <width>65</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Button_6</name>
+      <actions>
+        <action type="open_display">
+          <description>Out 4</description>
+          <file>lakeshore346_output.bob</file>
+          <macros>
+            <OUTNUM>4</OUTNUM>
+          </macros>
+          <target>replace</target>
+        </action>
+      </actions>
+      <x>215</x>
+      <y>45</y>
+      <width>65</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Button_7</name>
+      <actions>
+        <action type="open_display">
+          <description>Out 5</description>
+          <file>lakeshore346_output.bob</file>
+          <macros>
+            <OUTNUM>5</OUTNUM>
+          </macros>
+          <target>replace</target>
+        </action>
+      </actions>
+      <x>285</x>
+      <y>45</y>
+      <width>65</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Button_8</name>
+      <actions>
+        <action type="open_display">
+          <description>Out 6</description>
+          <file>lakeshore346_output.bob</file>
+          <macros>
+            <OUTNUM>6</OUTNUM>
+          </macros>
+          <target>replace</target>
+        </action>
+      </actions>
+      <x>355</x>
+      <y>45</y>
+      <width>65</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Button_9</name>
+      <actions>
+        <action type="open_display">
+          <description>Out 7</description>
+          <file>lakeshore346_output.bob</file>
+          <macros>
+            <OUTNUM>7</OUTNUM>
+          </macros>
+          <target>replace</target>
+        </action>
+      </actions>
+      <x>425</x>
+      <y>45</y>
+      <width>65</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Button_10</name>
+      <actions>
+        <action type="open_display">
+          <description>Out 8</description>
+          <file>lakeshore346_output.bob</file>
+          <macros>
+            <OUTNUM>8</OUTNUM>
+          </macros>
+          <target>replace</target>
+        </action>
+      </actions>
+      <x>495</x>
+      <y>45</y>
+      <width>65</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Button_11</name>
+      <actions>
+        <action type="open_display">
+          <description>Out 9</description>
+          <file>lakeshore346_output.bob</file>
+          <macros>
+            <OUTNUM>9</OUTNUM>
+          </macros>
+          <target>replace</target>
+        </action>
+      </actions>
+      <x>565</x>
+      <y>45</y>
+      <width>65</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Button_12</name>
+      <actions>
+        <action type="open_display">
+          <description>Out 10</description>
+          <file>lakeshore346_output.bob</file>
+          <macros>
+            <OUTNUM>10</OUTNUM>
+          </macros>
+          <target>replace</target>
+        </action>
+      </actions>
+      <x>635</x>
+      <y>45</y>
+      <width>65</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <x>5</x>
+    <y>90</y>
+    <width>430</width>
+    <height>600</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_21</name>
+      <text>Output</text>
+      <x>225</x>
+      <height>25</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_13</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+      <x>330</x>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_18</name>
+      <text>Control Input</text>
+      <y>60</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_21</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OMI</pv_name>
+      <x>330</x>
+      <y>60</y>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_11</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OMI_S</pv_name>
+      <x>225</x>
+      <y>60</y>
+      <height>25</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <items>
+        <item>NONE</item>
+        <item>A</item>
+        <item>B</item>
+        <item>C1</item>
+        <item>C2</item>
+        <item>C3</item>
+        <item>C4</item>
+        <item>D1</item>
+        <item>D2</item>
+        <item>D3</item>
+        <item>D4</item>
+        <item>E1</item>
+        <item>E2</item>
+        <item>E3</item>
+        <item>E4</item>
+        <item>F1</item>
+        <item>F2</item>
+        <item>F3</item>
+        <item>F4</item>
+        <item>G1</item>
+        <item>G2</item>
+        <item>G3</item>
+        <item>G4</item>
+        <item>H1</item>
+        <item>H2</item>
+        <item>H3</item>
+        <item>H4</item>
+      </items>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_19</name>
+      <text>Power Up Enable</text>
+      <y>120</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_17</name>
+      <text>Output Mode</text>
+      <y>90</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_111</name>
+      <text>Use for Warmup</text>
+      <y>150</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_2</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OMP_S</pv_name>
+      <x>225</x>
+      <y>120</y>
+      <height>25</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_22</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OMP</pv_name>
+      <x>330</x>
+      <y>120</y>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OMM_S</pv_name>
+      <x>225</x>
+      <y>90</y>
+      <height>25</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_20</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OMM</pv_name>
+      <x>330</x>
+      <y>90</y>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_12</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OMW_S</pv_name>
+      <x>225</x>
+      <y>150</y>
+      <height>25</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_141</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OMW</pv_name>
+      <x>330</x>
+      <y>150</y>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_140</name>
+      <text>Output Mode (OUTMODE)</text>
+      <y>30</y>
+      <width>430</width>
+      <height>25</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_112</name>
+      <text>Heater Output (HTR)</text>
+      <y>480</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_113</name>
+      <text>Heater Out Value (HTROUT)</text>
+      <y>510</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_114</name>
+      <text>Heater Out Power (HTROUT)</text>
+      <y>540</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_142</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTR</pv_name>
+      <x>225</x>
+      <y>480</y>
+      <width>205</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_143</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTROUT_VAL</pv_name>
+      <x>225</x>
+      <y>510</y>
+      <width>205</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_144</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTROUT_PWR</pv_name>
+      <x>225</x>
+      <y>540</y>
+      <width>205</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_1</name>
+      <text>Setpoint (SETP)</text>
+      <y>210</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_2</name>
+      <text>Range (RANGE)</text>
+      <y>240</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_110</name>
+      <text>Auto-Range (HTRAUTO)</text>
+      <y>270</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_11</name>
+      <text>Ramp Rate (RAMP)</text>
+      <y>300</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_12</name>
+      <text>Ramp Status (RAMP on/off)</text>
+      <y>330</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_13</name>
+      <text>Manual Output (MOUT)</text>
+      <y>360</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_14</name>
+      <text>P</text>
+      <y>390</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_15</name>
+      <text>D</text>
+      <y>450</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_16</name>
+      <text>I</text>
+      <y>420</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):SETP</pv_name>
+      <x>330</x>
+      <y>210</y>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_3</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):RANGE</pv_name>
+      <x>330</x>
+      <y>240</y>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):SETP_S</pv_name>
+      <x>225</x>
+      <y>210</y>
+      <height>25</height>
+      <background_color>
+        <color name="WritePV_Background" red="128" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_4</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):RANGE_S</pv_name>
+      <x>225</x>
+      <y>240</y>
+      <height>25</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_10</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRAUTO_S</pv_name>
+      <x>225</x>
+      <y>270</y>
+      <height>25</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_140</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRAUTO</pv_name>
+      <x>330</x>
+      <y>270</y>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_1</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):RAMPST</pv_name>
+      <x>330</x>
+      <y>330</y>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_2</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):RAMP</pv_name>
+      <x>330</x>
+      <y>300</y>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_2</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):RAMP_S</pv_name>
+      <x>225</x>
+      <y>300</y>
+      <height>25</height>
+      <background_color>
+        <color name="WritePV_Background" red="128" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_4</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):MOUT_S</pv_name>
+      <x>225</x>
+      <y>360</y>
+      <height>25</height>
+      <background_color>
+        <color name="WritePV_Background" red="128" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_9</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):MOUT</pv_name>
+      <x>330</x>
+      <y>360</y>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_5</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):P_S</pv_name>
+      <x>225</x>
+      <y>390</y>
+      <height>25</height>
+      <background_color>
+        <color name="WritePV_Background" red="128" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_10</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):P</pv_name>
+      <x>330</x>
+      <y>390</y>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_6</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):I_S</pv_name>
+      <x>225</x>
+      <y>420</y>
+      <height>25</height>
+      <background_color>
+        <color name="WritePV_Background" red="128" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_11</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):I</pv_name>
+      <x>330</x>
+      <y>420</y>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_7</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):D_S</pv_name>
+      <x>225</x>
+      <y>450</y>
+      <height>25</height>
+      <background_color>
+        <color name="WritePV_Background" red="128" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_12</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):D</pv_name>
+      <x>330</x>
+      <y>450</y>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_5</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):RAMPST_S</pv_name>
+      <x>225</x>
+      <y>330</y>
+      <height>25</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_115</name>
+      <text>Heater Status (HTRST)</text>
+      <y>570</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 8">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_119</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRST_CACHE</pv_name>
+      <x>225</x>
+      <y>570</y>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 8">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 8">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button_1</name>
+      <actions>
+        <action type="write_pv">
+          <description>Reset</description>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):HTRST_RESET.PROC</pv_name>
+          <value>1</value>
+        </action>
+      </actions>
+      <x>330</x>
+      <y>570</y>
+      <height>25</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 8">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 8">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Menu Button_3</name>
+    <pv_name>$(P)$(R)OUT$(OUTNUM):TUNEMODE_S</pv_name>
+    <x>435</x>
+    <y>716</y>
+    <height>25</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <description>Start Tune</description>
+        <pv_name>$(P)$(R)OUT$(OUTNUM):TUNESTART.PROC</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <x>540</x>
+    <y>716</y>
+    <height>25</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_20</name>
+    <text>Tuning Mode</text>
+    <x>230</x>
+    <y>716</y>
+    <width>200</width>
+    <height>25</height>
+    <horizontal_alignment>2</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group_17</name>
+    <x>440</x>
+    <y>90</y>
+    <width>430</width>
+    <height>600</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_118</name>
+      <text>Enable</text>
+      <y>60</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_119</name>
+      <text>Setpoint Error</text>
+      <y>90</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_120</name>
+      <text>Settle Time</text>
+      <y>120</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_121</name>
+      <text>Latch</text>
+      <y>150</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_122</name>
+      <text>Audible</text>
+      <y>180</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_123</name>
+      <text>Visible</text>
+      <y>210</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_101</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_EN</pv_name>
+      <x>330</x>
+      <y>60</y>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_102</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_SETPERR</pv_name>
+      <x>330</x>
+      <y>90</y>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_103</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_STLTIM</pv_name>
+      <x>330</x>
+      <y>120</y>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_104</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_LATCH</pv_name>
+      <x>330</x>
+      <y>150</y>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_105</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_AUD</pv_name>
+      <x>330</x>
+      <y>180</y>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_106</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_VIS</pv_name>
+      <x>330</x>
+      <y>210</y>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_21</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_SETPERR_S</pv_name>
+      <x>225</x>
+      <y>90</y>
+      <height>25</height>
+      <background_color>
+        <color name="WritePV_Background" red="128" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_22</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_STLTIM_S</pv_name>
+      <x>225</x>
+      <y>120</y>
+      <height>25</height>
+      <background_color>
+        <color name="WritePV_Background" red="128" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_20</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_EN_S</pv_name>
+      <x>225</x>
+      <y>60</y>
+      <height>25</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_21</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_LATCH_S</pv_name>
+      <x>225</x>
+      <y>150</y>
+      <height>25</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_22</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_AUD_S</pv_name>
+      <x>225</x>
+      <y>180</y>
+      <height>25</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_23</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_VIS_S</pv_name>
+      <x>225</x>
+      <y>210</y>
+      <height>25</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_132</name>
+      <text>Output Stability (OUTSTABLE)</text>
+      <y>30</y>
+      <width>430</width>
+      <height>25</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_133</name>
+      <text>Monitor Out Parameter (ANALOG)</text>
+      <y>240</y>
+      <width>430</width>
+      <height>25</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &lt; 5">
+            <value>false</value>
+          </exp>
+          <exp bool_exp="pvInt0 &gt; 8">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_134</name>
+      <text>High Value</text>
+      <y>270</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &lt; 5">
+            <value>false</value>
+          </exp>
+          <exp bool_exp="pvInt0 &gt; 8">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_24</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):ANALOG_HIGH_S</pv_name>
+      <x>225</x>
+      <y>270</y>
+      <height>25</height>
+      <background_color>
+        <color name="WritePV_Background" red="128" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &lt; 5">
+            <value>false</value>
+          </exp>
+          <exp bool_exp="pvInt0 &gt; 8">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="true">
+          <exp bool_exp="pvInt0 &lt; 5">
+            <expression></expression>
+          </exp>
+          <exp bool_exp="pvInt &gt; 8">
+            <expression></expression>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_162</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):ANALOG_HIGH</pv_name>
+      <x>330</x>
+      <y>270</y>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &lt; 5">
+            <value>false</value>
+          </exp>
+          <exp bool_exp="pvInt0 &gt; 8">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="true">
+          <exp bool_exp="pvInt0 &lt; 5">
+            <expression></expression>
+          </exp>
+          <exp bool_exp="pvInt &gt; 8">
+            <expression></expression>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_135</name>
+      <text>Low Value</text>
+      <y>300</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &lt; 5">
+            <value>false</value>
+          </exp>
+          <exp bool_exp="pvInt0 &gt; 8">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_25</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):ANALOG_LOW_S</pv_name>
+      <x>225</x>
+      <y>300</y>
+      <height>25</height>
+      <background_color>
+        <color name="WritePV_Background" red="128" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &lt; 5">
+            <value>false</value>
+          </exp>
+          <exp bool_exp="pvInt0 &gt; 8">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="true">
+          <exp bool_exp="pvInt0 &lt; 5">
+            <expression></expression>
+          </exp>
+          <exp bool_exp="pvInt &gt; 8">
+            <expression></expression>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_163</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):ANALOG_LOW</pv_name>
+      <x>330</x>
+      <y>300</y>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &lt; 5">
+            <value>false</value>
+          </exp>
+          <exp bool_exp="pvInt0 &gt; 8">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="true">
+          <exp bool_exp="pvInt0 &lt; 5">
+            <expression></expression>
+          </exp>
+          <exp bool_exp="pvInt &gt; 8">
+            <expression></expression>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_136</name>
+      <text>Heater Setup (HTRSET)</text>
+      <y>330</y>
+      <width>430</width>
+      <height>25</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_124</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRSET_RES</pv_name>
+      <x>330</x>
+      <y>360</y>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_123</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRSET_MXOUT</pv_name>
+      <x>330</x>
+      <y>390</y>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_122</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRSET_CURPWR</pv_name>
+      <x>330</x>
+      <y>420</y>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_137</name>
+      <text>Resistance</text>
+      <y>360</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_26</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRSET_RES_S</pv_name>
+      <x>225</x>
+      <y>360</y>
+      <height>25</height>
+      <background_color>
+        <color name="WritePV_Background" red="128" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_138</name>
+      <text>Max Output</text>
+      <y>390</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_27</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRSET_MXOUT_S</pv_name>
+      <x>225</x>
+      <y>390</y>
+      <height>25</height>
+      <background_color>
+        <color name="WritePV_Background" red="128" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_24</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRSET_CURPWR_S</pv_name>
+      <x>225</x>
+      <y>420</y>
+      <height>25</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_139</name>
+      <text>Current/Power</text>
+      <y>420</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_141</name>
+      <text>Heater Setup (HTRSET)</text>
+      <y>450</y>
+      <width>430</width>
+      <height>25</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_107</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRLIM_EN</pv_name>
+      <x>330</x>
+      <y>480</y>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_108</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRLIM_SHRT</pv_name>
+      <x>330</x>
+      <y>510</y>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_109</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRLIM_OPN</pv_name>
+      <x>330</x>
+      <y>540</y>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_25</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRLIM_EN_S</pv_name>
+      <x>225</x>
+      <y>480</y>
+      <height>25</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_28</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRLIM_SHRT_S</pv_name>
+      <x>225</x>
+      <y>510</y>
+      <height>25</height>
+      <background_color>
+        <color name="WritePV_Background" red="128" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input_29</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRLIM_OPN_S</pv_name>
+      <x>225</x>
+      <y>540</y>
+      <height>25</height>
+      <background_color>
+        <color name="WritePV_Background" red="128" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_142</name>
+      <text>Open Resistance</text>
+      <y>540</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_143</name>
+      <text>Short Resistance</text>
+      <y>510</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_144</name>
+      <text>Protection</text>
+      <y>480</y>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_125</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTGRP</pv_name>
+      <x>330</x>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0&gt;4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="true">
+          <exp bool_exp="pvInt0&gt;4">
+            <expression></expression>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_145</name>
+      <text>Out Virt Group (OUTGROUP)</text>
+      <width>220</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0&gt;4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Menu Button_26</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTGRP_S</pv_name>
+      <x>225</x>
+      <height>25</height>
+      <background_color>
+        <color red="240" green="240" blue="240">
+        </color>
+      </background_color>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0&gt;4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="true">
+          <exp bool_exp="pvInt0&gt;4">
+            <expression></expression>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Button</name>
+      <actions>
+        <action type="open_display">
+          <description>Zone Settings</description>
+          <file>lakeshore346_zone.opi</file>
+          <target>tab</target>
+        </action>
+      </actions>
+      <y>570</y>
+      <width>430</width>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+</display>

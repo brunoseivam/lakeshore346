@@ -1,0 +1,4 @@
+function(temp_fanout_init)
+function(temp_fanout_proc)
+function(curve_read_init)
+function(curve_read_proc)

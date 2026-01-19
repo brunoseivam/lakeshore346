@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Lake Shore 346 Digital I/O $(P)$(R)</name>
+  <width>1475</width>
+  <height>310</height>
+  <actions>
+  </actions>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="embedded" version="2.0.0">
+    <name>Header</name>
+    <macros>
+      <HEADER>Lake Shore 346 - Digital I/O</HEADER>
+    </macros>
+    <file>lakeshore346_header.bob</file>
+    <width>1475</width>
+    <height>80</height>
+    <resize>4</resize>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Relays</name>
+    <x>175</x>
+    <y>85</y>
+    <width>1290</width>
+    <height>215</height>
+    <style>1</style>
+    <font>
+      <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>5</x>
+      <y>5</y>
+      <width>730</width>
+      <height>175</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="group" version="3.0.0">
+        <name>Group</name>
+        <macros>
+          <RELAY>1</RELAY>
+        </macros>
+        <x>115</x>
+        <width>305</width>
+        <height>175</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="combo" version="2.0.0">
+          <name>INP_S Stability</name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP_S</pv_name>
+          <x>155</x>
+          <y>90</y>
+          <width>80</width>
+          <height>25</height>
+          <rules>
+            <rule name="Visibility" prop_id="visible" out_exp="false">
+              <exp bool_exp="pvInt0==3">
+                <value>true</value>
+              </exp>
+              <exp bool_exp="pvInt0!=3">
+                <value>false</value>
+              </exp>
+              <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE_S</pv_name>
+            </rule>
+          </rules>
+          <items>
+            <item>1</item>
+            <item>2</item>
+            <item>3</item>
+            <item>4</item>
+            <item>5</item>
+            <item>6</item>
+            <item>7</item>
+            <item>8</item>
+            <item>9</item>
+            <item>10</item>
+          </items>
+          <items_from_pv>false</items_from_pv>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label</name>
+          <text>Relay $(RELAY)</text>
+          <width>305</width>
+          <height>25</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="action_button" version="3.0.0">
+          <name>Action Button</name>
+          <actions>
+            <action type="write_pv">
+              <description>Set Relay $(RELAY)</description>
+              <pv_name>$(pv_name)</pv_name>
+              <value>1</value>
+            </action>
+          </actions>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_S</pv_name>
+          <x>155</x>
+          <y>150</y>
+          <width>150</width>
+          <height>25</height>
+          <tooltip>$(actions)</tooltip>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Combo Box_2</name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_COND_S</pv_name>
+          <x>155</x>
+          <y>120</y>
+          <width>150</width>
+          <height>25</height>
+          <items>
+            <item></item>
+          </items>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_2</name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_COND</pv_name>
+          <y>120</y>
+          <width>150</width>
+          <height>25</height>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_1</name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP</pv_name>
+          <y>90</y>
+          <width>150</width>
+          <height>25</height>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>INP_S</name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP_S</pv_name>
+          <x>155</x>
+          <y>90</y>
+          <width>80</width>
+          <height>25</height>
+          <rules>
+            <rule name="Visibility" prop_id="visible" out_exp="false">
+              <exp bool_exp="pvInt0==3">
+                <value>false</value>
+              </exp>
+              <exp bool_exp="pvInt0!=3">
+                <value>true</value>
+              </exp>
+              <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE_S</pv_name>
+            </rule>
+          </rules>
+          <items>
+            <item>NONE</item>
+            <item>A</item>
+            <item>B</item>
+            <item>C1</item>
+            <item>C2</item>
+            <item>C3</item>
+            <item>C4</item>
+            <item>D1</item>
+            <item>D2</item>
+            <item>D3</item>
+            <item>D4</item>
+            <item>E1</item>
+            <item>E2</item>
+            <item>E3</item>
+            <item>E4</item>
+            <item>F1</item>
+            <item>F2</item>
+            <item>F3</item>
+            <item>F4</item>
+            <item>G1</item>
+            <item>G2</item>
+            <item>G3</item>
+            <item>G4</item>
+            <item>H1</item>
+            <item>H2</item>
+            <item>H3</item>
+            <item>H4</item>
+          </items>
+          <items_from_pv>false</items_from_pv>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_3</name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP_S</pv_name>
+          <x>245</x>
+          <y>90</y>
+          <width>60</width>
+          <height>25</height>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Combo Box_1</name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE_S</pv_name>
+          <x>155</x>
+          <y>60</y>
+          <width>150</width>
+          <height>25</height>
+          <items>
+            <item></item>
+          </items>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update</name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAYST</pv_name>
+          <y>30</y>
+          <width>305</width>
+          <height>25</height>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_12</name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE</pv_name>
+          <y>60</y>
+          <width>150</width>
+          <height>25</height>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_3</name>
+        <text>Relay State</text>
+        <y>30</y>
+        <width>110</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_4</name>
+        <text>Relay Mode</text>
+        <y>60</y>
+        <width>110</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_5</name>
+        <text>Relay Input</text>
+        <y>90</y>
+        <width>110</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_6</name>
+        <text>Relay Condition</text>
+        <y>120</y>
+        <width>110</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_7</name>
+        <text>Send Config</text>
+        <y>150</y>
+        <width>110</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group_3</name>
+        <macros>
+          <RELAY>2</RELAY>
+        </macros>
+        <x>425</x>
+        <width>305</width>
+        <height>175</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="combo" version="2.0.0">
+          <name>INP_S Stability_3</name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP_S</pv_name>
+          <x>155</x>
+          <y>90</y>
+          <width>80</width>
+          <height>25</height>
+          <rules>
+            <rule name="Visibility" prop_id="visible" out_exp="false">
+              <exp bool_exp="pvInt0==3">
+                <value>true</value>
+              </exp>
+              <exp bool_exp="pvInt0!=3">
+                <value>false</value>
+              </exp>
+              <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE_S</pv_name>
+            </rule>
+          </rules>
+          <items>
+            <item>1</item>
+            <item>2</item>
+            <item>3</item>
+            <item>4</item>
+            <item>5</item>
+            <item>6</item>
+            <item>7</item>
+            <item>8</item>
+            <item>9</item>
+            <item>10</item>
+          </items>
+          <items_from_pv>false</items_from_pv>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_8</name>
+          <text>Relay $(RELAY)</text>
+          <width>305</width>
+          <height>25</height>
+          <font>
+            <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="action_button" version="3.0.0">
+          <name>Action Button_3</name>
+          <actions>
+            <action type="write_pv">
+              <description>Set Relay $(RELAY)</description>
+              <pv_name>$(pv_name)</pv_name>
+              <value>1</value>
+            </action>
+          </actions>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_S</pv_name>
+          <x>155</x>
+          <y>150</y>
+          <width>150</width>
+          <height>25</height>
+          <tooltip>$(actions)</tooltip>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Combo Box_8</name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_COND_S</pv_name>
+          <x>155</x>
+          <y>120</y>
+          <width>150</width>
+          <height>25</height>
+          <items>
+            <item></item>
+          </items>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_13</name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_COND</pv_name>
+          <y>120</y>
+          <width>150</width>
+          <height>25</height>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_14</name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP</pv_name>
+          <y>90</y>
+          <width>150</width>
+          <height>25</height>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>INP_S_3</name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP_S</pv_name>
+          <x>155</x>
+          <y>90</y>
+          <width>80</width>
+          <height>25</height>
+          <rules>
+            <rule name="Visibility" prop_id="visible" out_exp="false">
+              <exp bool_exp="pvInt0==3">
+                <value>false</value>
+              </exp>
+              <exp bool_exp="pvInt0!=3">
+                <value>true</value>
+              </exp>
+              <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE_S</pv_name>
+            </rule>
+          </rules>
+          <items>
+            <item>NONE</item>
+            <item>A</item>
+            <item>B</item>
+            <item>C1</item>
+            <item>C2</item>
+            <item>C3</item>
+            <item>C4</item>
+            <item>D1</item>
+            <item>D2</item>
+            <item>D3</item>
+            <item>D4</item>
+            <item>E1</item>
+            <item>E2</item>
+            <item>E3</item>
+            <item>E4</item>
+            <item>F1</item>
+            <item>F2</item>
+            <item>F3</item>
+            <item>F4</item>
+            <item>G1</item>
+            <item>G2</item>
+            <item>G3</item>
+            <item>G4</item>
+            <item>H1</item>
+            <item>H2</item>
+            <item>H3</item>
+            <item>H4</item>
+          </items>
+          <items_from_pv>false</items_from_pv>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_15</name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP_S</pv_name>
+          <x>245</x>
+          <y>90</y>
+          <width>60</width>
+          <height>25</height>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Combo Box_9</name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE_S</pv_name>
+          <x>155</x>
+          <y>60</y>
+          <width>150</width>
+          <height>25</height>
+          <items>
+            <item></item>
+          </items>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_16</name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAYST</pv_name>
+          <y>30</y>
+          <width>305</width>
+          <height>25</height>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_17</name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE</pv_name>
+          <y>60</y>
+          <width>150</width>
+          <height>25</height>
+          <horizontal_alignment>1</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+      </widget>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_9</name>
+      <text>The left column for each relay shows the current configuration in the device.
+
+To change the configuration, modify the values on the right column and click "Set Relay".
+
+The allowed values for "Relay Input" change based on "Relay Mode".</text>
+      <x>749</x>
+      <y>5</y>
+      <width>530</width>
+      <height>175</height>
+      <font>
+        <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Digital Inputs</name>
+    <x>5</x>
+    <y>85</y>
+    <width>165</width>
+    <height>215</height>
+    <style>1</style>
+    <font>
+      <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_26</name>
+      <pv_name>$(P)$(R)DIGIN1:STATE</pv_name>
+      <x>5</x>
+      <y>35</y>
+      <width>150</width>
+      <height>25</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_19</name>
+      <text>Digital Input 1</text>
+      <x>5</x>
+      <y>5</y>
+      <width>150</width>
+      <height>25</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_20</name>
+      <text>Digital Input 2</text>
+      <x>5</x>
+      <y>70</y>
+      <width>150</width>
+      <height>25</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_28</name>
+      <pv_name>$(P)$(R)DIGIN2:STATE</pv_name>
+      <x>5</x>
+      <y>100</y>
+      <width>150</width>
+      <height>25</height>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+</display>

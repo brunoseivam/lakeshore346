@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Main Out Col</name>
+  <macros>
+    <P>LS346:</P>
+    <R></R>
+  </macros>
+  <width>100</width>
+  <height>1050</height>
+  <actions>
+  </actions>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_20</name>
+    <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+    <width>95</width>
+    <height>25</height>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Button</name>
+    <actions>
+      <action type="open_display">
+        <description>Cfg Out $(OUTNUM)</description>
+        <file>lakeshore346_output.opi</file>
+        <macros>
+          <OUTNUM>$(OUTNUM)</OUTNUM>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <y>30</y>
+    <width>95</width>
+    <height>25</height>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_22</name>
+    <pv_name>$(P)$(R)OUT$(OUTNUM):OMI</pv_name>
+    <y>60</y>
+    <width>65</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_15</name>
+    <pv_name>$(P)$(R)OUT$(OUTNUM):RANGE</pv_name>
+    <y>150</y>
+    <width>95</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>$(P)$(R)OUT$(OUTNUM):IN_WINDOW</pv_name>
+    <bit>0</bit>
+    <x>70</x>
+    <y>60</y>
+    <width>25</width>
+    <height>25</height>
+    <line_color>
+      <color red="150" green="150" blue="150">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_95</name>
+    <pv_name>$(P)$(R)OUT$(OUTNUM):HTRAUTO</pv_name>
+    <y>180</y>
+    <width>95</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_16</name>
+    <pv_name>$(P)$(R)OUT$(OUTNUM):MOUT</pv_name>
+    <y>270</y>
+    <width>95</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_62</name>
+    <pv_name>$(P)$(R)OUT$(OUTNUM):OMM</pv_name>
+    <y>390</y>
+    <width>95</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_63</name>
+    <pv_name>$(P)$(R)OUT$(OUTNUM):OMP</pv_name>
+    <y>420</y>
+    <width>95</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_69</name>
+    <pv_name>$(P)$(R)OUT$(OUTNUM):OMW</pv_name>
+    <y>450</y>
+    <width>95</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_101</name>
+    <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_EN</pv_name>
+    <y>570</y>
+    <width>95</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_102</name>
+    <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_SETPERR</pv_name>
+    <y>600</y>
+    <width>95</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_103</name>
+    <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_STLTIM</pv_name>
+    <y>630</y>
+    <width>95</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_104</name>
+    <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_LATCH</pv_name>
+    <y>660</y>
+    <width>95</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_105</name>
+    <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_AUD</pv_name>
+    <y>690</y>
+    <width>95</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_106</name>
+    <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_VIS</pv_name>
+    <y>720</y>
+    <width>95</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_92</name>
+    <pv_name>$(P)$(R)OUT$(OUTNUM):HTRLIM_EN</pv_name>
+    <y>930</y>
+    <width>95</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0 &gt; 4">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+      </rule>
+      <rule name="PVName" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0 &gt; 4">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_93</name>
+    <pv_name>$(P)$(R)OUT$(OUTNUM):HTRLIM_SHRT</pv_name>
+    <y>960</y>
+    <width>95</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0 &gt; 4">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+      </rule>
+      <rule name="PVName" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0 &gt; 4">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_94</name>
+    <pv_name>$(P)$(R)OUT$(OUTNUM):HTRLIM_OPN</pv_name>
+    <y>990</y>
+    <width>95</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0 &gt; 4">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+      </rule>
+      <rule name="PVName" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0 &gt; 4">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <y>90</y>
+    <width>100</width>
+    <height>55</height>
+    <style>3</style>
+    <background_color>
+      <color red="220" green="220" blue="220">
+      </color>
+    </background_color>
+    <widget type="textentry" version="3.0.0">
+      <name>Text</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):SETP_S</pv_name>
+      <width>95</width>
+      <height>25</height>
+      <background_color>
+        <color name="WritePV_Background" red="128" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_12</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):SETP</pv_name>
+      <y>30</y>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <y>210</y>
+    <width>100</width>
+    <height>55</height>
+    <style>3</style>
+    <background_color>
+      <color red="230" green="230" blue="230">
+      </color>
+    </background_color>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_14</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):RAMP</pv_name>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_13</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):RAMPST</pv_name>
+      <y>30</y>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <y>300</y>
+    <width>100</width>
+    <height>85</height>
+    <style>3</style>
+    <background_color>
+      <color red="230" green="230" blue="230">
+      </color>
+    </background_color>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_17</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):P</pv_name>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_18</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):I</pv_name>
+      <y>30</y>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_19</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):D</pv_name>
+      <y>60</y>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <y>480</y>
+    <width>100</width>
+    <height>85</height>
+    <style>3</style>
+    <background_color>
+      <color red="230" green="230" blue="230">
+      </color>
+    </background_color>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_97</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTROUT_PWR</pv_name>
+      <y>60</y>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_96</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTROUT_VAL</pv_name>
+      <y>30</y>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_21</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTR</pv_name>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <y>750</y>
+    <width>100</width>
+    <height>25</height>
+    <style>3</style>
+    <background_color>
+      <color red="230" green="230" blue="230">
+      </color>
+    </background_color>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_87</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRST_CACHE</pv_name>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 8">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 8">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_99</name>
+    <pv_name>$(P)$(R)OUT$(OUTNUM):ANALOG_HIGH</pv_name>
+    <y>780</y>
+    <width>95</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0 &lt; 5">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt0 &gt; 8">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+      </rule>
+      <rule name="PVName" prop_id="pv_name" out_exp="true">
+        <exp bool_exp="pvInt0 &lt; 5">
+          <expression></expression>
+        </exp>
+        <exp bool_exp="pvInt &gt; 8">
+          <expression></expression>
+        </exp>
+        <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_100</name>
+    <pv_name>$(P)$(R)OUT$(OUTNUM):ANALOG_LOW</pv_name>
+    <y>810</y>
+    <width>95</width>
+    <height>25</height>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <rules>
+      <rule name="Visibility" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0 &lt; 5">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt0 &gt; 8">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+      </rule>
+      <rule name="PVName" prop_id="pv_name" out_exp="true">
+        <exp bool_exp="pvInt0 &lt; 5">
+          <expression></expression>
+        </exp>
+        <exp bool_exp="pvInt &gt; 8">
+          <expression></expression>
+        </exp>
+        <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+      </rule>
+    </rules>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <y>840</y>
+    <width>100</width>
+    <height>85</height>
+    <style>3</style>
+    <background_color>
+      <color red="230" green="230" blue="230">
+      </color>
+    </background_color>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_91</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRSET_CURPWR</pv_name>
+      <y>60</y>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_90</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRSET_MXOUT</pv_name>
+      <y>30</y>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_89</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRSET_RES</pv_name>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0 &gt; 4">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Group</name>
+    <y>1020</y>
+    <width>100</width>
+    <height>25</height>
+    <style>3</style>
+    <background_color>
+      <color red="230" green="230" blue="230">
+      </color>
+    </background_color>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_88</name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTGRP</pv_name>
+      <width>95</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <rules>
+        <rule name="Visibility" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0&gt;4">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+        <rule name="PVName" prop_id="pv_name" out_exp="true">
+          <exp bool_exp="pvInt0&gt;4">
+            <expression></expression>
+          </exp>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+        </rule>
+      </rules>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+</display>

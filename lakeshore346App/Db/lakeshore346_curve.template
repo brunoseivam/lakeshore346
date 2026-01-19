@@ -1,0 +1,107 @@
+record(longout, "$(P)$(R)CURVE:NUM") {
+    field(DESC, "Curve Number to be read")
+    field(VAL,  "10")
+    field(DRVL, "1")
+    field(DRVH, "60")
+}
+
+record(bo, "$(P)$(R)CURVE:READ_CMD") {
+    field(DESC, "Read Curve")
+    field(FLNK, "$(P)$(R)CURVE:CRVHDR PP")
+}
+
+record(bi, "$(P)$(R)CURVE:CRVHDR") {
+    field(DTYP, "stream")
+    field(INP,  "@ls346.proto getCRVHDR($(P)$(R)CURVE) $(PORT) $(ADDR)")
+    field(FLNK, "$(P)$(R)CURVE:MOD_CALC PP")
+}
+
+record(stringin, "$(P)$(R)CURVE:NAME") {
+}
+
+record(stringin, "$(P)$(R)CURVE:SERIAL") {
+}
+
+record(mbbi, "$(P)$(R)CURVE:FORMAT") {
+    field(ZRVL, "1") field(ZRST, "mV/K")
+    field(ONVL, "2") field(ONST, "V/K")
+    field(TWVL, "3") field(TWST, "ohm/K")
+    field(THVL, "4") field(THST, "log ohm/K")
+}
+
+record(ai, "$(P)$(R)CURVE:LIMIT") {
+}
+
+record(mbbi, "$(P)$(R)CURVE:COEFF") {
+    field(ZRVL, "1") field(ZRST, "negative")
+    field(ONVL, "2") field(ONST, "positive")
+}
+
+record(calcout, "$(P)$(R)CURVE:MOD_CALC") {
+    field(DESC, "Is curve modifiable?")
+    field(CALC, "A>20")
+    field(INPA, "$(P)$(R)CURVE:NUM")
+    field(OUT,  "$(P)$(R)CURVE:MOD PP")
+    field(FLNK, "$(P)$(R)CURVE:NUMPTS PP")
+}
+
+record(bi, "$(P)$(R)CURVE:MOD") {
+    field(DESC, "Is curve modifiable?")
+    field(ZNAM, "No")
+    field(ONAM, "Yes")
+}
+
+record(longin, "$(P)$(R)CURVE:NUMPTS") {
+    field(DTYP, "stream")
+    field(INP,  "@ls346.proto getCRVNUMPTS($(P)$(R)CURVE) $(PORT) $(ADDR)")
+    field(FLNK, "$(P)$(R)CURVE:ASUB PP")
+}
+
+record(ai, "$(P)$(R)CURVE:READ_PROG") {
+    field(EGU,  "%")
+    field(LOPR, "0")
+    field(HOPR, "100")
+    field(VAL,  "0")
+    field(PINI, "YES")
+}
+
+record(aSub, "$(P)$(R)CURVE:ASUB") {
+    field(INAM, "curve_read_init")
+    field(SNAM, "curve_read_proc")
+    field(PREC, "3")
+
+    field(FTA, "CHAR")  field(NOA, "64") field(INPA, { const: "$(PORT)" })
+    field(FTB, "ULONG") field(NOB, "1")  field(INPB, { const: "$(ADDR)" })
+    field(FTC, "ULONG") field(NOC, "1")  field(INPC, { const: "$(BATCH=10)" })
+    field(FTD, "CHAR")  field(NOD, "64") field(INPD, { const: "$(P)$(R)CURVE:READ_PROG" })
+    field(FTE, "ULONG") field(NOE, "1")  field(INPE, "$(P)$(R)CURVE:NUM")
+    field(FTF, "ULONG") field(NOF, "1")  field(INPF, "$(P)$(R)CURVE:NUMPTS")
+
+    # Extracted Curve
+
+    # Units values (sensor units)
+    field(FTVA, "DOUBLE") field(NOVA, "200") field(OUTA, "$(P)$(R)CURVE:UNITS PP")
+
+    # Temp values (K)
+    field(FTVB, "DOUBLE") field(NOVB, "200") field(OUTB, "$(P)$(R)CURVE:TEMPS PP")
+
+    field(FLNK, "$(P)$(R)CURVE:NUM_LOADED PP")
+}
+
+record(longin, "$(P)$(R)CURVE:NUM_LOADED") {
+    field(DESC, "Loaded curve number")
+    field(INP,  "$(P)$(R)CURVE:NUM")
+}
+
+record(waveform, "$(P)$(R)CURVE:UNITS") {
+    field(FTVL, "DOUBLE")
+    field(NELM, "200")
+    field(PREC, "6")
+}
+
+record(waveform, "$(P)$(R)CURVE:TEMPS") {
+    field(EGU,  "K")
+    field(FTVL, "DOUBLE")
+    field(NELM, "200")
+    field(PREC, "6")
+}

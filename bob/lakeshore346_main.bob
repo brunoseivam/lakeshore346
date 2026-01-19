@@ -1,0 +1,2541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Lake Shore 346 Main $(P)$(R)</name>
+  <macros>
+    <P>LS346:</P>
+    <R></R>
+  </macros>
+  <width>1920</width>
+  <height>1350</height>
+  <actions>
+  </actions>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="group" version="3.0.0">
+    <name>Inputs</name>
+    <x>5</x>
+    <y>270</y>
+    <width>605</width>
+    <height>880</height>
+    <style>1</style>
+    <font>
+      <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>Builtin</name>
+      <x>5</x>
+      <y>40</y>
+      <width>420</width>
+      <height>810</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="template" version="2.0.0">
+        <name>AB</name>
+        <file>lakeshore346_main_in_line.bob</file>
+        <instances>
+          <instance>
+            <macros>
+              <INP>A</INP>
+              <INPGRP>A</INPGRP>
+              <INPNUM>1</INPNUM>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <INP>B</INP>
+              <INPGRP>B</INPGRP>
+              <INPNUM>1</INPNUM>
+            </macros>
+          </instance>
+        </instances>
+        <y>30</y>
+        <width>595</width>
+        <height>60</height>
+        <gap>0</gap>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>$(INPGRP)</name>
+        <macros>
+          <INPGRP>C</INPGRP>
+        </macros>
+        <y>90</y>
+        <width>420</width>
+        <height>120</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="template" version="2.0.0">
+          <name>$(INPGRP)</name>
+          <file>lakeshore346_main_in_line.bob</file>
+          <instances>
+            <instance>
+              <macros>
+                <INPNUM>1</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>2</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>3</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>4</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+          </instances>
+          <width>595</width>
+          <height>120</height>
+          <gap>0</gap>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>$(INPGRP)</name>
+        <macros>
+          <INPGRP>D</INPGRP>
+        </macros>
+        <y>210</y>
+        <width>420</width>
+        <height>120</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="template" version="2.0.0">
+          <name>$(INPGRP)</name>
+          <file>lakeshore346_main_in_line.bob</file>
+          <instances>
+            <instance>
+              <macros>
+                <INPNUM>1</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>2</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>3</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>4</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+          </instances>
+          <width>595</width>
+          <height>120</height>
+          <gap>0</gap>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>$(INPGRP)</name>
+        <macros>
+          <INPGRP>E</INPGRP>
+        </macros>
+        <y>330</y>
+        <width>420</width>
+        <height>120</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="template" version="2.0.0">
+          <name>$(INPGRP)</name>
+          <file>lakeshore346_main_in_line.bob</file>
+          <instances>
+            <instance>
+              <macros>
+                <INPNUM>1</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>2</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>3</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>4</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+          </instances>
+          <width>595</width>
+          <height>120</height>
+          <gap>0</gap>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>$(INPGRP)</name>
+        <macros>
+          <INPGRP>F</INPGRP>
+        </macros>
+        <y>450</y>
+        <width>420</width>
+        <height>120</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="template" version="2.0.0">
+          <name>$(INPGRP)</name>
+          <file>lakeshore346_main_in_line.bob</file>
+          <instances>
+            <instance>
+              <macros>
+                <INPNUM>1</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>2</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>3</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>4</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+          </instances>
+          <width>595</width>
+          <height>120</height>
+          <gap>0</gap>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>$(INPGRP)</name>
+        <macros>
+          <INPGRP>G</INPGRP>
+        </macros>
+        <y>570</y>
+        <width>420</width>
+        <height>120</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="template" version="2.0.0">
+          <name>$(INPGRP)</name>
+          <file>lakeshore346_main_in_line.bob</file>
+          <instances>
+            <instance>
+              <macros>
+                <INPNUM>1</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>2</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>3</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>4</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+          </instances>
+          <width>595</width>
+          <height>120</height>
+          <gap>0</gap>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>$(INPGRP)</name>
+        <macros>
+          <INPGRP>H</INPGRP>
+        </macros>
+        <y>690</y>
+        <width>420</width>
+        <height>120</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="template" version="2.0.0">
+          <name>$(INPGRP)</name>
+          <file>lakeshore346_main_in_line.bob</file>
+          <instances>
+            <instance>
+              <macros>
+                <INPNUM>1</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>2</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>3</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>4</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+          </instances>
+          <width>595</width>
+          <height>120</height>
+          <gap>0</gap>
+        </widget>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>5</x>
+      <y>5</y>
+      <width>599</width>
+      <height>35</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="group" version="3.0.0">
+        <name>Group</name>
+        <x>20</x>
+        <y>5</y>
+        <width>210</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="action_button" version="3.0.0">
+          <name>Button_13</name>
+          <actions>
+            <action type="write_pv">
+              <description>Unit=K</description>
+              <pv_name>$(pv_name)</pv_name>
+              <value>K</value>
+            </action>
+          </actions>
+          <pv_name>$(P)$(R)UNITS</pv_name>
+          <height>25</height>
+          <tooltip>Note: ensure Phoebus has the setting below so that unit change is reflected immediately without a refresh
+org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+        <widget type="action_button" version="3.0.0">
+          <name>Button_14</name>
+          <actions>
+            <action type="write_pv">
+              <description>Unit=C</description>
+              <pv_name>$(pv_name)</pv_name>
+              <value>C</value>
+            </action>
+          </actions>
+          <pv_name>$(P)$(R)UNITS</pv_name>
+          <x>110</x>
+          <height>25</height>
+          <tooltip>Note: ensure Phoebus has the setting below so that unit change is reflected immediately without a refresh
+org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
+          <border_alarm_sensitive>false</border_alarm_sensitive>
+        </widget>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>Action Button_1</name>
+        <actions>
+          <action type="write_pv">
+            <description>Clear All Alarms</description>
+            <pv_name>$(pv_name)</pv_name>
+            <value>1</value>
+          </action>
+        </actions>
+        <pv_name>$(P)$(R)ALMRST</pv_name>
+        <x>375</x>
+        <y>5</y>
+        <width>200</width>
+        <height>25</height>
+        <tooltip>$(actions)</tooltip>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Labels</name>
+      <x>5</x>
+      <y>40</y>
+      <width>595</width>
+      <height>30</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_3</name>
+        <text>Input</text>
+        <width>40</width>
+        <height>30</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_1</name>
+        <text>Temperature</text>
+        <x>175</x>
+        <width>90</width>
+        <height>30</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_47</name>
+        <text>Min</text>
+        <x>300</x>
+        <width>90</width>
+        <height>30</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_48</name>
+        <text>Desc</text>
+        <x>45</x>
+        <width>90</width>
+        <height>30</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_49</name>
+        <text>AL</text>
+        <x>145</x>
+        <width>25</width>
+        <height>30</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_54</name>
+        <text>AH</text>
+        <x>270</x>
+        <width>25</width>
+        <height>30</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_52</name>
+        <text>Max</text>
+        <x>395</x>
+        <width>90</width>
+        <height>30</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Device</name>
+    <x>5</x>
+    <y>85</y>
+    <width>605</width>
+    <height>180</height>
+    <style>1</style>
+    <font>
+      <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_31</name>
+      <text>Host</text>
+      <x>5</x>
+      <y>5</y>
+      <width>80</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_34</name>
+      <text>Connected</text>
+      <x>5</x>
+      <y>35</y>
+      <width>80</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_13</name>
+      <pv_name>$(P)$(R)ASYN.HOSTINFO</pv_name>
+      <x>90</x>
+      <y>5</y>
+      <width>230</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_15</name>
+      <pv_name>$(P)$(R)ASYN.CNCT</pv_name>
+      <x>90</x>
+      <y>35</y>
+      <width>200</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>LED</name>
+      <pv_name>$(P)$(R)ASYN.CNCT</pv_name>
+      <x>295</x>
+      <y>35</y>
+      <width>25</width>
+      <height>25</height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_14</name>
+      <text>Model</text>
+      <x>5</x>
+      <y>65</y>
+      <width>80</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_10</name>
+      <pv_name>$(P)$(R)MODEL</pv_name>
+      <x>90</x>
+      <y>65</y>
+      <width>230</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_15</name>
+      <text>Serial</text>
+      <x>5</x>
+      <y>95</y>
+      <width>80</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_11</name>
+      <pv_name>$(P)$(R)SERIAL</pv_name>
+      <x>90</x>
+      <y>95</y>
+      <width>230</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_13</name>
+      <text>Firmware</text>
+      <x>5</x>
+      <y>125</y>
+      <width>80</width>
+      <height>25</height>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_9</name>
+      <pv_name>$(P)$(R)FIRMWARE</pv_name>
+      <x>90</x>
+      <y>125</y>
+      <width>230</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_72</name>
+      <text>Slot E</text>
+      <x>320</x>
+      <y>35</y>
+      <width>60</width>
+      <height>25</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_336</name>
+      <pv_name>$(P)$(R)CARDE:TYPE</pv_name>
+      <x>395</x>
+      <y>35</y>
+      <width>120</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_404</name>
+      <pv_name>$(P)$(R)CARDE:NUMINP</pv_name>
+      <x>520</x>
+      <y>35</y>
+      <width>75</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_337</name>
+      <pv_name>$(P)$(R)CARDF:TYPE</pv_name>
+      <x>395</x>
+      <y>65</y>
+      <width>120</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_405</name>
+      <pv_name>$(P)$(R)CARDF:NUMINP</pv_name>
+      <x>520</x>
+      <y>65</y>
+      <width>75</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_343</name>
+      <pv_name>$(P)$(R)CARDG:TYPE</pv_name>
+      <x>395</x>
+      <y>95</y>
+      <width>120</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_410</name>
+      <pv_name>$(P)$(R)CARDG:NUMINP</pv_name>
+      <x>520</x>
+      <y>95</y>
+      <width>75</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_342</name>
+      <pv_name>$(P)$(R)CARDH:TYPE</pv_name>
+      <x>395</x>
+      <y>125</y>
+      <width>120</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_411</name>
+      <pv_name>$(P)$(R)CARDH:NUMINP</pv_name>
+      <x>520</x>
+      <y>125</y>
+      <width>75</width>
+      <height>25</height>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_75</name>
+      <text>Slot F</text>
+      <x>320</x>
+      <y>65</y>
+      <width>60</width>
+      <height>25</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_76</name>
+      <text>Slot H</text>
+      <x>320</x>
+      <y>125</y>
+      <width>60</width>
+      <height>25</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_77</name>
+      <text>Slot G</text>
+      <x>320</x>
+      <y>95</y>
+      <width>60</width>
+      <height>25</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_90</name>
+      <text>Card</text>
+      <x>395</x>
+      <y>5</y>
+      <width>120</width>
+      <height>25</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_91</name>
+      <text># Inputs</text>
+      <x>520</x>
+      <y>5</y>
+      <width>75</width>
+      <height>25</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Outputs</name>
+    <x>615</x>
+    <y>270</y>
+    <width>1295</width>
+    <height>1080</height>
+    <style>1</style>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>5</x>
+      <y>5</y>
+      <width>155</width>
+      <height>1050</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_27</name>
+        <text>Output</text>
+        <width>150</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_25</name>
+        <text>Control Input</text>
+        <y>60</y>
+        <width>150</width>
+        <height>25</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_17</name>
+        <text>Range</text>
+        <y>150</y>
+        <width>150</width>
+        <height>25</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group</name>
+        <y>90</y>
+        <width>155</width>
+        <height>55</height>
+        <style>3</style>
+        <background_color>
+          <color red="220" green="220" blue="220">
+          </color>
+        </background_color>
+        <widget type="label" version="2.0.0">
+          <name>Label_16</name>
+          <text>Setpoint</text>
+          <width>150</width>
+          <height>55</height>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_30</name>
+        <text>Auto-Range</text>
+        <y>180</y>
+        <width>150</width>
+        <height>25</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_20</name>
+        <text>Manual Output</text>
+        <y>270</y>
+        <width>150</width>
+        <height>25</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_24</name>
+        <text>Output mode</text>
+        <y>390</y>
+        <width>150</width>
+        <height>25</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_26</name>
+        <text>Power Up Enable</text>
+        <y>420</y>
+        <width>150</width>
+        <height>25</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_70</name>
+        <text>Use for Warmup</text>
+        <y>450</y>
+        <width>150</width>
+        <height>25</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group</name>
+        <y>210</y>
+        <width>155</width>
+        <height>55</height>
+        <style>3</style>
+        <background_color>
+          <color red="230" green="230" blue="230">
+          </color>
+        </background_color>
+        <widget type="label" version="2.0.0">
+          <name>Label_18</name>
+          <text>Ramp Rate</text>
+          <width>150</width>
+          <height>25</height>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_19</name>
+          <text>Ramp Status</text>
+          <y>30</y>
+          <width>150</width>
+          <height>25</height>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group</name>
+        <y>300</y>
+        <width>155</width>
+        <height>85</height>
+        <style>3</style>
+        <background_color>
+          <color red="230" green="230" blue="230">
+          </color>
+        </background_color>
+        <widget type="label" version="2.0.0">
+          <name>Label_21</name>
+          <text>P</text>
+          <width>150</width>
+          <height>25</height>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_23</name>
+          <text>I</text>
+          <y>30</y>
+          <width>150</width>
+          <height>25</height>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_22</name>
+          <text>D</text>
+          <y>60</y>
+          <width>150</width>
+          <height>25</height>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group</name>
+        <y>480</y>
+        <width>155</width>
+        <height>85</height>
+        <style>3</style>
+        <background_color>
+          <color red="230" green="230" blue="230">
+          </color>
+        </background_color>
+        <widget type="label" version="2.0.0">
+          <name>Label_28</name>
+          <text>Heater Output</text>
+          <width>150</width>
+          <height>25</height>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_32</name>
+          <text>Htr Out Value</text>
+          <y>30</y>
+          <width>150</width>
+          <height>25</height>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_36</name>
+          <text>Htr Out Power</text>
+          <y>60</y>
+          <width>150</width>
+          <height>25</height>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_71</name>
+        <text>Out Stab Enable</text>
+        <y>570</y>
+        <width>150</width>
+        <height>25</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_73</name>
+        <text>Out Stab SetPt Err</text>
+        <y>600</y>
+        <width>150</width>
+        <height>25</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_74</name>
+        <text>Out Stab Settle Time</text>
+        <y>630</y>
+        <width>150</width>
+        <height>25</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_78</name>
+        <text>Out Stab Latch</text>
+        <y>660</y>
+        <width>150</width>
+        <height>25</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_79</name>
+        <text>Out Stab Audible</text>
+        <y>690</y>
+        <width>150</width>
+        <height>25</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_80</name>
+        <text>Out Stab Visible</text>
+        <y>720</y>
+        <width>150</width>
+        <height>25</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_82</name>
+        <text>Monitor Out Low</text>
+        <y>810</y>
+        <width>150</width>
+        <height>25</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_81</name>
+        <text>Monitor Out High</text>
+        <y>780</y>
+        <width>150</width>
+        <height>25</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group</name>
+        <y>750</y>
+        <width>155</width>
+        <height>25</height>
+        <style>3</style>
+        <background_color>
+          <color red="230" green="230" blue="230">
+          </color>
+        </background_color>
+        <widget type="label" version="2.0.0">
+          <name>Label_29</name>
+          <text>Heater Status</text>
+          <width>150</width>
+          <height>25</height>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group</name>
+        <y>840</y>
+        <width>155</width>
+        <height>85</height>
+        <style>3</style>
+        <background_color>
+          <color red="230" green="230" blue="230">
+          </color>
+        </background_color>
+        <widget type="label" version="2.0.0">
+          <name>Label_83</name>
+          <text>Heater Resistance</text>
+          <width>150</width>
+          <height>25</height>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_84</name>
+          <text>Heater Max Output</text>
+          <y>30</y>
+          <width>150</width>
+          <height>25</height>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_85</name>
+          <text>Heater Current/Power</text>
+          <y>60</y>
+          <width>150</width>
+          <height>25</height>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_86</name>
+        <text>Heater Protection</text>
+        <y>930</y>
+        <width>150</width>
+        <height>25</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_87</name>
+        <text>Heater Short Resist</text>
+        <y>960</y>
+        <width>150</width>
+        <height>25</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_88</name>
+        <text>Heater Open Resist</text>
+        <y>990</y>
+        <width>150</width>
+        <height>25</height>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group</name>
+        <y>1020</y>
+        <width>155</width>
+        <height>25</height>
+        <style>3</style>
+        <background_color>
+          <color red="230" green="230" blue="230">
+          </color>
+        </background_color>
+        <widget type="label" version="2.0.0">
+          <name>Label_89</name>
+          <text>Heater Out Virt Group</text>
+          <width>150</width>
+          <height>25</height>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+          <actions>
+          </actions>
+          <border_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </border_color>
+        </widget>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>160</x>
+      <y>5</y>
+      <width>1000</width>
+      <height>1050</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="embedded" version="2.0.0">
+        <name>Group</name>
+        <macros>
+          <OUTNUM>1</OUTNUM>
+        </macros>
+        <file>lakeshore346_main_out_col.bob</file>
+        <width>100</width>
+        <height>1050</height>
+        <resize>4</resize>
+        <transparent>true</transparent>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>Group_2</name>
+        <macros>
+          <OUTNUM>2</OUTNUM>
+        </macros>
+        <file>lakeshore346_main_out_col.bob</file>
+        <x>100</x>
+        <width>100</width>
+        <height>1050</height>
+        <resize>4</resize>
+        <transparent>true</transparent>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>Group_5</name>
+        <macros>
+          <OUTNUM>3</OUTNUM>
+        </macros>
+        <file>lakeshore346_main_out_col.bob</file>
+        <x>200</x>
+        <width>100</width>
+        <height>1050</height>
+        <resize>4</resize>
+        <transparent>true</transparent>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>Group_6</name>
+        <macros>
+          <OUTNUM>4</OUTNUM>
+        </macros>
+        <file>lakeshore346_main_out_col.bob</file>
+        <x>300</x>
+        <width>100</width>
+        <height>1050</height>
+        <resize>4</resize>
+        <transparent>true</transparent>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>Group_10</name>
+        <macros>
+          <OUTNUM>5</OUTNUM>
+        </macros>
+        <file>lakeshore346_main_out_col.bob</file>
+        <x>400</x>
+        <width>100</width>
+        <height>1050</height>
+        <resize>4</resize>
+        <transparent>true</transparent>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>Group_9</name>
+        <macros>
+          <OUTNUM>6</OUTNUM>
+        </macros>
+        <file>lakeshore346_main_out_col.bob</file>
+        <x>500</x>
+        <width>100</width>
+        <height>1050</height>
+        <resize>4</resize>
+        <transparent>true</transparent>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>Group_8</name>
+        <macros>
+          <OUTNUM>7</OUTNUM>
+        </macros>
+        <file>lakeshore346_main_out_col.bob</file>
+        <x>600</x>
+        <width>100</width>
+        <height>1050</height>
+        <resize>4</resize>
+        <transparent>true</transparent>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>Group_7</name>
+        <macros>
+          <OUTNUM>8</OUTNUM>
+        </macros>
+        <file>lakeshore346_main_out_col.bob</file>
+        <x>700</x>
+        <width>100</width>
+        <height>1050</height>
+        <resize>4</resize>
+        <transparent>true</transparent>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>Group_30</name>
+        <macros>
+          <OUTNUM>9</OUTNUM>
+        </macros>
+        <file>lakeshore346_main_out_col.bob</file>
+        <x>800</x>
+        <width>100</width>
+        <height>1050</height>
+        <resize>4</resize>
+        <transparent>true</transparent>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>Group_31</name>
+        <macros>
+          <OUTNUM>10</OUTNUM>
+        </macros>
+        <file>lakeshore346_main_out_col.bob</file>
+        <x>900</x>
+        <width>100</width>
+        <height>1050</height>
+        <resize>4</resize>
+        <transparent>true</transparent>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>1165</x>
+      <y>65</y>
+      <width>125</width>
+      <height>146</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_50</name>
+        <text>Set all Setpoints</text>
+        <width>125</width>
+        <height>25</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="textentry" version="3.0.0">
+        <name>Text_5</name>
+        <pv_name>$(P)$(R)OUTALL:SETP_S</pv_name>
+        <y>30</y>
+        <width>95</width>
+        <height>25</height>
+        <background_color>
+          <color name="WritePV_Background" red="128" green="255" blue="255">
+          </color>
+        </background_color>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED_5</name>
+        <pv_name>$(P)$(R)IN_WINDOWS</pv_name>
+        <bit>0</bit>
+        <x>100</x>
+        <y>30</y>
+        <width>25</width>
+        <height>25</height>
+        <line_color>
+          <color red="150" green="150" blue="150">
+          </color>
+        </line_color>
+        <actions>
+        </actions>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_51</name>
+        <text>(blocks until all temperatures are within tolerance windows)</text>
+        <y>55</y>
+        <width>125</width>
+        <height>91</height>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>Group</name>
+    <macros>
+      <HEADER>Lake Shore 346 - Main</HEADER>
+    </macros>
+    <file>lakeshore346_header.bob</file>
+    <width>1920</width>
+    <height>80</height>
+    <resize>4</resize>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Warmup</name>
+    <x>615</x>
+    <y>85</y>
+    <width>215</width>
+    <height>180</height>
+    <style>1</style>
+    <font>
+      <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>Label_5</name>
+      <text>Temperature</text>
+      <x>5</x>
+      <y>5</y>
+      <height>30</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_57</name>
+      <text>Percentage</text>
+      <x>5</x>
+      <y>35</y>
+      <height>30</height>
+      <font>
+        <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text_6</name>
+      <pv_name>$(P)$(R)WARM:TEMP</pv_name>
+      <x>110</x>
+      <y>5</y>
+      <width>95</width>
+      <height>25</height>
+      <background_color>
+        <color name="WritePV_Background" red="128" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text_7</name>
+      <pv_name>$(P)$(R)WARM:PCT</pv_name>
+      <x>110</x>
+      <y>35</y>
+      <width>95</width>
+      <height>25</height>
+      <background_color>
+        <color name="WritePV_Background" red="128" green="255" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>5</x>
+      <y>65</y>
+      <width>200</width>
+      <height>25</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="group" version="3.0.0">
+        <name>Group</name>
+        <macros>
+          <OUTNUM>1</OUTNUM>
+        </macros>
+        <width>20</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_1</name>
+          <pv_name>LS346:OUT$(OUTNUM):OMW</pv_name>
+          <off_label>$(OUTNUM)</off_label>
+          <on_label>$(OUTNUM)</on_label>
+          <square>true</square>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group_1</name>
+        <macros>
+          <OUTNUM>2</OUTNUM>
+        </macros>
+        <x>20</x>
+        <width>20</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_15</name>
+          <pv_name>LS346:OUT$(OUTNUM):OMW</pv_name>
+          <off_label>$(OUTNUM)</off_label>
+          <on_label>$(OUTNUM)</on_label>
+          <square>true</square>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group_3</name>
+        <macros>
+          <OUTNUM>3</OUTNUM>
+        </macros>
+        <x>40</x>
+        <width>20</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_16</name>
+          <pv_name>LS346:OUT$(OUTNUM):OMW</pv_name>
+          <off_label>$(OUTNUM)</off_label>
+          <on_label>$(OUTNUM)</on_label>
+          <square>true</square>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group_4</name>
+        <macros>
+          <OUTNUM>4</OUTNUM>
+        </macros>
+        <x>60</x>
+        <width>20</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_17</name>
+          <pv_name>LS346:OUT$(OUTNUM):OMW</pv_name>
+          <off_label>$(OUTNUM)</off_label>
+          <on_label>$(OUTNUM)</on_label>
+          <square>true</square>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group_11</name>
+        <macros>
+          <OUTNUM>5</OUTNUM>
+        </macros>
+        <x>80</x>
+        <width>20</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_18</name>
+          <pv_name>LS346:OUT$(OUTNUM):OMW</pv_name>
+          <off_label>$(OUTNUM)</off_label>
+          <on_label>$(OUTNUM)</on_label>
+          <square>true</square>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group_12</name>
+        <macros>
+          <OUTNUM>6</OUTNUM>
+        </macros>
+        <x>100</x>
+        <width>20</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_19</name>
+          <pv_name>LS346:OUT$(OUTNUM):OMW</pv_name>
+          <off_label>$(OUTNUM)</off_label>
+          <on_label>$(OUTNUM)</on_label>
+          <square>true</square>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group_13</name>
+        <macros>
+          <OUTNUM>7</OUTNUM>
+        </macros>
+        <x>120</x>
+        <width>20</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_20</name>
+          <pv_name>LS346:OUT$(OUTNUM):OMW</pv_name>
+          <off_label>$(OUTNUM)</off_label>
+          <on_label>$(OUTNUM)</on_label>
+          <square>true</square>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group_14</name>
+        <macros>
+          <OUTNUM>8</OUTNUM>
+        </macros>
+        <x>140</x>
+        <width>20</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_21</name>
+          <pv_name>LS346:OUT$(OUTNUM):OMW</pv_name>
+          <off_label>$(OUTNUM)</off_label>
+          <on_label>$(OUTNUM)</on_label>
+          <square>true</square>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group_15</name>
+        <macros>
+          <OUTNUM>9</OUTNUM>
+        </macros>
+        <x>160</x>
+        <width>20</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_22</name>
+          <pv_name>LS346:OUT$(OUTNUM):OMW</pv_name>
+          <off_label>$(OUTNUM)</off_label>
+          <on_label>$(OUTNUM)</on_label>
+          <square>true</square>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group_16</name>
+        <macros>
+          <OUTNUM>10</OUTNUM>
+        </macros>
+        <x>180</x>
+        <width>20</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_23</name>
+          <pv_name>LS346:OUT$(OUTNUM):OMW</pv_name>
+          <off_label>$(OUTNUM)</off_label>
+          <on_label>$(OUTNUM)</on_label>
+          <square>true</square>
+        </widget>
+      </widget>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Button_17</name>
+      <actions>
+        <action type="write_pv">
+          <description>Start</description>
+          <pv_name>$(pv_name)</pv_name>
+          <value>1</value>
+        </action>
+      </actions>
+      <pv_name>$(P)$(R)WARM:CMD</pv_name>
+      <x>5</x>
+      <y>90</y>
+      <width>200</width>
+      <height>25</height>
+      <tooltip>Note: ensure Phoebus has the setting below so that unit change is reflected immediately without a refresh
+org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Status Registers</name>
+    <x>835</x>
+    <y>85</y>
+    <width>475</width>
+    <height>180</height>
+    <style>1</style>
+    <font>
+      <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <macros>
+        <REG>ESR</REG>
+      </macros>
+      <x>5</x>
+      <width>390</width>
+      <height>55</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="group" version="3.0.0">
+        <name>Group</name>
+        <macros>
+          <BIT>PON</BIT>
+        </macros>
+        <y>30</y>
+        <width>40</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_2</name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <width>40</width>
+          <off_label>$(BIT)</off_label>
+          <on_label>$(BIT)</on_label>
+          <square>true</square>
+          <rules>
+            <rule name="Tooltip" prop_id="tooltip" out_exp="true">
+              <exp bool_exp="true">
+                <expression>pvStr0</expression>
+              </exp>
+              <pv_name>$(pv_name).DESC</pv_name>
+            </rule>
+          </rules>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group_20</name>
+        <macros>
+          <BIT>CME</BIT>
+        </macros>
+        <x>80</x>
+        <y>30</y>
+        <width>40</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_7</name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <width>40</width>
+          <off_label>$(BIT)</off_label>
+          <on_label>$(BIT)</on_label>
+          <square>true</square>
+          <rules>
+            <rule name="Tooltip" prop_id="tooltip" out_exp="true">
+              <exp bool_exp="true">
+                <expression>pvStr0</expression>
+              </exp>
+              <pv_name>$(pv_name).DESC</pv_name>
+            </rule>
+          </rules>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group_21</name>
+        <macros>
+          <BIT>EXE</BIT>
+        </macros>
+        <x>120</x>
+        <y>30</y>
+        <width>40</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_8</name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <width>40</width>
+          <off_label>$(BIT)</off_label>
+          <on_label>$(BIT)</on_label>
+          <square>true</square>
+          <rules>
+            <rule name="Tooltip" prop_id="tooltip" out_exp="true">
+              <exp bool_exp="true">
+                <expression>pvStr0</expression>
+              </exp>
+              <pv_name>$(pv_name).DESC</pv_name>
+            </rule>
+          </rules>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group_24</name>
+        <macros>
+          <BIT>DSE</BIT>
+        </macros>
+        <x>160</x>
+        <y>30</y>
+        <width>40</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_12</name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <width>40</width>
+          <off_label>$(BIT)</off_label>
+          <on_label>$(BIT)</on_label>
+          <square>true</square>
+          <rules>
+            <rule name="Tooltip" prop_id="tooltip" out_exp="true">
+              <exp bool_exp="true">
+                <expression>pvStr0</expression>
+              </exp>
+              <pv_name>$(pv_name).DESC</pv_name>
+            </rule>
+          </rules>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group_25</name>
+        <macros>
+          <BIT>QYE</BIT>
+        </macros>
+        <x>200</x>
+        <y>30</y>
+        <width>40</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_13</name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <width>40</width>
+          <off_label>$(BIT)</off_label>
+          <on_label>$(BIT)</on_label>
+          <square>true</square>
+          <rules>
+            <rule name="Tooltip" prop_id="tooltip" out_exp="true">
+              <exp bool_exp="true">
+                <expression>pvStr0</expression>
+              </exp>
+              <pv_name>$(pv_name).DESC</pv_name>
+            </rule>
+          </rules>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group_26</name>
+        <macros>
+          <BIT>OPC</BIT>
+        </macros>
+        <x>280</x>
+        <y>30</y>
+        <width>40</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_14</name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <width>40</width>
+          <off_label>$(BIT)</off_label>
+          <on_label>$(BIT)</on_label>
+          <square>true</square>
+          <rules>
+            <rule name="Tooltip" prop_id="tooltip" out_exp="true">
+              <exp bool_exp="true">
+                <expression>pvStr0</expression>
+              </exp>
+              <pv_name>$(pv_name).DESC</pv_name>
+            </rule>
+          </rules>
+        </widget>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_6</name>
+        <text>Event Status Register (ESR)</text>
+        <width>385</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED_30</name>
+        <x>240</x>
+        <y>30</y>
+        <width>40</width>
+        <square>true</square>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED_31</name>
+        <x>40</x>
+        <y>30</y>
+        <width>40</width>
+        <square>true</square>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update</name>
+        <pv_name>LS346:STATUS:$(REG)</pv_name>
+        <x>325</x>
+        <y>30</y>
+        <width>60</width>
+        <format>4</format>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group_17</name>
+      <macros>
+        <REG>STB</REG>
+      </macros>
+      <x>5</x>
+      <y>55</y>
+      <width>390</width>
+      <height>55</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="group" version="3.0.0">
+        <name>Group_18</name>
+        <macros>
+          <BIT>OSB</BIT>
+        </macros>
+        <y>30</y>
+        <width>40</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_3</name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <width>40</width>
+          <off_label>$(BIT)</off_label>
+          <on_label>$(BIT)</on_label>
+          <square>true</square>
+          <rules>
+            <rule name="Tooltip" prop_id="tooltip" out_exp="true">
+              <exp bool_exp="true">
+                <expression>pvStr0</expression>
+              </exp>
+              <pv_name>$(pv_name).DESC</pv_name>
+            </rule>
+          </rules>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group_22</name>
+        <macros>
+          <BIT>MSS</BIT>
+        </macros>
+        <x>40</x>
+        <y>30</y>
+        <width>40</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_9</name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <width>40</width>
+          <off_label>$(BIT)</off_label>
+          <on_label>$(BIT)</on_label>
+          <square>true</square>
+          <rules>
+            <rule name="Tooltip" prop_id="tooltip" out_exp="true">
+              <exp bool_exp="true">
+                <expression>pvStr0</expression>
+              </exp>
+              <pv_name>$(pv_name).DESC</pv_name>
+            </rule>
+          </rules>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group_23</name>
+        <macros>
+          <BIT>ESB</BIT>
+        </macros>
+        <x>80</x>
+        <y>30</y>
+        <width>40</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_10</name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <width>40</width>
+          <off_label>$(BIT)</off_label>
+          <on_label>$(BIT)</on_label>
+          <square>true</square>
+          <rules>
+            <rule name="Tooltip" prop_id="tooltip" out_exp="true">
+              <exp bool_exp="true">
+                <expression>pvStr0</expression>
+              </exp>
+              <pv_name>$(pv_name).DESC</pv_name>
+            </rule>
+          </rules>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group_27</name>
+        <macros>
+          <BIT>MAV</BIT>
+        </macros>
+        <x>120</x>
+        <y>30</y>
+        <width>40</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_24</name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <width>40</width>
+          <off_label>$(BIT)</off_label>
+          <on_label>$(BIT)</on_label>
+          <square>true</square>
+          <rules>
+            <rule name="Tooltip" prop_id="tooltip" out_exp="true">
+              <exp bool_exp="true">
+                <expression>pvStr0</expression>
+              </exp>
+              <pv_name>$(pv_name).DESC</pv_name>
+            </rule>
+          </rules>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group_28</name>
+        <macros>
+          <BIT>QSB</BIT>
+        </macros>
+        <x>160</x>
+        <y>30</y>
+        <width>40</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_25</name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <width>40</width>
+          <off_label>$(BIT)</off_label>
+          <on_label>$(BIT)</on_label>
+          <square>true</square>
+          <rules>
+            <rule name="Tooltip" prop_id="tooltip" out_exp="true">
+              <exp bool_exp="true">
+                <expression>pvStr0</expression>
+              </exp>
+              <pv_name>$(pv_name).DESC</pv_name>
+            </rule>
+          </rules>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>Group_29</name>
+        <macros>
+          <BIT>EAV</BIT>
+        </macros>
+        <x>200</x>
+        <y>30</y>
+        <width>40</width>
+        <height>25</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="led" version="2.0.0">
+          <name>LED_26</name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <width>40</width>
+          <off_label>$(BIT)</off_label>
+          <on_label>$(BIT)</on_label>
+          <square>true</square>
+          <rules>
+            <rule name="Tooltip" prop_id="tooltip" out_exp="true">
+              <exp bool_exp="true">
+                <expression>pvStr0</expression>
+              </exp>
+              <pv_name>$(pv_name).DESC</pv_name>
+            </rule>
+          </rules>
+        </widget>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_7</name>
+        <text>Status Byte Register (STB)</text>
+        <width>385</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED_27</name>
+        <x>240</x>
+        <y>30</y>
+        <width>40</width>
+        <square>true</square>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>LED_29</name>
+        <x>280</x>
+        <y>30</y>
+        <width>40</width>
+        <square>true</square>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_1</name>
+        <pv_name>LS346:STATUS:$(REG)</pv_name>
+        <x>325</x>
+        <y>30</y>
+        <width>60</width>
+        <format>4</format>
+        <show_units>false</show_units>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Button_18</name>
+      <actions>
+        <action type="open_display">
+          <description>Configure</description>
+          <file>lakeshore346_status.bob</file>
+          <target>tab</target>
+        </action>
+      </actions>
+      <x>10</x>
+      <y>115</y>
+      <width>110</width>
+      <height>25</height>
+      <tooltip>Note: ensure Phoebus has the setting below so that unit change is reflected immediately without a refresh
+org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Button_19</name>
+      <actions>
+        <action type="write_pv">
+          <description>Clear Status</description>
+          <pv_name>$(pv_name)</pv_name>
+          <value>1</value>
+        </action>
+      </actions>
+      <pv_name>$(P)$(R)STATUS:CLS</pv_name>
+      <x>130</x>
+      <y>115</y>
+      <width>110</width>
+      <height>25</height>
+      <tooltip>Note: ensure Phoebus has the setting below so that unit change is reflected immediately without a refresh
+org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+</display>

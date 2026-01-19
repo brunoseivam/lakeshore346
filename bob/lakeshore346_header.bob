@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Header</name>
+  <macros>
+    <P>LS346:</P>
+    <R></R>
+  </macros>
+  <width>1475</width>
+  <height>80</height>
+  <background_color>
+    <color name="Header_Background" red="77" green="77" blue="77">
+    </color>
+  </background_color>
+  <actions>
+  </actions>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="group" version="3.0.0">
+    <name>Header</name>
+    <width>1475</width>
+    <height>80</height>
+    <style>3</style>
+    <background_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>5</x>
+      <y>5</y>
+      <width>220</width>
+      <height>70</height>
+      <style>3</style>
+      <widget type="picture" version="2.0.0">
+        <name>Picture</name>
+        <file>lake-shore-logo.svg</file>
+        <x>5</x>
+        <y>5</y>
+        <width>210</width>
+        <height>60</height>
+        <stretch_image>true</stretch_image>
+      </widget>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_43</name>
+      <text>$(HEADER) -- $(P)$(R)</text>
+      <x>230</x>
+      <y>5</y>
+      <width>1060</width>
+      <height>40</height>
+      <font>
+        <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="Header_ForeGround" red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <vertical_alignment>1</vertical_alignment>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Button_15</name>
+      <actions>
+        <action type="open_display">
+          <description>Main</description>
+          <file>lakeshore346_main.opi</file>
+          <target>replace</target>
+        </action>
+      </actions>
+      <x>230</x>
+      <y>50</y>
+      <width>120</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Button_16</name>
+      <actions>
+        <action type="open_display">
+          <description>Alarms</description>
+          <file>lakeshore346_input_alarm.opi</file>
+          <target>replace</target>
+        </action>
+      </actions>
+      <x>355</x>
+      <y>50</y>
+      <width>120</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Button_17</name>
+      <actions>
+        <action type="open_display">
+          <description>Input Settings</description>
+          <file>lakeshore346_input_settings.bob</file>
+          <target>replace</target>
+        </action>
+      </actions>
+      <x>480</x>
+      <y>50</y>
+      <width>120</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Button_18</name>
+      <actions>
+        <action type="open_display">
+          <description>Tolerances</description>
+          <file>lakeshore346_windows.opi</file>
+          <target>replace</target>
+        </action>
+      </actions>
+      <x>605</x>
+      <y>50</y>
+      <width>120</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Button_20</name>
+      <actions>
+        <action type="open_display">
+          <description>Raw Voltages</description>
+          <file>lakeshore346_raw_voltages.bob</file>
+          <target>replace</target>
+        </action>
+      </actions>
+      <x>730</x>
+      <y>50</y>
+      <width>120</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Button_21</name>
+      <actions>
+        <action type="open_display">
+          <description>Digital I/O</description>
+          <file>lakeshore346_digital_io.opi</file>
+          <target>replace</target>
+        </action>
+      </actions>
+      <x>855</x>
+      <y>50</y>
+      <width>120</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Button_22</name>
+      <actions>
+        <action type="open_display">
+          <description>EPICS Config</description>
+          <file>lakeshore346_software.opi</file>
+          <target>replace</target>
+        </action>
+      </actions>
+      <x>1105</x>
+      <y>50</y>
+      <width>120</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Button_23</name>
+      <actions>
+        <action type="open_display">
+          <description>Curve</description>
+          <file>lakeshore346_curve.opi</file>
+          <target>replace</target>
+        </action>
+      </actions>
+      <x>980</x>
+      <y>50</y>
+      <width>120</width>
+      <height>25</height>
+      <tooltip>$(actions)</tooltip>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+</display>

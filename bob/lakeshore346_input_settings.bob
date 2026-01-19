@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Lake Shore 346 Input Settings $(P)$(R)</name>
+  <width>1475</width>
+  <height>1880</height>
+  <actions>
+  </actions>
+  <grid_step_x>5</grid_step_x>
+  <grid_step_y>5</grid_step_y>
+  <widget type="embedded" version="2.0.0">
+    <name>Header</name>
+    <macros>
+      <HEADER>Lake Shore 346 - Input Settings</HEADER>
+    </macros>
+    <file>lakeshore346_header.bob</file>
+    <width>1475</width>
+    <height>80</height>
+    <resize>4</resize>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Input Type and Settings</name>
+    <x>5</x>
+    <y>85</y>
+    <width>1285</width>
+    <height>1665</height>
+    <style>1</style>
+    <font>
+      <font name="Header 3" family="Liberation Sans" style="BOLD" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color name="Header_Background" red="77" green="77" blue="77">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+    <widget type="group" version="3.0.0">
+      <name>Labels</name>
+      <x>5</x>
+      <y>5</y>
+      <width>1265</width>
+      <height>60</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>Label_79</name>
+        <text>Units</text>
+        <x>715</x>
+        <y>30</y>
+        <width>80</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_78</name>
+        <text>Compens</text>
+        <x>630</x>
+        <y>30</y>
+        <width>80</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_77</name>
+        <text>Range</text>
+        <x>465</x>
+        <y>30</y>
+        <width>160</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_76</name>
+        <text>Auto Range</text>
+        <x>370</x>
+        <y>30</y>
+        <width>90</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_75</name>
+        <text>Sensor Type</text>
+        <x>235</x>
+        <y>30</y>
+        <width>130</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_73</name>
+        <text>Curve</text>
+        <x>180</x>
+        <y>30</y>
+        <width>50</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_68</name>
+        <text>Description</text>
+        <x>35</x>
+        <y>30</y>
+        <width>140</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_63</name>
+        <text>Inp</text>
+        <y>30</y>
+        <width>30</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_80</name>
+        <text>Temp Lim</text>
+        <x>800</x>
+        <y>30</y>
+        <width>80</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_81</name>
+        <text>Enabled</text>
+        <x>885</x>
+        <y>30</y>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_82</name>
+        <text>Num Pts</text>
+        <x>990</x>
+        <y>30</y>
+        <width>80</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_83</name>
+        <text>Window</text>
+        <x>1075</x>
+        <y>30</y>
+        <width>80</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_84</name>
+        <text>Filter</text>
+        <x>885</x>
+        <width>269</width>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <background_color>
+          <color name="Read_Background" red="240" green="240" blue="240">
+          </color>
+        </background_color>
+        <transparent>false</transparent>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>Label_85</name>
+        <text>Polling</text>
+        <x>1160</x>
+        <y>30</y>
+        <height>25</height>
+        <font>
+          <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>Group</name>
+      <x>5</x>
+      <y>65</y>
+      <width>1270</width>
+      <height>1568</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="template" version="2.0.0">
+        <name>AB</name>
+        <file>lakeshore346_input_settings_line.bob</file>
+        <instances>
+          <instance>
+            <macros>
+              <INPGRP>A</INPGRP>
+              <INPNUM>1</INPNUM>
+              <INP>A</INP>
+            </macros>
+          </instance>
+          <instance>
+            <macros>
+              <INPGRP>B</INPGRP>
+              <INPNUM>1</INPNUM>
+              <INP>B</INP>
+            </macros>
+          </instance>
+        </instances>
+        <width>1265</width>
+        <height>120</height>
+        <gap>0</gap>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>$(INPGRP)</name>
+        <macros>
+          <INPGRP>D</INPGRP>
+        </macros>
+        <y>360</y>
+        <width>1265</width>
+        <height>240</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="template" version="2.0.0">
+          <name>$(INPGRP)</name>
+          <file>lakeshore346_input_settings_line.bob</file>
+          <instances>
+            <instance>
+              <macros>
+                <INPNUM>1</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>2</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>3</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>4</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+          </instances>
+          <width>1265</width>
+          <height>240</height>
+          <gap>0</gap>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>$(INPGRP)</name>
+        <macros>
+          <INPGRP>C</INPGRP>
+        </macros>
+        <y>120</y>
+        <width>1265</width>
+        <height>240</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="template" version="2.0.0">
+          <name>$(INPGRP)</name>
+          <file>lakeshore346_input_settings_line.bob</file>
+          <instances>
+            <instance>
+              <macros>
+                <INPNUM>1</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>2</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>3</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>4</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+          </instances>
+          <width>1265</width>
+          <height>240</height>
+          <gap>0</gap>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>$(INPGRP)</name>
+        <macros>
+          <INPGRP>E</INPGRP>
+        </macros>
+        <y>600</y>
+        <width>1265</width>
+        <height>240</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="template" version="2.0.0">
+          <name>$(INPGRP)</name>
+          <file>lakeshore346_input_settings_line.bob</file>
+          <instances>
+            <instance>
+              <macros>
+                <INPNUM>1</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>2</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>3</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>4</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+          </instances>
+          <width>1265</width>
+          <height>240</height>
+          <gap>0</gap>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>$(INPGRP)</name>
+        <macros>
+          <INPGRP>F</INPGRP>
+        </macros>
+        <y>840</y>
+        <width>1265</width>
+        <height>240</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="template" version="2.0.0">
+          <name>$(INPGRP)</name>
+          <file>lakeshore346_input_settings_line.bob</file>
+          <instances>
+            <instance>
+              <macros>
+                <INPNUM>1</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>2</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>3</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>4</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+          </instances>
+          <width>1265</width>
+          <height>240</height>
+          <gap>0</gap>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>$(INPGRP)</name>
+        <macros>
+          <INPGRP>G</INPGRP>
+        </macros>
+        <y>1080</y>
+        <width>1265</width>
+        <height>240</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="template" version="2.0.0">
+          <name>$(INPGRP)</name>
+          <file>lakeshore346_input_settings_line.bob</file>
+          <instances>
+            <instance>
+              <macros>
+                <INPNUM>1</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>2</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>3</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>4</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+          </instances>
+          <width>1265</width>
+          <height>240</height>
+          <gap>0</gap>
+        </widget>
+      </widget>
+      <widget type="group" version="3.0.0">
+        <name>$(INPGRP)</name>
+        <macros>
+          <INPGRP>H</INPGRP>
+        </macros>
+        <y>1320</y>
+        <width>1265</width>
+        <height>240</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="template" version="2.0.0">
+          <name>$(INPGRP)</name>
+          <file>lakeshore346_input_settings_line.bob</file>
+          <instances>
+            <instance>
+              <macros>
+                <INPNUM>1</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>2</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>3</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+            <instance>
+              <macros>
+                <INPNUM>4</INPNUM>
+                <INP>$(INPGRP)$(INPNUM)</INP>
+              </macros>
+            </instance>
+          </instances>
+          <width>1265</width>
+          <height>240</height>
+          <gap>0</gap>
+        </widget>
+      </widget>
+    </widget>
+  </widget>
+</display>

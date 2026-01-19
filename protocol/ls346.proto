@@ -1,0 +1,665 @@
+##################################################
+#
+# Protocol File
+#
+# Protocol file for Lakeshore 346
+# Osprey DCS, January 2026
+#
+# Based on the protocol for Lakeshore 336
+#
+##################################################
+
+ReplyTimeout = 2000;
+LockTimeout = 40000;
+
+# /// Read the device ID
+getID {
+    out "*IDN?";
+    separator = ",";
+    in "%[^,]";
+}
+
+# /// Read the installed optional cards
+getCARDS {
+    out "CARDS?;*OPC?";
+    in "%d,%(\$1F:TYPE.RVAL)d,%(\$1G:TYPE.RVAL)d,%(\$1H:TYPE.RVAL)d;1";
+}
+
+# /// Read the heater status for outputs
+getHTR {
+    out "HTR? \$1;*OPC?";
+    in "%f;1";
+}
+
+# /// Read the setpoint for the given output
+getSETP {
+    out "SETP? \$1;*OPC?";
+    in "%f;1";
+}
+
+# /// Read the temperature in Kelvin for the given input
+getKRDG {
+    out "KRDG? \$1;*OPC?";
+    in "%f;1";
+}
+
+# /// Read all temperatures in Kelvin
+# /// This is read into a waveform
+getKRDGALL {
+    out "KRDG? ALL";
+    separator=",";
+    in "%f";
+}
+
+# /// Read the temperature in Celsius for the given input
+getCRDG {
+    out "CRDG? \$1;*OPC?";
+    in "%f;1";
+}
+
+# /// Read all temperatures in Celsius
+# /// This is read into a waveform
+getCRDGALL {
+    out "CRDG? ALL";
+    separator=",";
+    in "%f";
+}
+
+# /// Read the voltage input for the given input
+getSRDG {
+    out "SRDG? \$1;*OPC?";
+    in "%f;1";
+}
+
+getSRDGALL {
+    out "SRDG? ALL";
+    separator=",";
+    in "%f";
+}
+
+# /// Read the range parameter (power range) for the given output
+getRANGE {
+    out "RANGE? \$1;*OPC?";
+    in "%d;1";
+}
+
+# /// Read the ramp value and status for outputs
+# /// The first parameter is the output number.
+# /// The second parameter is the ramp status record.
+getRAMP {
+    out "RAMP? \$1;*OPC?";
+    in "%(\$2)d,%f;1";
+}
+
+# /// Read the manual output value for outputs 1-4
+getMOUT {
+    out "MOUT? \$1;*OPC?";
+    in "%f;1";
+}
+
+# /// Read the PID params into 3 records using one write/read.
+# /// The first argument is the output number. The second and third are
+# /// the I and D records.
+getPID {
+    out "PID? \$1";
+   separator = ",";
+    in "%f";
+}
+
+# /// Combine getOUTMODEMODE, getOUTMODEINPUT and getOUTMODEPE into one function.
+# /// The first argument is the output number.
+# /// The second argument is the output mode intput record.
+# /// The third argument is the output mode powerup enable record.
+getOM {
+    out "OUTMODE? \$1;*OPC?";
+    in "%d,%(\$2:OMI)[^,],%(\$2:OMP)d,%(\$2:OMW)d;1";
+}
+
+# /// Read the output mode mode status for outputs 1-4
+# /// 0=Off
+# /// 1=Closed Loop PID
+# /// 2=Zone
+# /// 3=Open Loop
+# /// 4=Monitor Out
+# /// 5=Warm Up Supply
+getOUTMODEMODE {
+    out "OUTMODE? \$1;*OPC?";
+    in "%d,%*d,%*d;1";
+}
+
+# /// Read the output mode input for outputs 1-4
+# /// 0=None
+# /// 1=A
+# /// 2=B
+# /// 3=C
+# /// 4=D
+getOUTMODEINPUT {
+    out "OUTMODE? \$1;*OPC?";
+    in "%*d,%d,%*d;1";
+}
+
+# /// Read the output mode power up enable for outputs 1-4
+# /// 0=Off
+# /// 1=On
+getOUTMODEPE {
+    out "OUTMODE? \$1;*OPC?";
+    in "%*d,%*d,%d;1";
+}
+
+
+# /// Read the tuning status
+getTUNEST {
+    out "TUNEST?;*OPC?";
+    in "%[^;];1";
+}
+
+# /// Read the tuning status success param
+getTUNESTSUCCESS {
+    out "TUNEST?*OPC?";
+    in "%*d,%*d,%d,%*d;1";
+}
+
+# /// Read the ZONE parameters (this is read into a waveform)
+getZONE {
+    out "ZONE? \$1,\$2";
+   separator=",";
+    in "%f";
+}
+
+# /// Read the input sensor name
+getINNAME {
+    out "INNAME? \$1;*OPC?";
+    in "\"%[^\"]\";1";
+    @mismatch { in "1"; }
+}
+
+# /// Read Input Reading Operation Status Query
+getRDGOPR {
+    out "RDGOPR? \$1;*OPC?";
+    in "%d;1";
+}
+
+# /// Alarm Parameters
+getALARM {
+    out "ALARM? \$1;*OPC?";
+    in "%d,%(\$2_HIGHVAL)f,%(\$2_LOWVAL)f,%(\$2_DB)f,%(\$2_LE)d,%(\$2_AU)d,%(\$2_VIS)d;1";
+    @mismatch { in "1"; }
+}
+
+setALARM_ONOFF {
+    out "ALARM \$1,%d,%(\$2_HIGHVAL.VAL)f,%(\$2_LOWVAL.VAL)f,%(\$2_DB.VAL)f,%(\$2_LE.VAL)d,%(\$2_AU.VAL)d,%(\$2_VIS.VAL)d;*OPC?";
+    in "1";
+    @init {
+        out "ALARM? \$1;*OPC?";
+        in "%d,%*f,%*f,%*f,%*d,%*d,%*d;1";
+    }
+}
+
+setALARM_HIGHVAL {
+    out "ALARM \$1,%(\$2_ONOFF)d,%f,%(\$2_LOWVAL.VAL)f,%(\$2_DB.VAL)f,%(\$2_LE.VAL)d,%(\$2_AU.VAL)d,%(\$2_VIS.VAL)d;*OPC?";
+    in "1";
+    @init {
+        out "ALARM? \$1;*OPC?";
+        in "%*d,%f,%*f,%*f,%*d,%*d,%*d;1";
+    }
+}
+
+setALARM_LOWVAL {
+    out "ALARM \$1,%(\$2_ONOFF)d,%(\$2_HIGHVAL.VAL)f,%f,%(\$2_DB.VAL)f,%(\$2_LE.VAL)d,%(\$2_AU.VAL)d,%(\$2_VIS.VAL)d;*OPC?";
+    in "1";
+    @init {
+        out "ALARM? \$1;*OPC?";
+        in "%*d,%*f,%f,%*f,%*d,%*d,%*d;1";
+    }
+}
+
+setALARM_DB {
+    out "ALARM \$1,%(\$2_ONOFF)d,%(\$2_HIGHVAL.VAL)f,%(\$2_LOWVAL.VAL)f,%f,%(\$2_LE.VAL)d,%(\$2_AU.VAL)d,%(\$2_VIS.VAL)d;*OPC?";
+    in "1";
+    @init {
+        out "ALARM? \$1;*OPC?";
+        in "%*d,%*f,%*f,%f,%*d,%*d,%*d;1";
+    }
+}
+
+setALARM_LE {
+    out "ALARM \$1,%(\$2_ONOFF)d,%(\$2_HIGHVAL.VAL)f,%(\$2_LOWVAL.VAL)f,%(\$2_DB.VAL)f,%d,%(\$2_AU.VAL)d,%(\$2_VIS.VAL)d;*OPC?";
+    in "1";
+    @init {
+        out "ALARM? \$1;*OPC?";
+        in "%*d,%*f,%*f,%*f,%d,%*d,%*d;1";
+    }
+}
+
+setALARM_AU {
+    out "ALARM \$1,%(\$2_ONOFF)d,%(\$2_HIGHVAL.VAL)f,%(\$2_LOWVAL.VAL)f,%(\$2_DB.VAL)f,%(\$2_LE.VAL)d,%d,%(\$2_VIS.VAL)d;*OPC?";
+    in "1";
+    @init {
+        out "ALARM? \$1;*OPC?";
+        in "%*d,%*f,%*f,%*f,%*d,%d,%*d;1";
+    }
+}
+
+setALARM_VIS {
+    out "ALARM \$1,%(\$2_ONOFF)d,%(\$2_HIGHVAL.VAL)f,%(\$2_LOWVAL.VAL)f,%(\$2_DB.VAL)f,%(\$2_LE.VAL)d,%(\$2_AU.VAL)d,%d;*OPC?";
+    in "1";
+    @init {
+        out "ALARM? \$1;*OPC?";
+        in "%*d,%*f,%*f,%*f,%*d,%*d,%d;1";
+    }
+}
+
+# /// Read the input reading status
+getRDGST {
+    out "RDGST? \$1;*OPC?";
+    in "%d;1"
+}
+
+# /// Read the heater status for outputs 1-8
+getHTRST {
+    out "HTRST? \$1;*OPC?";
+    in "%d;1"
+}
+
+# /// Input curve number
+getINCRV {
+    out "INCRV? \$1;*OPC?";
+    in "%d;1";
+    @mismatch { in "1"; }
+}
+
+# /// Input curve number
+setINCRV {
+    out "INCRV \$1,%d;*OPC?";
+    in "1";
+    @init { getINCRV; }
+}
+
+# /// Read the input type params. I put the ends of the PV names here
+# /// to make the initial record INP link short.
+getINTYPE {
+    out "INTYPE? \$1;*OPC?";
+    in "%(\$2_S)d,%(\$2_AR)d,%(\$2_R)d,%(\$2_C)d,%(\$2_U)d;1";
+    @mismatch { in "1"; }
+}
+
+# /// Set the setpoint for outputs 1-4
+setSETP {
+    out "SETP \$1,%f;*OPC?";
+    in "1";
+    @init { getSETP; }
+}
+
+# /// Set the range parameter for outputs 1-4
+setRANGE {
+    out "RANGE \$1,%d;*OPC?";
+    in "1";
+    @init { getRANGE; }
+}
+
+# /// Set the ramp parameter for loops 1-2
+#Need to pass in the PV name for the getRAMPSTATUS protocol.
+setRAMP {
+    out "RAMP \$1,%(\$2.VAL)d,%f;*OPC?";
+    in "1";
+    @init { out "RAMP? \$1;*OPC?"; in "%*d,%f;1"; }
+}
+
+# /// Set the ramp status for loops 1-2
+#Need to pass in the PV name for the getRAMP protocol.
+setRAMPSTATUS {
+    out "RAMP \$1,%d,%(\$2.VAL)f;*OPC?";
+    in "1";
+    @init { out "RAMP? \$1;*OPC?"; in "%d,%*f;1"; }
+}
+
+# /// Set the manual output value for outputs 1-4
+setMOUT {
+    out "MOUT \$1,%f;*OPC?";
+    in "1";
+    @init { getMOUT; }
+}
+
+# /// Set the PID P parameter for outputs 1-4
+setP {
+    out "PID \$1,%f,%(\$2:I.VAL)f,%(\$2:D.VAL)f;*OPC?";
+    in "1";
+    @init { out "PID? \$1;*OPC?"; in "%f,%*f,%*f;1"; }
+}
+
+# /// Set the PID I parameter for outputs 1-4
+setI {
+    out "PID \$1,%(\$2:P.VAL)f,%f,%(\$2:D.VAL)f;*OPC?";
+    in "1";
+    @init { out "PID? \$1;*OPC?"; in "%*f,%f,%*f;1"; }
+}
+
+# /// Set the PID D parameter for outputs 1-4
+setD {
+    out "PID \$1,%(\$2:P.VAL)f,%(\$2:I.VAL)f,%f;*OPC?";
+    in "1";
+    @init { out "PID? \$1;*OPC?"; in "%*f,%*f,%f;1"; }
+}
+
+# /// Set the output mode [mode],[input],[power up enable],[warm up]
+setOM {
+    out "OUTMODE \$1,%d,%(\$2:OMI.VAL)s,%(\$2:OMP.VAL)d,%(\$2:OMW.VAL)d;*OPC?";
+    in "1";
+    @init { out "OUTMODE? \$1;*OPC?"; in "%d,%*[^,],%*d,%*d;1";}
+}
+
+# /// Set the output mode input [mode],[input],[power up enable],[warm up]
+setOMI {
+    out "OUTMODE \$1,%(\$2:OMM.VAL)d,%s,%(\$2:OMP.VAL)d,%(\$2:OMW.VAL)d;*OPC?";
+    in "1";
+    @init { out "OUTMODE? \$1;*OPC?"; in "%*d,%[^,],%*d,%*d;1";}
+}
+
+# /// Set the output mode power up enable [mode],[input],[power up enable],[warm up]
+setOMP {
+    out "OUTMODE \$1,%(\$2:OMM.VAL)d,%(\$2:OMI.VAL)s,%d,%(\$2:OMW.VAL)d;*OPC?";
+    in "1";
+    @init { out "OUTMODE? \$1;*OPC?"; in "%*d,%*[^,],%d,%*d;1";}
+}
+
+# /// Set the output mode warm up [mode],[input],[power up enable],[warm up]
+setOMW {
+    out "OUTMODE \$1,%(\$2:OMM.VAL)d,%(\$2:OMI.VAL)s,%(\$2:OMP.VAL)d,%d;*OPC?";
+    in "1";
+    @init { out "OUTMODE? \$1;*OPC?"; in "%*d,%*[^,],%d,%*d;1";}
+}
+
+# /// Start the auto tune process.
+setATUNE {
+    out "ATUNE \$1,%(\$2.VAL)d;*OPC?";
+    in "1";
+}
+
+# /// Set the ZONE parameters
+setZONE {
+    out "ZONE \$1,\$2,%(A)f,%(B)f,%(C)f,%(D)f,%(E)f,%(F)d,%(G)d,%(H)f;*OPC?";
+    in "1";
+}
+
+# /// Set the input sensor name
+setINNAME {
+    out "INNAME \$1,\"%s\";*OPC?";
+    in "1";
+    @init { getINNAME; }
+}
+
+getTLIMIT {
+    out "TLIMIT? \$1;*OPC?";
+    in "%f;1";
+    @mismatch { in "1"; }
+}
+
+setTLIMIT {
+    out "TLIMIT $1, %f;*OPC?";
+    in "1";
+    @init { getTLIMIT; }
+}
+
+getFILTER {
+    out "FILTER? \$1;*OPC?";
+    in "%d,%(\$2_NPTS)d,%(\$2_WND)d;1";
+}
+
+setFILTER_EN {
+    out "FILTER \$1,%d,%(\$2_NPTS.VAL)d,%(\$2_WND.VAL)d;*OPC?";
+    in "1";
+    @init {
+        out "FILTER? \$1;*OPC?";
+        in "%d,%*d,%*d;1";
+    }
+}
+
+setFILTER_NPTS {
+    out "FILTER \$1,%(\$2_EN)d,%d,%(\$2_WND.VAL)d;*OPC?";
+    in "1";
+    @init {
+        out "FILTER? \$1;*OPC?";
+        in "%*d,%d,%*d;1";
+    }
+}
+
+setFILTER_WND {
+    out "FILTER \$1,%(\$2_EN)d,%(\$2_NPTS)d,%d;*OPC?";
+    in "1";
+    @init {
+        out "FILTER? \$1;*OPC?";
+        in "%*d,%*d,%d;1";
+    }
+}
+
+# /// Reset all alarms
+cmdALMRST {
+    out "ALMRST;*OPC?";
+    in "1";
+}
+
+# /// Minimum/Maximum
+
+getMDAT {
+    out "MDAT? \$1;*OPC?";
+    in "%f,%(\$2:MDATMAX)f;1";
+}
+
+cmdMNMXRST {
+    out "MNMXRST \$1;*OPC?";
+    in "1";
+}
+
+#
+# Digital I/O
+#
+
+getRELAY {
+    out "RELAY? \$1;*OPC?";
+    in "%d,%(\$2_INP)[^,],%(\$2_COND)d;1";
+}
+
+setRELAY {
+    out "RELAY \$1,%(\$2_MODE_S)d,%(\$2_INP_S)s,%(\$2_COND_S)d;*OPC?";
+    in "1";
+    @init {
+        out "RELAY? \$1;*OPC?";
+        in "%(\$2_MODE_S)d,%(\$2_INP_S)[^,],%(\$2_COND_S)d;1";
+    }
+}
+
+getRELAYST {
+    out "RELAYST? \$1;*OPC?";
+    in "%d;1";
+}
+
+getDIGIN {
+    out "DIGIN?";
+    separator = ",";
+    in "%d";
+}
+
+#
+# Curve
+#
+getCRVHDR {
+    out "CRVHDR? %(\$1:NUM.VAL)d;*OPC?";
+    in "\"%(\$1:NAME)[^\"]\",\"%(\$1:SERIAL)[^\"]\",%(\$1:FORMAT.RVAL)d,%(\$1:LIMIT)f,%(\$1:COEFF.RVAL)d;1";
+}
+
+getCRVNUMPTS {
+    out "CRVNUMPTS? %(\$1:NUM.VAL)d;*OPC?";
+    in "%d;1";
+}
+
+#
+# Heater Group
+#
+getOUTGROUP {
+    out "OUTGROUP? \$1;*OPC?";
+    in "%d;1";
+}
+
+setOUTGROUP {
+    out "OUTGROUP \$1,%d;*OPC?";
+    in "1";
+    @init { getOUTGROUP; }
+}
+
+#
+# Heater Setup
+#
+getHTRSET {
+    out "HTRSET? \$1;*OPC?";
+    in "%d,%(\$2_MXOUT)f,%(\$2_CURPWR)d;1";
+    @init {
+        out "HTRSET? \$1;*OPC?";
+        in "%(\$2_RES_S)d,%(\$2_MXOUT_S)f,%(\$2_CURPWR_S.RVAL)d;1";
+    }
+}
+
+setHTRSET_RES {
+    out "HTRSET \$1,%d,%(\$2_MXOUT)f,%(\$2_CURPWR.RVAL)d;*OPC?";
+    in "1";
+}
+
+setHTRSET_MXOUT {
+    out "HTRSET \$1,%(\$2_RES)d,%f,%(\$2_CURPWR.RVAL)d;*OPC?";
+    in "1";
+}
+
+setHTRSET_CURPWR {
+    out "HTRSET \$1,%(\$2_RES)d,%(\$2_MXOUT)f,%d;*OPC?";
+    in "1";
+}
+
+getHTRLIM {
+    out "HTRLIM? \$1;*OPC?";
+    in "%d,%(\$2_SHRT)f,%(\$2_OPN)f;1";
+    @init {
+        out "HTRLIM? \$1;*OPC?";
+        in "%(\$2_EN_S)d,%(\$2_SHRT_S)f,%(\$2_OPN_S)f;1";
+    }
+}
+
+setHTRLIM_EN {
+    out "HTRLIM \$1,%d,%(\$2_SHRT)f,%(\$2_OPN)f;*OPC?";
+    in "1";
+}
+
+setHTRLIM_SHRT {
+    out "HTRLIM \$1,%(\$2_EN)d,%f,%(\$2_OPN)f;*OPC?";
+    in "1";
+}
+
+setHTRLIM_OPN {
+    out "HTRLIM \$1,%(\$2_EN)d,%(\$2_SHRT)f,%f;*OPC?";
+    in "1";
+}
+
+#
+# Heater Autorange
+#
+getHTRAUTO {
+    out "HTRAUTO? \$1;*OPC?";
+    in "%d;1";
+}
+
+setHTRAUTO {
+    out "HTRAUTO \$1,%d;*OPC?";
+    in "1";
+    @init { getHTRAUTO; }
+}
+
+#
+# Heater Output
+#
+getHTROUT {
+    out "HTROUT? \$1;*OPC?";
+    in "%f,%(\$2_PWR)f;1";
+}
+
+#
+# Monitor Out Parameter
+#
+getANALOG {
+    out "ANALOG? \$1;*OPC?";
+    in "%f,%(\$2_LOW)f;1";
+    @init {
+        out "ANALOG? \$1;*OPC?";
+        in "%(\$2_HIGH_S)f,%(\$2_LOW_S)f;1";
+    }
+}
+
+setANALOG_HIGH {
+    out "ANALOG \$1,%f,%(\$2_LOW)f;*OPC?";
+    in "1";
+}
+
+setANALOG_LOW {
+    out "ANALOG \$1,%(\$2_HIGH)f,%f;*OPC?";
+    in "1";
+}
+
+#
+# Output Stability
+#
+getOUTSTABLE {
+    out "OUTSTABLE? \$1;*OPC?";
+    in "%d,%(\$2_SETPERR)f,%(\$2_STLTIM)d,%(\$2_LATCH)d,%(\$2_AUD)d,%(\$2_VIS)d;1";
+    @init {
+        out "OUTSTABLE? \$1;*OPC?";
+        in "%(\$2_EN_S)d,%(\$2_SETPERR_S)f,%(\$2_STLTIM_S)d,%(\$2_LATCH_S)d,%(\$2_AUD_S)d,%(\$2_VIS_S)d;1";
+    }
+}
+
+setOUTSTABLE_EN {
+    out "OUTSTABLE \$1,%d,%(\$2_SETPERR)f,%(\$2_STLTIM)d,%(\$2_LATCH)d,%(\$2_AUD)d,%(\$2_VIS)d;*OPC?";
+    in "1";
+}
+
+setOUTSTABLE_SETPERR {
+    out "OUTSTABLE \$1,%(\$2_EN)d,%f,%(\$2_STLTIM)d,%(\$2_LATCH)d,%(\$2_AUD)d,%(\$2_VIS)d;*OPC?";
+    in "1";
+}
+
+setOUTSTABLE_STLTIM {
+    out "OUTSTABLE \$1,%(\$2_EN)d,%(\$2_SETPERR)f,%d,%(\$2_LATCH)d,%(\$2_AUD)d,%(\$2_VIS)d;*OPC?";
+    in "1";
+}
+
+setOUTSTABLE_LATCH {
+    out "OUTSTABLE \$1,%(\$2_EN)d,%(\$2_SETPERR)f,%(\$2_STLTIM)d,%d,%(\$2_AUD)d,%(\$2_VIS)d;*OPC?";
+    in "1";
+}
+
+setOUTSTABLE_AUD {
+    out "OUTSTABLE \$1,%(\$2_EN)d,%(\$2_SETPERR)f,%(\$2_STLTIM)d,%(\$2_LATCH)d,%d,%(\$2_VIS)d;*OPC?";
+    in "1";
+}
+
+setOUTSTABLE_VIS {
+    out "OUTSTABLE \$1,%(\$2_EN)d,%(\$2_SETPERR)f,%(\$2_STLTIM)d,%(\$2_LATCH)d,%(\$2_AUD)d,%d;*OPC?";
+    in "1";
+}
+
+#
+# Warmup
+#
+cmdWARM {
+    out "WARM %(\$1:TEMP)f,%(\$1:PCT)f;*OPC?";
+    in "1";
+}
+
+#
+# Status Registers
+#
+getESE { out "*ESE?;*OPC?";   in "%d;1"; }
+setESE { out "*ESE %d;*OPC?"; in "1";    @init { getESE; } }
+getESR { out "*ESR?;*OPC?";   in "%d;1"; }
+
+getSRE { out "*SRE?;*OPC?";   in "%d;1"; }
+setSRE { out "*SRE %d;*OPC?"; in "1";    @init { getSRE; } }
+getSTB { out "*STB?;*OPC?";   in "%d;1"; }
+
+cmdCLS { out "*CLS;*OPC?";    in "1";    }
