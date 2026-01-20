@@ -74,7 +74,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_301</name>
-    <pv_name>$(P)$(R)INP$(INP):INNAME</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):INNAME_RBV</pv_name>
     <x>45</x>
     <width>90</width>
     <height>25</height>
@@ -112,7 +112,7 @@
   <widget type="led" version="2.0.0">
     <name>LED_1</name>
     <class>ERROR</class>
-    <pv_name>$(P)$(R)INP$(INP):ALARM_HIGH</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):ALARM_HIGH_RBV</pv_name>
     <x>270</x>
     <width>25</width>
     <height>25</height>
@@ -151,7 +151,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
-    <pv_name>$(P)$(R)INP$(INP):KRDG</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):KRDG_RBV</pv_name>
     <x>175</x>
     <width>90</width>
     <height>25</height>
@@ -189,7 +189,7 @@
   <widget type="led" version="2.0.0">
     <name>LED</name>
     <class>ERROR</class>
-    <pv_name>$(P)$(R)INP$(INP):ALARM_LOW</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):ALARM_LOW_RBV</pv_name>
     <x>145</x>
     <width>25</width>
     <height>25</height>
@@ -228,7 +228,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_293</name>
-    <pv_name>$(P)$(R)INP$(INP):MDATMIN</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):MDATMIN_RBV</pv_name>
     <x>300</x>
     <width>90</width>
     <height>25</height>
@@ -265,7 +265,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_294</name>
-    <pv_name>$(P)$(R)INP$(INP):MDATMAX</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):MDATMAX_RBV</pv_name>
     <x>395</x>
     <width>90</width>
     <height>25</height>

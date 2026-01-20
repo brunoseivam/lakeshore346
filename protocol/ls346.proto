@@ -9,7 +9,7 @@
 #
 ##################################################
 
-ReplyTimeout = 2000;
+ReplyTimeout = 4000;
 LockTimeout = 40000;
 
 # Device ID
@@ -88,8 +88,25 @@ getRANGE {
 # /// The second parameter is the ramp status record.
 getRAMP {
     out "RAMP? \$1;*OPC?";
-    in "%(\$2)d,%f;1";
+    in "%(\$2:RAMPST_RBV)d,%f;1";
+    @init {
+        out "RAMP? \$1;*OPC?";
+        in "%(\$2:RAMPST)d,%(\$2:RAMP)f;1";
+    }
 }
+
+# Set the ramp parameter for loops 1-2
+setRAMP {
+    out "RAMP \$1,%(\$2:RAMPST_RBV.VAL)d,%f;*OPC?";
+    in "1";
+}
+
+# Set the ramp status for loops 1-2
+setRAMPSTATUS {
+    out "RAMP \$1,%d,%(\$2:RAMP_RBV.VAL)f;*OPC?";
+    in "1";
+}
+
 
 # /// Read the manual output value for outputs 1-4
 getMOUT {
@@ -106,48 +123,44 @@ getPID {
     in "%f";
 }
 
-# /// Combine getOUTMODEMODE, getOUTMODEINPUT and getOUTMODEPE into one function.
-# /// The first argument is the output number.
-# /// The second argument is the output mode intput record.
-# /// The third argument is the output mode powerup enable record.
+# Combine getOUTMODEMODE, getOUTMODEINPUT and getOUTMODEPE into one function.
+# The first argument is the output number.
+# The second argument is the output mode intput record.
+# The third argument is the output mode powerup enable record.
 getOM {
     out "OUTMODE? \$1;*OPC?";
-    in "%d,%(\$2:OMI)[^,],%(\$2:OMP)d,%(\$2:OMW)d;1";
+    in "%d,%(\$2:OMI_RBV)[^,],%(\$2:OMP_RBV)d,%(\$2:OMW_RBV)d;1";
+    @init {
+        out "OUTMODE? \$1;*OPC?";
+        in "%(\$2:OMM)d,%(\$2:OMI)[^,],%(\$2:OMP)d,%(\$2:OMW)d;1";
+    }
 }
 
-# /// Read the output mode mode status for outputs 1-4
-# /// 0=Off
-# /// 1=Closed Loop PID
-# /// 2=Zone
-# /// 3=Open Loop
-# /// 4=Monitor Out
-# /// 5=Warm Up Supply
-getOUTMODEMODE {
-    out "OUTMODE? \$1;*OPC?";
-    in "%d,%*d,%*d;1";
+# Set the output mode [mode],[input],[power up enable],[warm up]
+setOM {
+    out "OUTMODE \$1,%d,%(\$2:OMI.VAL)s,%(\$2:OMP.VAL)d,%(\$2:OMW.VAL)d;*OPC?";
+    in "1";
 }
 
-# /// Read the output mode input for outputs 1-4
-# /// 0=None
-# /// 1=A
-# /// 2=B
-# /// 3=C
-# /// 4=D
-getOUTMODEINPUT {
-    out "OUTMODE? \$1;*OPC?";
-    in "%*d,%d,%*d;1";
+# Set the output mode input [mode],[input],[power up enable],[warm up]
+setOMI {
+    out "OUTMODE \$1,%(\$2:OMM.VAL)d,%s,%(\$2:OMP.VAL)d,%(\$2:OMW.VAL)d;*OPC?";
+    in "1";
 }
 
-# /// Read the output mode power up enable for outputs 1-4
-# /// 0=Off
-# /// 1=On
-getOUTMODEPE {
-    out "OUTMODE? \$1;*OPC?";
-    in "%*d,%*d,%d;1";
+# /// Set the output mode power up enable [mode],[input],[power up enable],[warm up]
+setOMP {
+    out "OUTMODE \$1,%(\$2:OMM.VAL)d,%(\$2:OMI.VAL)s,%d,%(\$2:OMW.VAL)d;*OPC?";
+    in "1";
 }
 
+# /// Set the output mode warm up [mode],[input],[power up enable],[warm up]
+setOMW {
+    out "OUTMODE \$1,%(\$2:OMM.VAL)d,%(\$2:OMI.VAL)s,%(\$2:OMP.VAL)d,%d;*OPC?";
+    in "1";
+}
 
-# /// Read the tuning status
+# Read the tuning status
 getTUNEST {
     out "TUNEST?;*OPC?";
     in "%[^;];1";
@@ -173,80 +186,56 @@ getINNAME {
     @mismatch { in "1"; }
 }
 
-# /// Read Input Reading Operation Status Query
+# Read Input Reading Operation Status Query
 getRDGOPR {
     out "RDGOPR? \$1;*OPC?";
     in "%d;1";
 }
 
-# /// Alarm Parameters
+# Alarm Parameters
 getALARM {
     out "ALARM? \$1;*OPC?";
-    in "%d,%(\$2_HIGHVAL)f,%(\$2_LOWVAL)f,%(\$2_DB)f,%(\$2_LE)d,%(\$2_AU)d,%(\$2_VIS)d;1";
+    in "%d,%(\$2_HIGHVAL_RBV)f,%(\$2_LOWVAL_RBV)f,%(\$2_DB_RBV)f,%(\$2_LE_RBV)d,%(\$2_AU_RBV)d,%(\$2_VIS_RBV)d;1";
     @mismatch { in "1"; }
+    @init {
+        out "ALARM? \$1;*OPC?";
+        in "%(\$2_ONOFF)d,%(\$2_HIGHVAL)f,%(\$2_LOWVAL)f,%(\$2_DB)f,%(\$2_LE)d,%(\$2_AU)d,%(\$2_VIS)d;1";
+    }
 }
 
 setALARM_ONOFF {
-    out "ALARM \$1,%d,%(\$2_HIGHVAL.VAL)f,%(\$2_LOWVAL.VAL)f,%(\$2_DB.VAL)f,%(\$2_LE.VAL)d,%(\$2_AU.VAL)d,%(\$2_VIS.VAL)d;*OPC?";
+    out "ALARM \$1,%d,%(\$2_HIGHVAL_RBV.VAL)f,%(\$2_LOWVAL_RBV.VAL)f,%(\$2_DB_RBV.VAL)f,%(\$2_LE_RBV.VAL)d,%(\$2_AU_RBV.VAL)d,%(\$2_VIS_RBV.VAL)d;*OPC?";
     in "1";
-    @init {
-        out "ALARM? \$1;*OPC?";
-        in "%d,%*f,%*f,%*f,%*d,%*d,%*d;1";
-    }
 }
 
 setALARM_HIGHVAL {
-    out "ALARM \$1,%(\$2_ONOFF)d,%f,%(\$2_LOWVAL.VAL)f,%(\$2_DB.VAL)f,%(\$2_LE.VAL)d,%(\$2_AU.VAL)d,%(\$2_VIS.VAL)d;*OPC?";
+    out "ALARM \$1,%(\$2_ONOFF_RBV)d,%f,%(\$2_LOWVAL_RBV.VAL)f,%(\$2_DB_RBV.VAL)f,%(\$2_LE_RBV.VAL)d,%(\$2_AU_RBV.VAL)d,%(\$2_VIS_RBV.VAL)d;*OPC?";
     in "1";
-    @init {
-        out "ALARM? \$1;*OPC?";
-        in "%*d,%f,%*f,%*f,%*d,%*d,%*d;1";
-    }
 }
 
 setALARM_LOWVAL {
-    out "ALARM \$1,%(\$2_ONOFF)d,%(\$2_HIGHVAL.VAL)f,%f,%(\$2_DB.VAL)f,%(\$2_LE.VAL)d,%(\$2_AU.VAL)d,%(\$2_VIS.VAL)d;*OPC?";
+    out "ALARM \$1,%(\$2_ONOFF_RBV)d,%(\$2_HIGHVAL_RBV.VAL)f,%f,%(\$2_DB_RBV.VAL)f,%(\$2_LE_RBV.VAL)d,%(\$2_AU_RBV.VAL)d,%(\$2_VIS_RBV.VAL)d;*OPC?";
     in "1";
-    @init {
-        out "ALARM? \$1;*OPC?";
-        in "%*d,%*f,%f,%*f,%*d,%*d,%*d;1";
-    }
 }
 
 setALARM_DB {
-    out "ALARM \$1,%(\$2_ONOFF)d,%(\$2_HIGHVAL.VAL)f,%(\$2_LOWVAL.VAL)f,%f,%(\$2_LE.VAL)d,%(\$2_AU.VAL)d,%(\$2_VIS.VAL)d;*OPC?";
+    out "ALARM \$1,%(\$2_ONOFF_RBV)d,%(\$2_HIGHVAL_RBV.VAL)f,%(\$2_LOWVAL_RBV.VAL)f,%f,%(\$2_LE_RBV.VAL)d,%(\$2_AU_RBV.VAL)d,%(\$2_VIS_RBV.VAL)d;*OPC?";
     in "1";
-    @init {
-        out "ALARM? \$1;*OPC?";
-        in "%*d,%*f,%*f,%f,%*d,%*d,%*d;1";
-    }
 }
 
 setALARM_LE {
-    out "ALARM \$1,%(\$2_ONOFF)d,%(\$2_HIGHVAL.VAL)f,%(\$2_LOWVAL.VAL)f,%(\$2_DB.VAL)f,%d,%(\$2_AU.VAL)d,%(\$2_VIS.VAL)d;*OPC?";
+    out "ALARM \$1,%(\$2_ONOFF_RBV)d,%(\$2_HIGHVAL_RBV.VAL)f,%(\$2_LOWVAL_RBV.VAL)f,%(\$2_DB_RBV.VAL)f,%d,%(\$2_AU_RBV.VAL)d,%(\$2_VIS_RBV.VAL)d;*OPC?";
     in "1";
-    @init {
-        out "ALARM? \$1;*OPC?";
-        in "%*d,%*f,%*f,%*f,%d,%*d,%*d;1";
-    }
 }
 
 setALARM_AU {
-    out "ALARM \$1,%(\$2_ONOFF)d,%(\$2_HIGHVAL.VAL)f,%(\$2_LOWVAL.VAL)f,%(\$2_DB.VAL)f,%(\$2_LE.VAL)d,%d,%(\$2_VIS.VAL)d;*OPC?";
+    out "ALARM \$1,%(\$2_ONOFF_RBV)d,%(\$2_HIGHVAL_RBV.VAL)f,%(\$2_LOWVAL_RBV.VAL)f,%(\$2_DB_RBV.VAL)f,%(\$2_LE_RBV.VAL)d,%d,%(\$2_VIS_RBV.VAL)d;*OPC?";
     in "1";
-    @init {
-        out "ALARM? \$1;*OPC?";
-        in "%*d,%*f,%*f,%*f,%*d,%d,%*d;1";
-    }
 }
 
 setALARM_VIS {
-    out "ALARM \$1,%(\$2_ONOFF)d,%(\$2_HIGHVAL.VAL)f,%(\$2_LOWVAL.VAL)f,%(\$2_DB.VAL)f,%(\$2_LE.VAL)d,%(\$2_AU.VAL)d,%d;*OPC?";
+    out "ALARM \$1,%(\$2_ONOFF_RBV)d,%(\$2_HIGHVAL_RBV.VAL)f,%(\$2_LOWVAL_RBV.VAL)f,%(\$2_DB_RBV.VAL)f,%(\$2_LE_RBV.VAL)d,%(\$2_AU_RBV.VAL)d,%d;*OPC?";
     in "1";
-    @init {
-        out "ALARM? \$1;*OPC?";
-        in "%*d,%*f,%*f,%*f,%*d,%*d,%d;1";
-    }
 }
 
 # /// Read the input reading status
@@ -279,7 +268,7 @@ setINCRV {
 # /// to make the initial record INP link short.
 getINTYPE {
     out "INTYPE? \$1;*OPC?";
-    in "%(\$2_S)d,%(\$2_AR)d,%(\$2_R)d,%(\$2_C)d,%(\$2_U)d;1";
+    in "%(\$2_S_RBV)d,%(\$2_AR_RBV)d,%(\$2_R_RBV)d,%(\$2_C_RBV)d,%(\$2_U_RBV)d;1";
     @mismatch { in "1"; }
 }
 
@@ -295,22 +284,6 @@ setRANGE {
     out "RANGE \$1,%d;*OPC?";
     in "1";
     @init { getRANGE; }
-}
-
-# /// Set the ramp parameter for loops 1-2
-#Need to pass in the PV name for the getRAMPSTATUS protocol.
-setRAMP {
-    out "RAMP \$1,%(\$2.VAL)d,%f;*OPC?";
-    in "1";
-    @init { out "RAMP? \$1;*OPC?"; in "%*d,%f;1"; }
-}
-
-# /// Set the ramp status for loops 1-2
-#Need to pass in the PV name for the getRAMP protocol.
-setRAMPSTATUS {
-    out "RAMP \$1,%d,%(\$2.VAL)f;*OPC?";
-    in "1";
-    @init { out "RAMP? \$1;*OPC?"; in "%d,%*f;1"; }
 }
 
 # /// Set the manual output value for outputs 1-4
@@ -341,33 +314,6 @@ setD {
     @init { out "PID? \$1;*OPC?"; in "%*f,%*f,%f;1"; }
 }
 
-# /// Set the output mode [mode],[input],[power up enable],[warm up]
-setOM {
-    out "OUTMODE \$1,%d,%(\$2:OMI.VAL)s,%(\$2:OMP.VAL)d,%(\$2:OMW.VAL)d;*OPC?";
-    in "1";
-    @init { out "OUTMODE? \$1;*OPC?"; in "%d,%*[^,],%*d,%*d;1";}
-}
-
-# /// Set the output mode input [mode],[input],[power up enable],[warm up]
-setOMI {
-    out "OUTMODE \$1,%(\$2:OMM.VAL)d,%s,%(\$2:OMP.VAL)d,%(\$2:OMW.VAL)d;*OPC?";
-    in "1";
-    @init { out "OUTMODE? \$1;*OPC?"; in "%*d,%[^,],%*d,%*d;1";}
-}
-
-# /// Set the output mode power up enable [mode],[input],[power up enable],[warm up]
-setOMP {
-    out "OUTMODE \$1,%(\$2:OMM.VAL)d,%(\$2:OMI.VAL)s,%d,%(\$2:OMW.VAL)d;*OPC?";
-    in "1";
-    @init { out "OUTMODE? \$1;*OPC?"; in "%*d,%*[^,],%d,%*d;1";}
-}
-
-# /// Set the output mode warm up [mode],[input],[power up enable],[warm up]
-setOMW {
-    out "OUTMODE \$1,%(\$2:OMM.VAL)d,%(\$2:OMI.VAL)s,%(\$2:OMP.VAL)d,%d;*OPC?";
-    in "1";
-    @init { out "OUTMODE? \$1;*OPC?"; in "%*d,%*[^,],%d,%*d;1";}
-}
 
 # /// Start the auto tune process.
 setATUNE {
@@ -402,34 +348,26 @@ setTLIMIT {
 
 getFILTER {
     out "FILTER? \$1;*OPC?";
-    in "%d,%(\$2_NPTS)d,%(\$2_WND)d;1";
+    in "%d,%(\$2_NPTS_RBV)d,%(\$2_WND_RBV)d;1";
+    @init {
+        out "FILTER? \$1;*OPC?";
+        in "%(\$2_EN)d,%(\$2_NPTS)d,%(\$2_WND)d;1";
+    }
 }
 
 setFILTER_EN {
     out "FILTER \$1,%d,%(\$2_NPTS.VAL)d,%(\$2_WND.VAL)d;*OPC?";
     in "1";
-    @init {
-        out "FILTER? \$1;*OPC?";
-        in "%d,%*d,%*d;1";
-    }
 }
 
 setFILTER_NPTS {
     out "FILTER \$1,%(\$2_EN)d,%d,%(\$2_WND.VAL)d;*OPC?";
     in "1";
-    @init {
-        out "FILTER? \$1;*OPC?";
-        in "%*d,%d,%*d;1";
-    }
 }
 
 setFILTER_WND {
     out "FILTER \$1,%(\$2_EN)d,%(\$2_NPTS)d,%d;*OPC?";
     in "1";
-    @init {
-        out "FILTER? \$1;*OPC?";
-        in "%*d,%*d,%d;1";
-    }
 }
 
 # /// Reset all alarms
@@ -442,7 +380,7 @@ cmdALMRST {
 
 getMDAT {
     out "MDAT? \$1;*OPC?";
-    in "%f,%(\$2:MDATMAX)f;1";
+    in "%f,%(\$2:MDATMAX_RBV)f;1";
 }
 
 cmdMNMXRST {
@@ -479,12 +417,10 @@ getDIGIN {
     in "%d";
 }
 
-#
 # Curve
-#
 getCRVHDR {
     out "CRVHDR? %(\$1:NUM.VAL)d;*OPC?";
-    in "\"%(\$1:NAME)[^\"]\",\"%(\$1:SERIAL)[^\"]\",%(\$1:FORMAT.RVAL)d,%(\$1:LIMIT)f,%(\$1:COEFF.RVAL)d;1";
+    in "\"%(\$1:NAME_RBV)[^\"]\",\"%(\$1:SERIAL_RBV)[^\"]\",%(\$1:FORMAT_RBV.RVAL)d,%(\$1:LIMIT_RBV)f,%(\$1:COEFF_RBV.RVAL)d;1";
 }
 
 getCRVNUMPTS {
@@ -492,9 +428,7 @@ getCRVNUMPTS {
     in "%d;1";
 }
 
-#
 # Heater Group
-#
 getOUTGROUP {
     out "OUTGROUP? \$1;*OPC?";
     in "%d;1";
@@ -506,54 +440,52 @@ setOUTGROUP {
     @init { getOUTGROUP; }
 }
 
-#
 # Heater Setup
-#
 getHTRSET {
     out "HTRSET? \$1;*OPC?";
-    in "%d,%(\$2_MXOUT)f,%(\$2_CURPWR)d;1";
+    in "%d,%(\$2_MXOUT_RBV)f,%(\$2_CURPWR_RBV)d;1";
     @init {
         out "HTRSET? \$1;*OPC?";
-        in "%(\$2_RES_S)d,%(\$2_MXOUT_S)f,%(\$2_CURPWR_S.RVAL)d;1";
+        in "%(\$2_RES)d,%(\$2_MXOUT)f,%(\$2_CURPWR.RVAL)d;1";
     }
 }
 
 setHTRSET_RES {
-    out "HTRSET \$1,%d,%(\$2_MXOUT)f,%(\$2_CURPWR.RVAL)d;*OPC?";
+    out "HTRSET \$1,%d,%(\$2_MXOUT_RBV)f,%(\$2_CURPWR_RBV.RVAL)d;*OPC?";
     in "1";
 }
 
 setHTRSET_MXOUT {
-    out "HTRSET \$1,%(\$2_RES)d,%f,%(\$2_CURPWR.RVAL)d;*OPC?";
+    out "HTRSET \$1,%(\$2_RES_RBV)d,%f,%(\$2_CURPWR_RBV.RVAL)d;*OPC?";
     in "1";
 }
 
 setHTRSET_CURPWR {
-    out "HTRSET \$1,%(\$2_RES)d,%(\$2_MXOUT)f,%d;*OPC?";
+    out "HTRSET \$1,%(\$2_RES_RBV)d,%(\$2_MXOUT_RBV)f,%d;*OPC?";
     in "1";
 }
 
 getHTRLIM {
     out "HTRLIM? \$1;*OPC?";
-    in "%d,%(\$2_SHRT)f,%(\$2_OPN)f;1";
+    in "%d,%(\$2_SHRT_RBV)f,%(\$2_OPN_RBV)f;1";
     @init {
         out "HTRLIM? \$1;*OPC?";
-        in "%(\$2_EN_S)d,%(\$2_SHRT_S)f,%(\$2_OPN_S)f;1";
+        in "%(\$2_EN)d,%(\$2_SHRT)f,%(\$2_OPN)f;1";
     }
 }
 
 setHTRLIM_EN {
-    out "HTRLIM \$1,%d,%(\$2_SHRT)f,%(\$2_OPN)f;*OPC?";
+    out "HTRLIM \$1,%d,%(\$2_SHRT_RBV)f,%(\$2_OPN_RBV)f;*OPC?";
     in "1";
 }
 
 setHTRLIM_SHRT {
-    out "HTRLIM \$1,%(\$2_EN)d,%f,%(\$2_OPN)f;*OPC?";
+    out "HTRLIM \$1,%(\$2_EN_RBV)d,%f,%(\$2_OPN_RBV)f;*OPC?";
     in "1";
 }
 
 setHTRLIM_OPN {
-    out "HTRLIM \$1,%(\$2_EN)d,%(\$2_SHRT)f,%f;*OPC?";
+    out "HTRLIM \$1,%(\$2_EN_RBV)d,%(\$2_SHRT_RBV)f,%f;*OPC?";
     in "1";
 }
 
@@ -571,89 +503,79 @@ setHTRAUTO {
     @init { getHTRAUTO; }
 }
 
-#
 # Heater Output
-#
 getHTROUT {
     out "HTROUT? \$1;*OPC?";
-    in "%f,%(\$2_PWR)f;1";
+    in "%f,%(\$2_PWR_RBV)f;1";
 }
 
-#
 # Monitor Out Parameter
-#
 getANALOG {
     out "ANALOG? \$1;*OPC?";
-    in "%f,%(\$2_LOW)f;1";
+    in "%f,%(\$2_LOW_RBV)f;1";
     @init {
         out "ANALOG? \$1;*OPC?";
-        in "%(\$2_HIGH_S)f,%(\$2_LOW_S)f;1";
+        in "%(\$2_HIGH)f,%(\$2_LOW)f;1";
     }
 }
 
 setANALOG_HIGH {
-    out "ANALOG \$1,%f,%(\$2_LOW)f;*OPC?";
+    out "ANALOG \$1,%f,%(\$2_LOW_RBV)f;*OPC?";
     in "1";
 }
 
 setANALOG_LOW {
-    out "ANALOG \$1,%(\$2_HIGH)f,%f;*OPC?";
+    out "ANALOG \$1,%(\$2_HIGH_RBV)f,%f;*OPC?";
     in "1";
 }
 
-#
 # Output Stability
-#
 getOUTSTABLE {
     out "OUTSTABLE? \$1;*OPC?";
-    in "%d,%(\$2_SETPERR)f,%(\$2_STLTIM)d,%(\$2_LATCH)d,%(\$2_AUD)d,%(\$2_VIS)d;1";
+    in "%d,%(\$2_SETPERR_RBV)f,%(\$2_STLTIM_RBV)d,%(\$2_LATCH_RBV)d,%(\$2_AUD_RBV)d,%(\$2_VIS_RBV)d;1";
     @init {
         out "OUTSTABLE? \$1;*OPC?";
-        in "%(\$2_EN_S)d,%(\$2_SETPERR_S)f,%(\$2_STLTIM_S)d,%(\$2_LATCH_S)d,%(\$2_AUD_S)d,%(\$2_VIS_S)d;1";
+        in "%(\$2_EN)d,%(\$2_SETPERR)f,%(\$2_STLTIM)d,%(\$2_LATCH)d,%(\$2_AUD)d,%(\$2_VIS)d;1";
     }
 }
 
 setOUTSTABLE_EN {
-    out "OUTSTABLE \$1,%d,%(\$2_SETPERR)f,%(\$2_STLTIM)d,%(\$2_LATCH)d,%(\$2_AUD)d,%(\$2_VIS)d;*OPC?";
+    out "OUTSTABLE \$1,%d,%(\$2_SETPERR_RBV)f,%(\$2_STLTIM_RBV)d,%(\$2_LATCH_RBV)d,%(\$2_AUD_RBV)d,%(\$2_VIS_RBV)d;*OPC?";
     in "1";
 }
 
 setOUTSTABLE_SETPERR {
-    out "OUTSTABLE \$1,%(\$2_EN)d,%f,%(\$2_STLTIM)d,%(\$2_LATCH)d,%(\$2_AUD)d,%(\$2_VIS)d;*OPC?";
+    out "OUTSTABLE \$1,%(\$2_EN_RBV)d,%f,%(\$2_STLTIM_RBV)d,%(\$2_LATCH_RBV)d,%(\$2_AUD_RBV)d,%(\$2_VIS_RBV)d;*OPC?";
     in "1";
 }
 
 setOUTSTABLE_STLTIM {
-    out "OUTSTABLE \$1,%(\$2_EN)d,%(\$2_SETPERR)f,%d,%(\$2_LATCH)d,%(\$2_AUD)d,%(\$2_VIS)d;*OPC?";
+    out "OUTSTABLE \$1,%(\$2_EN_RBV)d,%(\$2_SETPERR_RBV)f,%d,%(\$2_LATCH_RBV)d,%(\$2_AUD_RBV)d,%(\$2_VIS_RBV)d;*OPC?";
     in "1";
 }
 
 setOUTSTABLE_LATCH {
-    out "OUTSTABLE \$1,%(\$2_EN)d,%(\$2_SETPERR)f,%(\$2_STLTIM)d,%d,%(\$2_AUD)d,%(\$2_VIS)d;*OPC?";
+    out "OUTSTABLE \$1,%(\$2_EN_RBV)d,%(\$2_SETPERR_RBV)f,%(\$2_STLTIM_RBV)d,%d,%(\$2_AUD_RBV)d,%(\$2_VIS_RBV)d;*OPC?";
     in "1";
 }
 
 setOUTSTABLE_AUD {
-    out "OUTSTABLE \$1,%(\$2_EN)d,%(\$2_SETPERR)f,%(\$2_STLTIM)d,%(\$2_LATCH)d,%d,%(\$2_VIS)d;*OPC?";
+    out "OUTSTABLE \$1,%(\$2_EN_RBV)d,%(\$2_SETPERR_RBV)f,%(\$2_STLTIM_RBV)d,%(\$2_LATCH_RBV)d,%d,%(\$2_VIS_RBV)d;*OPC?";
     in "1";
 }
 
 setOUTSTABLE_VIS {
-    out "OUTSTABLE \$1,%(\$2_EN)d,%(\$2_SETPERR)f,%(\$2_STLTIM)d,%(\$2_LATCH)d,%(\$2_AUD)d,%d;*OPC?";
+    out "OUTSTABLE \$1,%(\$2_EN_RBV)d,%(\$2_SETPERR_RBV)f,%(\$2_STLTIM_RBV)d,%(\$2_LATCH_RBV)d,%(\$2_AUD_RBV)d,%d;*OPC?";
     in "1";
 }
 
-#
 # Warmup
-#
 cmdWARM {
     out "WARM %(\$1:TEMP)f,%(\$1:PCT)f;*OPC?";
     in "1";
 }
 
-#
 # Status Registers
-#
 getESE { out "*ESE?;*OPC?";   in "%d;1"; }
 setESE { out "*ESE %d;*OPC?"; in "1";    @init { getESE; } }
 getESR { out "*ESR?;*OPC?";   in "%d;1"; }

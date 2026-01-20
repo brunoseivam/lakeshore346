@@ -60,7 +60,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry</name>
-    <pv_name>$(P)$(R)INP$(INP):INNAME_S</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):INNAME</pv_name>
     <x>35</x>
     <y>30</y>
     <width>140</width>
@@ -104,7 +104,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_272</name>
-    <pv_name>$(P)$(R)INP$(INP):INNAME</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):INNAME_RBV</pv_name>
     <x>35</x>
     <width>140</width>
     <height>25</height>
@@ -141,7 +141,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_231</name>
-    <pv_name>$(P)$(R)INP$(INP):INCRV</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):INCRV_RBV</pv_name>
     <x>180</x>
     <width>50</width>
     <height>25</height>
@@ -178,7 +178,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_239</name>
-    <pv_name>$(P)$(R)INP$(INP):INTYPE_S</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):INTYPE_S_RBV</pv_name>
     <x>235</x>
     <width>130</width>
     <height>55</height>
@@ -215,7 +215,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_247</name>
-    <pv_name>$(P)$(R)INP$(INP):INTYPE_AR</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):INTYPE_AR_RBV</pv_name>
     <x>370</x>
     <width>90</width>
     <height>55</height>
@@ -252,7 +252,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_255</name>
-    <pv_name>$(P)$(R)INP$(INP):INTYPE_R</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):INTYPE_R_RBV</pv_name>
     <x>465</x>
     <width>160</width>
     <height>55</height>
@@ -289,7 +289,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_263</name>
-    <pv_name>$(P)$(R)INP$(INP):INTYPE_C</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):INTYPE_C_RBV</pv_name>
     <x>630</x>
     <width>80</width>
     <height>55</height>
@@ -326,7 +326,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_271</name>
-    <pv_name>$(P)$(R)INP$(INP):INTYPE_U</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):INTYPE_U_RBV</pv_name>
     <x>715</x>
     <width>80</width>
     <height>55</height>
@@ -363,7 +363,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_1</name>
-    <pv_name>$(P)$(R)INP$(INP):INCRV_S</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):INCRV</pv_name>
     <x>180</x>
     <y>30</y>
     <width>50</width>
@@ -393,7 +393,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_273</name>
-    <pv_name>$(P)$(R)INP$(INP):TLIMIT</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):TLIMIT_RBV</pv_name>
     <x>800</x>
     <width>80</width>
     <height>25</height>
@@ -430,7 +430,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_2</name>
-    <pv_name>$(P)$(R)INP$(INP):TLIMIT_S</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):TLIMIT</pv_name>
     <x>800</x>
     <y>30</y>
     <width>80</width>
@@ -460,7 +460,7 @@
   </widget>
   <widget type="combo" version="2.0.0">
     <name>Combo Box</name>
-    <pv_name>$(P)$(R)INP$(INP):FILTER_EN_S</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):FILTER_EN</pv_name>
     <x>885</x>
     <y>30</y>
     <height>25</height>
@@ -489,7 +489,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_274</name>
-    <pv_name>$(P)$(R)INP$(INP):FILTER_EN</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):FILTER_EN_RBV</pv_name>
     <x>885</x>
     <height>25</height>
     <vertical_alignment>1</vertical_alignment>
@@ -525,7 +525,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_275</name>
-    <pv_name>$(P)$(R)INP$(INP):FILTER_NPTS</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):FILTER_NPTS_RBV</pv_name>
     <x>990</x>
     <width>80</width>
     <height>25</height>
@@ -562,7 +562,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_3</name>
-    <pv_name>$(P)$(R)INP$(INP):FILTER_NPTS_S</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):FILTER_NPTS</pv_name>
     <x>990</x>
     <y>30</y>
     <width>80</width>
@@ -592,7 +592,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_276</name>
-    <pv_name>$(P)$(R)INP$(INP):FILTER_WND</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):FILTER_WND_RBV</pv_name>
     <x>1075</x>
     <width>80</width>
     <height>25</height>
@@ -629,7 +629,7 @@
   </widget>
   <widget type="textentry" version="3.0.0">
     <name>Text Entry_4</name>
-    <pv_name>$(P)$(R)INP$(INP):FILTER_WND_S</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):FILTER_WND</pv_name>
     <x>1075</x>
     <y>30</y>
     <width>80</width>

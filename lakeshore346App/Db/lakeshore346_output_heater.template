@@ -1,18 +1,14 @@
 # This template is for outputs 1-4 and virtual outputs 9-10, which can provide heater power.
 
-##
-## Define the strings and values for this record.
-##
-record(mbbi, "$(P)$(R)OUT$(OUTNUM):RANGE") {
+# Define the strings and values for this record.
+record(mbbi, "$(P)$(R)OUT$(OUTNUM):RANGE_RBV") {
     field(ZRST, "Off")
     field(ONST, "Low")
     field(TWST, "High")
 }
 
-##
-## Define the strings and values for this record.
-##
-record(mbbo, "$(P)$(R)OUT$(OUTNUM):RANGE_S") {
+# Define the strings and values for this record.
+record(mbbo, "$(P)$(R)OUT$(OUTNUM):RANGE") {
     field(ZRST, "Off")
     field(ONST, "Low")
     field(TWST, "High")

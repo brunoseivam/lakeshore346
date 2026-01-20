@@ -262,7 +262,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_13</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
       <x>330</x>
       <height>25</height>
       <vertical_alignment>1</vertical_alignment>
@@ -291,7 +291,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_21</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):OMI</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OMI_RBV</pv_name>
       <x>330</x>
       <y>60</y>
       <height>25</height>
@@ -306,7 +306,7 @@
     </widget>
     <widget type="combo" version="2.0.0">
       <name>Menu Button_11</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):OMI_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OMI</pv_name>
       <x>225</x>
       <y>60</y>
       <height>25</height>
@@ -392,7 +392,7 @@
     </widget>
     <widget type="combo" version="2.0.0">
       <name>Menu Button_2</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):OMP_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OMP</pv_name>
       <x>225</x>
       <y>120</y>
       <height>25</height>
@@ -404,7 +404,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_22</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):OMP</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OMP_RBV</pv_name>
       <x>330</x>
       <y>120</y>
       <height>25</height>
@@ -419,7 +419,7 @@
     </widget>
     <widget type="combo" version="2.0.0">
       <name>Menu Button</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):OMM_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OMM</pv_name>
       <x>225</x>
       <y>90</y>
       <height>25</height>
@@ -431,7 +431,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_20</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):OMM</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OMM_RBV</pv_name>
       <x>330</x>
       <y>90</y>
       <height>25</height>
@@ -446,7 +446,7 @@
     </widget>
     <widget type="combo" version="2.0.0">
       <name>Menu Button_12</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):OMW_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OMW</pv_name>
       <x>225</x>
       <y>150</y>
       <height>25</height>
@@ -458,7 +458,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_141</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):OMW</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OMW_RBV</pv_name>
       <x>330</x>
       <y>150</y>
       <height>25</height>
@@ -537,7 +537,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_142</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):HTR</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTR_RBV</pv_name>
       <x>225</x>
       <y>480</y>
       <width>205</width>
@@ -553,7 +553,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_143</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):HTROUT_VAL</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTROUT_VAL_RBV</pv_name>
       <x>225</x>
       <y>510</y>
       <width>205</width>
@@ -569,7 +569,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_144</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):HTROUT_PWR</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTROUT_PWR_RBV</pv_name>
       <x>225</x>
       <y>540</y>
       <width>205</width>
@@ -720,7 +720,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):SETP</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):SETP_RBV</pv_name>
       <x>330</x>
       <y>210</y>
       <height>25</height>
@@ -735,7 +735,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_3</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):RANGE</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):RANGE_RBV</pv_name>
       <x>330</x>
       <y>240</y>
       <height>25</height>
@@ -750,7 +750,7 @@
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>Text Input</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):SETP_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):SETP</pv_name>
       <x>225</x>
       <y>210</y>
       <height>25</height>
@@ -767,7 +767,7 @@
     </widget>
     <widget type="combo" version="2.0.0">
       <name>Menu Button_4</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):RANGE_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):RANGE</pv_name>
       <x>225</x>
       <y>240</y>
       <height>25</height>
@@ -779,7 +779,7 @@
     </widget>
     <widget type="combo" version="2.0.0">
       <name>Menu Button_10</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRAUTO_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRAUTO</pv_name>
       <x>225</x>
       <y>270</y>
       <height>25</height>
@@ -791,7 +791,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_140</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRAUTO</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRAUTO_RBV</pv_name>
       <x>330</x>
       <y>270</y>
       <height>25</height>
@@ -806,7 +806,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_1</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):RAMPST</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):RAMPST_RBV</pv_name>
       <x>330</x>
       <y>330</y>
       <height>25</height>
@@ -821,7 +821,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_2</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):RAMP</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):RAMP_RBV</pv_name>
       <x>330</x>
       <y>300</y>
       <height>25</height>
@@ -836,7 +836,7 @@
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>Text Input_2</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):RAMP_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):RAMP</pv_name>
       <x>225</x>
       <y>300</y>
       <height>25</height>
@@ -853,7 +853,7 @@
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>Text Input_4</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):MOUT_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):MOUT</pv_name>
       <x>225</x>
       <y>360</y>
       <height>25</height>
@@ -870,7 +870,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_9</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):MOUT</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):MOUT_RBV</pv_name>
       <x>330</x>
       <y>360</y>
       <height>25</height>
@@ -885,7 +885,7 @@
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>Text Input_5</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):P_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):P</pv_name>
       <x>225</x>
       <y>390</y>
       <height>25</height>
@@ -902,7 +902,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_10</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):P</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):P_RBV</pv_name>
       <x>330</x>
       <y>390</y>
       <height>25</height>
@@ -917,7 +917,7 @@
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>Text Input_6</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):I_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):I</pv_name>
       <x>225</x>
       <y>420</y>
       <height>25</height>
@@ -934,7 +934,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_11</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):I</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):I_RBV</pv_name>
       <x>330</x>
       <y>420</y>
       <height>25</height>
@@ -949,7 +949,7 @@
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>Text Input_7</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):D_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):D</pv_name>
       <x>225</x>
       <y>450</y>
       <height>25</height>
@@ -966,7 +966,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_12</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):D</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):D_RBV</pv_name>
       <x>330</x>
       <y>450</y>
       <height>25</height>
@@ -981,7 +981,7 @@
     </widget>
     <widget type="combo" version="2.0.0">
       <name>Menu Button_5</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):RAMPST_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):RAMPST</pv_name>
       <x>225</x>
       <y>330</y>
       <height>25</height>
@@ -1006,7 +1006,7 @@
           <exp bool_exp="pvInt0 &gt; 8">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -1016,7 +1016,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_119</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRST_CACHE</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRST_CACHE_RBV</pv_name>
       <x>225</x>
       <y>570</y>
       <height>25</height>
@@ -1029,13 +1029,13 @@
           <exp bool_exp="pvInt0 &gt; 8">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
         <rule name="PVName" prop_id="pv_name" out_exp="false">
           <exp bool_exp="pvInt0 &gt; 8">
             <value></value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -1064,13 +1064,13 @@
           <exp bool_exp="pvInt0 &gt; 8">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
         <rule name="PVName" prop_id="pv_name" out_exp="false">
           <exp bool_exp="pvInt0 &gt; 8">
             <value></value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <tooltip>$(actions)</tooltip>
@@ -1224,7 +1224,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_101</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_EN</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_EN_RBV</pv_name>
       <x>330</x>
       <y>60</y>
       <width>95</width>
@@ -1240,7 +1240,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_102</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_SETPERR</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_SETPERR_RBV</pv_name>
       <x>330</x>
       <y>90</y>
       <width>95</width>
@@ -1256,7 +1256,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_103</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_STLTIM</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_STLTIM_RBV</pv_name>
       <x>330</x>
       <y>120</y>
       <width>95</width>
@@ -1272,7 +1272,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_104</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_LATCH</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_LATCH_RBV</pv_name>
       <x>330</x>
       <y>150</y>
       <width>95</width>
@@ -1288,7 +1288,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_105</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_AUD</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_AUD_RBV</pv_name>
       <x>330</x>
       <y>180</y>
       <width>95</width>
@@ -1304,7 +1304,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_106</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_VIS</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_VIS_RBV</pv_name>
       <x>330</x>
       <y>210</y>
       <width>95</width>
@@ -1320,7 +1320,7 @@
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>Text Input_21</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_SETPERR_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_SETPERR</pv_name>
       <x>225</x>
       <y>90</y>
       <height>25</height>
@@ -1337,7 +1337,7 @@
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>Text Input_22</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_STLTIM_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_STLTIM</pv_name>
       <x>225</x>
       <y>120</y>
       <height>25</height>
@@ -1354,7 +1354,7 @@
     </widget>
     <widget type="combo" version="2.0.0">
       <name>Menu Button_20</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_EN_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_EN</pv_name>
       <x>225</x>
       <y>60</y>
       <height>25</height>
@@ -1366,7 +1366,7 @@
     </widget>
     <widget type="combo" version="2.0.0">
       <name>Menu Button_21</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_LATCH_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_LATCH</pv_name>
       <x>225</x>
       <y>150</y>
       <height>25</height>
@@ -1378,7 +1378,7 @@
     </widget>
     <widget type="combo" version="2.0.0">
       <name>Menu Button_22</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_AUD_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_AUD</pv_name>
       <x>225</x>
       <y>180</y>
       <height>25</height>
@@ -1390,7 +1390,7 @@
     </widget>
     <widget type="combo" version="2.0.0">
       <name>Menu Button_23</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_VIS_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTSTABLE_VIS</pv_name>
       <x>225</x>
       <y>210</y>
       <height>25</height>
@@ -1441,7 +1441,7 @@
           <exp bool_exp="pvInt0 &gt; 8">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -1467,7 +1467,7 @@
           <exp bool_exp="pvInt0 &gt; 8">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -1477,7 +1477,7 @@
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>Text Input_24</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):ANALOG_HIGH_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):ANALOG_HIGH</pv_name>
       <x>225</x>
       <y>270</y>
       <height>25</height>
@@ -1495,7 +1495,7 @@
           <exp bool_exp="pvInt0 &gt; 8">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
         <rule name="PVName" prop_id="pv_name" out_exp="true">
           <exp bool_exp="pvInt0 &lt; 5">
@@ -1504,7 +1504,7 @@
           <exp bool_exp="pvInt &gt; 8">
             <expression></expression>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -1514,7 +1514,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_162</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):ANALOG_HIGH</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):ANALOG_HIGH_RBV</pv_name>
       <x>330</x>
       <y>270</y>
       <width>95</width>
@@ -1531,7 +1531,7 @@
           <exp bool_exp="pvInt0 &gt; 8">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
         <rule name="PVName" prop_id="pv_name" out_exp="true">
           <exp bool_exp="pvInt0 &lt; 5">
@@ -1540,7 +1540,7 @@
           <exp bool_exp="pvInt &gt; 8">
             <expression></expression>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -1566,7 +1566,7 @@
           <exp bool_exp="pvInt0 &gt; 8">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -1576,7 +1576,7 @@
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>Text Input_25</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):ANALOG_LOW_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):ANALOG_LOW</pv_name>
       <x>225</x>
       <y>300</y>
       <height>25</height>
@@ -1594,7 +1594,7 @@
           <exp bool_exp="pvInt0 &gt; 8">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
         <rule name="PVName" prop_id="pv_name" out_exp="true">
           <exp bool_exp="pvInt0 &lt; 5">
@@ -1603,7 +1603,7 @@
           <exp bool_exp="pvInt &gt; 8">
             <expression></expression>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -1613,7 +1613,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_163</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):ANALOG_LOW</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):ANALOG_LOW_RBV</pv_name>
       <x>330</x>
       <y>300</y>
       <width>95</width>
@@ -1630,7 +1630,7 @@
           <exp bool_exp="pvInt0 &gt; 8">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
         <rule name="PVName" prop_id="pv_name" out_exp="true">
           <exp bool_exp="pvInt0 &lt; 5">
@@ -1639,7 +1639,7 @@
           <exp bool_exp="pvInt &gt; 8">
             <expression></expression>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -1666,7 +1666,7 @@
           <exp bool_exp="pvInt0 &gt; 4">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -1676,7 +1676,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_124</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRSET_RES</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRSET_RES_RBV</pv_name>
       <x>330</x>
       <y>360</y>
       <width>95</width>
@@ -1690,13 +1690,13 @@
           <exp bool_exp="pvInt0 &gt; 4">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
         <rule name="PVName" prop_id="pv_name" out_exp="false">
           <exp bool_exp="pvInt0 &gt; 4">
             <value></value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -1706,7 +1706,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_123</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRSET_MXOUT</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRSET_MXOUT_RBV</pv_name>
       <x>330</x>
       <y>390</y>
       <width>95</width>
@@ -1720,13 +1720,13 @@
           <exp bool_exp="pvInt0 &gt; 4">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
         <rule name="PVName" prop_id="pv_name" out_exp="false">
           <exp bool_exp="pvInt0 &gt; 4">
             <value></value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -1736,7 +1736,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_122</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRSET_CURPWR</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRSET_CURPWR_RBV</pv_name>
       <x>330</x>
       <y>420</y>
       <width>95</width>
@@ -1750,13 +1750,13 @@
           <exp bool_exp="pvInt0 &gt; 4">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
         <rule name="PVName" prop_id="pv_name" out_exp="false">
           <exp bool_exp="pvInt0 &gt; 4">
             <value></value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -1779,7 +1779,7 @@
           <exp bool_exp="pvInt0 &gt; 4">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -1789,7 +1789,7 @@
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>Text Input_26</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRSET_RES_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRSET_RES</pv_name>
       <x>225</x>
       <y>360</y>
       <height>25</height>
@@ -1804,13 +1804,13 @@
           <exp bool_exp="pvInt0 &gt; 4">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
         <rule name="PVName" prop_id="pv_name" out_exp="false">
           <exp bool_exp="pvInt0 &gt; 4">
             <value></value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -1833,7 +1833,7 @@
           <exp bool_exp="pvInt0 &gt; 4">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -1843,7 +1843,7 @@
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>Text Input_27</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRSET_MXOUT_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRSET_MXOUT</pv_name>
       <x>225</x>
       <y>390</y>
       <height>25</height>
@@ -1858,13 +1858,13 @@
           <exp bool_exp="pvInt0 &gt; 4">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
         <rule name="PVName" prop_id="pv_name" out_exp="false">
           <exp bool_exp="pvInt0 &gt; 4">
             <value></value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -1874,7 +1874,7 @@
     </widget>
     <widget type="combo" version="2.0.0">
       <name>Menu Button_24</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRSET_CURPWR_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRSET_CURPWR</pv_name>
       <x>225</x>
       <y>420</y>
       <height>25</height>
@@ -1887,13 +1887,13 @@
           <exp bool_exp="pvInt0 &gt; 4">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
         <rule name="PVName" prop_id="pv_name" out_exp="false">
           <exp bool_exp="pvInt0 &gt; 4">
             <value></value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -1913,7 +1913,7 @@
           <exp bool_exp="pvInt0 &gt; 4">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -1940,7 +1940,7 @@
           <exp bool_exp="pvInt0 &gt; 4">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -1950,7 +1950,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_107</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRLIM_EN</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRLIM_EN_RBV</pv_name>
       <x>330</x>
       <y>480</y>
       <width>95</width>
@@ -1964,13 +1964,13 @@
           <exp bool_exp="pvInt0 &gt; 4">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
         <rule name="PVName" prop_id="pv_name" out_exp="false">
           <exp bool_exp="pvInt0 &gt; 4">
             <value></value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -1980,7 +1980,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_108</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRLIM_SHRT</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRLIM_SHRT_RBV</pv_name>
       <x>330</x>
       <y>510</y>
       <width>95</width>
@@ -1994,13 +1994,13 @@
           <exp bool_exp="pvInt0 &gt; 4">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
         <rule name="PVName" prop_id="pv_name" out_exp="false">
           <exp bool_exp="pvInt0 &gt; 4">
             <value></value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -2010,7 +2010,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_109</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRLIM_OPN</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRLIM_OPN_RBV</pv_name>
       <x>330</x>
       <y>540</y>
       <width>95</width>
@@ -2024,13 +2024,13 @@
           <exp bool_exp="pvInt0 &gt; 4">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
         <rule name="PVName" prop_id="pv_name" out_exp="false">
           <exp bool_exp="pvInt0 &gt; 4">
             <value></value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -2040,7 +2040,7 @@
     </widget>
     <widget type="combo" version="2.0.0">
       <name>Menu Button_25</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRLIM_EN_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRLIM_EN</pv_name>
       <x>225</x>
       <y>480</y>
       <height>25</height>
@@ -2053,20 +2053,20 @@
           <exp bool_exp="pvInt0 &gt; 4">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
         <rule name="PVName" prop_id="pv_name" out_exp="false">
           <exp bool_exp="pvInt0 &gt; 4">
             <value></value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>Text Input_28</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRLIM_SHRT_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRLIM_SHRT</pv_name>
       <x>225</x>
       <y>510</y>
       <height>25</height>
@@ -2081,13 +2081,13 @@
           <exp bool_exp="pvInt0 &gt; 4">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
         <rule name="PVName" prop_id="pv_name" out_exp="false">
           <exp bool_exp="pvInt0 &gt; 4">
             <value></value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -2097,7 +2097,7 @@
     </widget>
     <widget type="textentry" version="3.0.0">
       <name>Text Input_29</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRLIM_OPN_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):HTRLIM_OPN</pv_name>
       <x>225</x>
       <y>540</y>
       <height>25</height>
@@ -2112,13 +2112,13 @@
           <exp bool_exp="pvInt0 &gt; 4">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
         <rule name="PVName" prop_id="pv_name" out_exp="false">
           <exp bool_exp="pvInt0 &gt; 4">
             <value></value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -2141,7 +2141,7 @@
           <exp bool_exp="pvInt0 &gt; 4">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -2164,7 +2164,7 @@
           <exp bool_exp="pvInt0 &gt; 4">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -2187,7 +2187,7 @@
           <exp bool_exp="pvInt0 &gt; 4">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -2197,7 +2197,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_125</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTGRP</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTGRP_RBV</pv_name>
       <x>330</x>
       <width>95</width>
       <height>25</height>
@@ -2210,13 +2210,13 @@
           <exp bool_exp="pvInt0&gt;4">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
         <rule name="PVName" prop_id="pv_name" out_exp="true">
           <exp bool_exp="pvInt0&gt;4">
             <expression></expression>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -2238,7 +2238,7 @@
           <exp bool_exp="pvInt0&gt;4">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_color>
@@ -2248,7 +2248,7 @@
     </widget>
     <widget type="combo" version="2.0.0">
       <name>Menu Button_26</name>
-      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTGRP_S</pv_name>
+      <pv_name>$(P)$(R)OUT$(OUTNUM):OUTGRP</pv_name>
       <x>225</x>
       <height>25</height>
       <background_color>
@@ -2260,13 +2260,13 @@
           <exp bool_exp="pvInt0&gt;4">
             <value>false</value>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
         <rule name="PVName" prop_id="pv_name" out_exp="true">
           <exp bool_exp="pvInt0&gt;4">
             <expression></expression>
           </exp>
-          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT</pv_name>
+          <pv_name>$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV</pv_name>
         </rule>
       </rules>
       <border_alarm_sensitive>false</border_alarm_sensitive>

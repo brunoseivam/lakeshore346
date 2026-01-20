@@ -7,32 +7,32 @@ record(longout, "$(P)$(R)CURVE:NUM") {
 
 record(bo, "$(P)$(R)CURVE:READ_CMD") {
     field(DESC, "Read Curve")
-    field(FLNK, "$(P)$(R)CURVE:CRVHDR PP")
+    field(FLNK, "$(P)$(R)CURVE:CRVHDR_RBV PP")
 }
 
-record(bi, "$(P)$(R)CURVE:CRVHDR") {
+record(bi, "$(P)$(R)CURVE:CRVHDR_RBV") {
     field(DTYP, "stream")
     field(INP,  "@ls346.proto getCRVHDR($(P)$(R)CURVE) $(PORT) $(ADDR)")
     field(FLNK, "$(P)$(R)CURVE:MOD_CALC PP")
 }
 
-record(stringin, "$(P)$(R)CURVE:NAME") {
+record(stringin, "$(P)$(R)CURVE:NAME_RBV") {
 }
 
-record(stringin, "$(P)$(R)CURVE:SERIAL") {
+record(stringin, "$(P)$(R)CURVE:SERIAL_RBV") {
 }
 
-record(mbbi, "$(P)$(R)CURVE:FORMAT") {
+record(mbbi, "$(P)$(R)CURVE:FORMAT_RBV") {
     field(ZRVL, "1") field(ZRST, "mV/K")
     field(ONVL, "2") field(ONST, "V/K")
     field(TWVL, "3") field(TWST, "ohm/K")
     field(THVL, "4") field(THST, "log ohm/K")
 }
 
-record(ai, "$(P)$(R)CURVE:LIMIT") {
+record(ai, "$(P)$(R)CURVE:LIMIT_RBV") {
 }
 
-record(mbbi, "$(P)$(R)CURVE:COEFF") {
+record(mbbi, "$(P)$(R)CURVE:COEFF_RBV") {
     field(ZRVL, "1") field(ZRST, "negative")
     field(ONVL, "2") field(ONST, "positive")
 }
@@ -42,22 +42,22 @@ record(calcout, "$(P)$(R)CURVE:MOD_CALC") {
     field(CALC, "A>20")
     field(INPA, "$(P)$(R)CURVE:NUM")
     field(OUT,  "$(P)$(R)CURVE:MOD PP")
-    field(FLNK, "$(P)$(R)CURVE:NUMPTS PP")
+    field(FLNK, "$(P)$(R)CURVE:NUMPTS_RBV PP")
 }
 
-record(bi, "$(P)$(R)CURVE:MOD") {
+record(bi, "$(P)$(R)CURVE:MOD_RBV") {
     field(DESC, "Is curve modifiable?")
     field(ZNAM, "No")
     field(ONAM, "Yes")
 }
 
-record(longin, "$(P)$(R)CURVE:NUMPTS") {
+record(longin, "$(P)$(R)CURVE:NUMPTS_RBV") {
     field(DTYP, "stream")
     field(INP,  "@ls346.proto getCRVNUMPTS($(P)$(R)CURVE) $(PORT) $(ADDR)")
     field(FLNK, "$(P)$(R)CURVE:ASUB PP")
 }
 
-record(ai, "$(P)$(R)CURVE:READ_PROG") {
+record(ai, "$(P)$(R)CURVE:READ_PROG_RBV") {
     field(EGU,  "%")
     field(LOPR, "0")
     field(HOPR, "100")
@@ -72,34 +72,34 @@ record(aSub, "$(P)$(R)CURVE:ASUB") {
 
     field(FTA, "CHAR")  field(NOA, "64") field(INPA, { const: "$(PORT)" })
     field(FTB, "ULONG") field(NOB, "1")  field(INPB, { const: "$(ADDR)" })
-    field(FTC, "ULONG") field(NOC, "1")  field(INPC, { const: "$(BATCH=10)" })
-    field(FTD, "CHAR")  field(NOD, "64") field(INPD, { const: "$(P)$(R)CURVE:READ_PROG" })
+    field(FTC, "ULONG") field(NOC, "1")  field(INPC, { const: "$(BATCH=20)" })
+    field(FTD, "CHAR")  field(NOD, "64") field(INPD, { const: "$(P)$(R)CURVE:READ_PROG_RBV" })
     field(FTE, "ULONG") field(NOE, "1")  field(INPE, "$(P)$(R)CURVE:NUM")
-    field(FTF, "ULONG") field(NOF, "1")  field(INPF, "$(P)$(R)CURVE:NUMPTS")
+    field(FTF, "ULONG") field(NOF, "1")  field(INPF, "$(P)$(R)CURVE:NUMPTS_RBV")
 
     # Extracted Curve
 
     # Units values (sensor units)
-    field(FTVA, "DOUBLE") field(NOVA, "200") field(OUTA, "$(P)$(R)CURVE:UNITS PP")
+    field(FTVA, "DOUBLE") field(NOVA, "200") field(OUTA, "$(P)$(R)CURVE:UNITS_RBV PP")
 
     # Temp values (K)
-    field(FTVB, "DOUBLE") field(NOVB, "200") field(OUTB, "$(P)$(R)CURVE:TEMPS PP")
+    field(FTVB, "DOUBLE") field(NOVB, "200") field(OUTB, "$(P)$(R)CURVE:TEMPS_RBV PP")
 
-    field(FLNK, "$(P)$(R)CURVE:NUM_LOADED PP")
+    field(FLNK, "$(P)$(R)CURVE:NUM_LOADED_RBV PP")
 }
 
-record(longin, "$(P)$(R)CURVE:NUM_LOADED") {
+record(longin, "$(P)$(R)CURVE:NUM_LOADED_RBV") {
     field(DESC, "Loaded curve number")
     field(INP,  "$(P)$(R)CURVE:NUM")
 }
 
-record(waveform, "$(P)$(R)CURVE:UNITS") {
+record(waveform, "$(P)$(R)CURVE:UNITS_RBV") {
     field(FTVL, "DOUBLE")
     field(NELM, "200")
     field(PREC, "6")
 }
 
-record(waveform, "$(P)$(R)CURVE:TEMPS") {
+record(waveform, "$(P)$(R)CURVE:TEMPS_RBV") {
     field(EGU,  "K")
     field(FTVL, "DOUBLE")
     field(NELM, "200")

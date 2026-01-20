@@ -353,7 +353,7 @@
               <value>K</value>
             </action>
           </actions>
-          <pv_name>$(P)$(R)UNITS</pv_name>
+          <pv_name>$(P)$(R)UNITS_RBV</pv_name>
           <height>25</height>
           <tooltip>Note: ensure Phoebus has the setting below so that unit change is reflected immediately without a refresh
 org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
@@ -368,7 +368,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
               <value>C</value>
             </action>
           </actions>
-          <pv_name>$(P)$(R)UNITS</pv_name>
+          <pv_name>$(P)$(R)UNITS_RBV</pv_name>
           <x>110</x>
           <height>25</height>
           <tooltip>Note: ensure Phoebus has the setting below so that unit change is reflected immediately without a refresh

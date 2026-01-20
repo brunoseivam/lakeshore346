@@ -74,7 +74,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_1</name>
-    <pv_name>$(P)$(R)INP$(INP):KRDG</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):KRDG_RBV</pv_name>
     <x>35</x>
     <width>90</width>
     <height>25</height>
@@ -111,7 +111,7 @@
   </widget>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update_2</name>
-    <pv_name>$(P)$(R)INP$(INP):SRDG</pv_name>
+    <pv_name>$(P)$(R)INP$(INP):SRDG_RBV</pv_name>
     <x>130</x>
     <width>90</width>
     <height>25</height>

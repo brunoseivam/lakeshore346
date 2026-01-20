@@ -70,7 +70,7 @@
     </widget>
     <widget type="progressbar" version="2.0.0">
       <name>Progress Bar</name>
-      <pv_name>$(P)$(R)CURVE:READ_PROG</pv_name>
+      <pv_name>$(P)$(R)CURVE:READ_PROG_RBV</pv_name>
       <x>5</x>
       <y>35</y>
       <width>430</width>
@@ -92,7 +92,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_18</name>
-      <pv_name>$(P)$(R)CURVE:NAME</pv_name>
+      <pv_name>$(P)$(R)CURVE:NAME_RBV</pv_name>
       <x>130</x>
       <y>95</y>
       <width>150</width>
@@ -152,7 +152,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_20</name>
-      <pv_name>$(P)$(R)CURVE:FORMAT</pv_name>
+      <pv_name>$(P)$(R)CURVE:FORMAT_RBV</pv_name>
       <x>130</x>
       <y>155</y>
       <width>150</width>
@@ -175,7 +175,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_21</name>
-      <pv_name>$(P)$(R)CURVE:LIMIT</pv_name>
+      <pv_name>$(P)$(R)CURVE:LIMIT_RBV</pv_name>
       <x>130</x>
       <y>185</y>
       <width>150</width>
@@ -198,7 +198,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_22</name>
-      <pv_name>$(P)$(R)CURVE:COEFF</pv_name>
+      <pv_name>$(P)$(R)CURVE:COEFF_RBV</pv_name>
       <x>130</x>
       <y>215</y>
       <width>150</width>
@@ -207,7 +207,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_23</name>
-      <pv_name>$(P)$(R)CURVE:NUM_LOADED</pv_name>
+      <pv_name>$(P)$(R)CURVE:NUM_LOADED_RBV</pv_name>
       <x>130</x>
       <y>65</y>
       <width>150</width>
@@ -230,7 +230,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_30</name>
-      <pv_name>$(P)$(R)CURVE:NUMPTS</pv_name>
+      <pv_name>$(P)$(R)CURVE:NUMPTS_RBV</pv_name>
       <x>130</x>
       <y>245</y>
       <width>150</width>
@@ -253,7 +253,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_31</name>
-      <pv_name>$(P)$(R)CURVE:MOD</pv_name>
+      <pv_name>$(P)$(R)CURVE:MOD_RBV</pv_name>
       <x>130</x>
       <y>275</y>
       <width>150</width>
@@ -341,8 +341,8 @@
       <traces>
         <trace>
           <name>$(traces[0].y_pv)</name>
-          <x_pv>$(P)$(R)CURVE:UNITS</x_pv>
-          <y_pv>$(P)$(R)CURVE:TEMPS</y_pv>
+          <x_pv>$(P)$(R)CURVE:UNITS_RBV</x_pv>
+          <y_pv>$(P)$(R)CURVE:TEMPS_RBV</y_pv>
           <err_pv></err_pv>
           <axis>0</axis>
           <trace_type>1</trace_type>

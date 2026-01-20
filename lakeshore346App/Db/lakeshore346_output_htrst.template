@@ -1,51 +1,41 @@
-################################################################
-# Read records
-################################################################
-
-##
-## Read the heater status
-##
-record(longin, "$(P)$(R)OUT$(OUTNUM):HTRST") {
-  field(DTYP, "stream")
-  field(SDIS, "$(P):DISABLE_POLL")
-  field(SCAN, "$(SCAN) second")
-  field(INP,  "@ls346.proto getHTRST($(OUTNUM)) $(PORT) $(ADDR)")
-  field(FLNK, "$(P)$(R)OUT$(OUTNUM):HTRST_CALC")
-  info(archive, "Monitor, 00:00:01, VAL")
+# Read the heater status
+record(longin, "$(P)$(R)OUT$(OUTNUM):HTRST_RBV") {
+    field(DTYP, "stream")
+    field(SDIS, "$(P):DISABLE_POLL")
+    field(SCAN, "$(SCAN) second")
+    field(INP,  "@ls346.proto getHTRST($(OUTNUM)) $(PORT) $(ADDR)")
+    field(FLNK, "$(P)$(R)OUT$(OUTNUM):HTRST_CALC")
+    info(archive, "Monitor, 00:00:01, VAL")
 }
 
-##
-## Cache the heater status because this is cleared on a read on the controller.
-##
+# Cache the heater status because this is cleared on a read on the controller.
 record(calcout, "$(P)$(R)OUT$(OUTNUM):HTRST_CALC") {
-  field(INPA, "$(P)$(R)OUT$(OUTNUM):HTRST.VAL")
-  field(CALC, "A!=0?A:0")
-  field(DOPT, "Use CALC")
-  field(OOPT, "When Non-zero")
-  field(OUT, "$(P)$(R)OUT$(OUTNUM):HTRST_CACHE.RVAL PP")
+    field(INPA, "$(P)$(R)OUT$(OUTNUM):HTRST.VAL")
+    field(CALC, "A!=0?A:0")
+    field(DOPT, "Use CALC")
+    field(OOPT, "When Non-zero")
+    field(OUT, "$(P)$(R)OUT$(OUTNUM):HTRST_CACHE_RBV.RVAL PP")
 }
 
-record(mbbi, "$(P)$(R)OUT$(OUTNUM):HTRST_CACHE") {
-  field(DESC, "Cached HTRST")
-  field(DTYP, "Raw Soft Channel")
-  field(ZRST, "No Error")
-  field(ZRVL, "0")
-  field(ONST, "Open Load")
-  field(ONVL, "1")
-  field(TWST, "Short/Compliance")
-  field(TWVL, "2")
-  field(VAL, "0")
-  field(PINI, "YES")
-  field(ONSV, "MAJOR")
-  field(TWSV, "MAJOR")
-  info(archive, "Monitor, 00:00:01, VAL")
+record(mbbi, "$(P)$(R)OUT$(OUTNUM):HTRST_CACHE_RBV") {
+    field(DESC, "Cached HTRST")
+    field(DTYP, "Raw Soft Channel")
+    field(ZRST, "No Error")
+    field(ZRVL, "0")
+    field(ONST, "Open Load")
+    field(ONVL, "1")
+    field(TWST, "Short/Compliance")
+    field(TWVL, "2")
+    field(VAL, "0")
+    field(PINI, "YES")
+    field(ONSV, "MAJOR")
+    field(TWSV, "MAJOR")
+    info(archive, "Monitor, 00:00:01, VAL")
 }
 
-##
-## Provide record to reset the cached value
-##
+# Provide record to reset the cached value
 record(bo, "$(P)$(R)OUT$(OUTNUM):HTRST_RESET") {
-  field(DESC, "Reset Cached HTRST")
-  field(VAL, "0")
-  field(OUT, "$(P)$(R)OUT$(OUTNUM):HTRST_CACHE.RVAL PP")
+    field(DESC, "Reset Cached HTRST")
+    field(VAL, "0")
+    field(OUT, "$(P)$(R)OUT$(OUTNUM):HTRST_CACHE_RBV.RVAL PP")
 }

@@ -14,13 +14,13 @@
     </macros>
     <file>lakeshore346_header.bob</file>
     <width>1475</width>
-    <height>110</height>
+    <height>80</height>
     <resize>4</resize>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Voltage Readings</name>
     <x>10</x>
-    <y>120</y>
+    <y>90</y>
     <width>242</width>
     <height>846</height>
     <style>1</style>
