@@ -27,8 +27,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>No input</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (background)" prop_id="background_color" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -43,8 +43,8 @@
             </color>
           </value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (transparent)" prop_id="transparent" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -53,8 +53,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
   </widget>
@@ -76,8 +76,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -86,8 +86,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value></value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
     <border_alarm_sensitive>false</border_alarm_sensitive>
@@ -110,8 +110,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -120,8 +120,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value></value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
     <border_color>
@@ -161,8 +161,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -171,8 +171,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value></value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
     <border_color>
@@ -197,8 +197,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -207,8 +207,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value></value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
     <border_color>
@@ -233,8 +233,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -243,8 +243,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value></value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
     <border_color>
@@ -269,8 +269,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -279,8 +279,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value></value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
     <border_color>
@@ -305,8 +305,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -315,8 +315,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value></value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
     <border_color>
@@ -341,8 +341,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -351,8 +351,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value></value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
     <border_color>
@@ -377,8 +377,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -387,8 +387,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value></value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
     <border_color>
@@ -413,8 +413,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -423,8 +423,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value></value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
     <border_color>
@@ -449,8 +449,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -459,8 +459,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value></value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
     <border_color>
@@ -485,8 +485,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -495,8 +495,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value></value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
     <border_color>
@@ -522,8 +522,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -532,8 +532,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value></value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
     <border_color>
@@ -559,8 +559,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -569,8 +569,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value></value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
     <border_color>
@@ -592,8 +592,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -602,8 +602,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value></value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
   </widget>
@@ -621,8 +621,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -631,8 +631,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value></value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
   </widget>
@@ -651,8 +651,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -661,8 +661,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value></value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
   </widget>
@@ -680,8 +680,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -690,8 +690,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value></value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
   </widget>
@@ -709,8 +709,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -719,8 +719,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value></value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
   </widget>
@@ -739,8 +739,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -749,8 +749,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value></value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
   </widget>
@@ -768,8 +768,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -778,8 +778,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value></value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
   </widget>
@@ -798,8 +798,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -808,8 +808,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value></value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
   </widget>
@@ -828,8 +828,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value>false</value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
       <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
         <exp bool_exp="pvInt0==0">
@@ -838,8 +838,8 @@
         <exp bool_exp="pvInt1&lt;$(INPNUM)">
           <value></value>
         </exp>
-        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE</pv_name>
-        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV_RBV</pv_name>
       </rule>
     </rules>
   </widget>

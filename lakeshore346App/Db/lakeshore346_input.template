@@ -501,6 +501,7 @@ record(ai, "$(P)$(R)INP$(INPUT):MDATMIN") {
     field(DTYP, "stream")
     field(INP,  "@ls346.proto getMDAT($(INPUT),$(P)$(R)INP$(INPUT)) $(PORT) $(ADDR)")
     field(PREC, "3")
+    field(EGU,  "K")
     field(SCAN, "$(SCAN) second")
     field(PINI, "YES")
     info(archive, "Monitor, 00:00:01, VAL")
@@ -509,6 +510,7 @@ record(ai, "$(P)$(R)INP$(INPUT):MDATMIN") {
 record(ai, "$(P)$(R)INP$(INPUT):MDATMAX") {
     field(DESC, "MDAT Max")
     field(PREC, "3")
+    field(EGU,  "K")
     info(archive, "Monitor, 00:00:01, VAL")
 }
 

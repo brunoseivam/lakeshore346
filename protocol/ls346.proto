@@ -12,17 +12,17 @@
 ReplyTimeout = 2000;
 LockTimeout = 40000;
 
-# /// Read the device ID
+# Device ID
 getID {
     out "*IDN?";
     separator = ",";
     in "%[^,]";
 }
 
-# /// Read the installed optional cards
+# Optional Cards
 getCARDS {
     out "CARDS?;*OPC?";
-    in "%d,%(\$1F:TYPE.RVAL)d,%(\$1G:TYPE.RVAL)d,%(\$1H:TYPE.RVAL)d;1";
+    in "%d,%(\$1F:TYPE_RBV.RVAL)d,%(\$1G:TYPE_RBV.RVAL)d,%(\$1H:TYPE_RBV.RVAL)d;1";
 }
 
 # /// Read the heater status for outputs

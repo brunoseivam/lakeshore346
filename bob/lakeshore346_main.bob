@@ -741,7 +741,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_336</name>
-      <pv_name>$(P)$(R)CARDE:TYPE</pv_name>
+      <pv_name>$(P)$(R)CARDE:TYPE_RBV</pv_name>
       <x>395</x>
       <y>35</y>
       <width>120</width>
@@ -757,7 +757,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_404</name>
-      <pv_name>$(P)$(R)CARDE:NUMINP</pv_name>
+      <pv_name>$(P)$(R)CARDE:NUMINP_RBV</pv_name>
       <x>520</x>
       <y>35</y>
       <width>75</width>
@@ -773,7 +773,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_337</name>
-      <pv_name>$(P)$(R)CARDF:TYPE</pv_name>
+      <pv_name>$(P)$(R)CARDF:TYPE_RBV</pv_name>
       <x>395</x>
       <y>65</y>
       <width>120</width>
@@ -789,7 +789,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_405</name>
-      <pv_name>$(P)$(R)CARDF:NUMINP</pv_name>
+      <pv_name>$(P)$(R)CARDF:NUMINP_RBV</pv_name>
       <x>520</x>
       <y>65</y>
       <width>75</width>
@@ -805,7 +805,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_343</name>
-      <pv_name>$(P)$(R)CARDG:TYPE</pv_name>
+      <pv_name>$(P)$(R)CARDG:TYPE_RBV</pv_name>
       <x>395</x>
       <y>95</y>
       <width>120</width>
@@ -821,7 +821,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_410</name>
-      <pv_name>$(P)$(R)CARDG:NUMINP</pv_name>
+      <pv_name>$(P)$(R)CARDG:NUMINP_RBV</pv_name>
       <x>520</x>
       <y>95</y>
       <width>75</width>
@@ -837,7 +837,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_342</name>
-      <pv_name>$(P)$(R)CARDH:TYPE</pv_name>
+      <pv_name>$(P)$(R)CARDH:TYPE_RBV</pv_name>
       <x>395</x>
       <y>125</y>
       <width>120</width>
@@ -853,7 +853,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_411</name>
-      <pv_name>$(P)$(R)CARDH:NUMINP</pv_name>
+      <pv_name>$(P)$(R)CARDH:NUMINP_RBV</pv_name>
       <x>520</x>
       <y>125</y>
       <width>75</width>

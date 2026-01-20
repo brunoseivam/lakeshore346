@@ -7,5 +7,6 @@ include $(TOP)/configure/CONFIG
 
 DB += lakeshore346_core.db
 DB += lakeshore346_input.template
+DB += lakeshore346_card.template
 
 include $(TOP)/configure/RULES
