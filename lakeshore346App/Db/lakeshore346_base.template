@@ -12,15 +12,8 @@
 #   ADEL (optional) - Archive deadband for temperatures
 #   MDEL (optional) - Monitor deadband for temperatures
 #
-# Notes: The loop/output dependant PVs are in a seperate template file, included in this one.
-#        Generally, set records forward process the associated read records in order
-#        to update the read record faster than their SCAN rate otherwise would do (but they
-#        are not processed in the same processing chain).
-#
 # Bruno Martins, January 2026, heavily based on the template for Lakeshore 336 by
 # Matt Pearson, June 2013
-#
-# January 2014 - Initial version, based on the Lakeshore 336 template
 #
 ################################################################
 
@@ -50,35 +43,28 @@ record(bo, "$(P)$(R)DISABLE_POLL") {
 # Units selection
 ################################################################
 
-record(mbbi, "$(P)$(R)UNITS") {
+record(mbbi, "$(P)$(R)UNITS_RBV") {
     field(PINI, "YES")
     field(ZRVL, "0") field(ZRST, "K")
     field(ONVL, "1") field(ONST, "C")
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-record(mbbi, "$(P)$(R)UNITS_PER_MIN") {
-    field(INP,  "$(P)$(R)UNITS CP")
+record(mbbi, "$(P)$(R)UNITS_PER_MIN_RBV") {
+    field(INP,  "$(P)$(R)UNITS_RBV CP")
     field(PINI, "YES")
     field(ZRVL, "0") field(ZRST, "K/min")
     field(ONVL, "1") field(ONST, "C/min")
 }
 
-record(calc, "$(P)$(R)AOFF") {
-    field(INPA, "$(P)$(R)UNITS CP")
+record(calc, "$(P)$(R)AOFF_RBV") {
+    field(INPA, "$(P)$(R)UNITS_RBV CP")
     field(CALC, "A=0?0:-273.15")
     field(PREC, "2")
 }
 
-
-################################################################
-# Read records
-################################################################
-
-##
-## Read the ID string from the device.
-##
-record(waveform, "$(P)$(R)ID") {
+# Device IDN
+record(waveform, "$(P)$(R)IDN_RBV") {
     field(DTYP, "stream")
     field(SDIS, "$(P)$(R)DISABLE")
     field(NELM, "4")
@@ -88,28 +74,19 @@ record(waveform, "$(P)$(R)ID") {
     field(PINI, "YES")
 }
 
-##
-## Read the model number from the device.
-##
-record(stringin, "$(P)$(R)MODEL") {
+record(stringin, "$(P)$(R)MODEL_RBV") {
     field(SDIS, "$(P)$(R)DISABLE")
-    field(INP,  "$(P)$(R)ID.VAL[1] CP")
+    field(INP,  "$(P)$(R)IDN_RBV.VAL[1] CP")
 }
 
-##
-## Read the serial number from the device.
-##
-record(stringin, "$(P)$(R)SERIAL") {
+record(stringin, "$(P)$(R)SERIAL_RBV") {
     field(SDIS, "$(P)$(R)DISABLE")
-    field(INP,  "$(P)$(R)ID.VAL[2] CP")
+    field(INP,  "$(P)$(R)IDN_RBV.VAL[2] CP")
 }
 
-##
-## Read the firmware from the device.
-##
-record(stringin, "$(P)$(R)FIRMWARE") {
+record(stringin, "$(P)$(R)FIRMWARE_RBV") {
     field(SDIS, "$(P)$(R)DISABLE")
-    field(INP,  "$(P)$(R)ID.VAL[3] CP")
+    field(INP,  "$(P)$(R)IDN_RBV.VAL[3] CP")
 }
 
 ###
@@ -134,55 +111,13 @@ record(stringin, "$(P)$(R)FIRMWARE") {
 #    field(ONAM, "Error (see manual)")
 #}
 
-#################################################################
-## Now include the loop dependant records, for outputs 1, 2, 3 and 4.
-## The common records are in lakeshore336output.template.
-#################################################################
-#
-#substitute "INPUTA=$(P)$(R)KRDG0"
-#substitute "INPUTB=$(P)$(R)KRDG1"
-#substitute "INPUTC=$(P)$(R)KRDG2"
-#substitute "INPUTD=$(P)$(R)KRDG3"
-#substitute "INPUTD2=$(P)$(R)KRDGD2"
-#substitute "INPUTD3=$(P)$(R)KRDGD3"
-#substitute "INPUTD4=$(P)$(R)KRDGD4"
-#substitute "INPUTD5=$(P)$(R)KRDGD5"
-##substitute "TOLERANCE=1"
-#
-#substitute "OUT=1"
-#include "lakeshore336output.template"
-#include "lakeshore336loop.template"
-#
-#substitute "OUT=2"
-#include "lakeshore336output.template"
-#include "lakeshore336loop.template"
-#
-#substitute "OUT=3"
-#include "lakeshore336output.template"
-#include "lakeshore336analog.template"
-#
-#substitute "OUT=4"
-#include "lakeshore336output.template"
-#include "lakeshore336analog.template"
-#
-#substitute "OUT=3"
-#include "lakeshore336zone_analog.template"
-#
-#substitute "OUT=4"
-#include "lakeshore336zone_analog.template"
-#
-################################################################
-# Common setpoint record to set all the outputs
-
 record(stringout, "$(P)$(R)OUTALL:SETP_S_EGU") {
     field(OMSL, "closed_loop")
-    field(DOL,  "$(P)$(R)UNITS CP")
+    field(DOL,  "$(P)$(R)UNITS_RBV CP")
     field(OUT,  "$(P)$(R)OUTALL:SETP_S.EGU PP")
 }
 
-##
-## Set all the outputs at the same time
-##
+# Set all the outputs at the same time
 record(dfanout, "$(P)$(R)OUTALL:SETP_S") {
     field(DESC, "Set all the outputs")
     field(OMSL, "supervisory")
@@ -202,10 +137,9 @@ record(dfanout, "$(P)$(R)OUTALL:SETP_S") {
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-
 record(stringout, "$(P)$(R)TOLERANCE_EGU") {
     field(OMSL, "closed_loop")
-    field(DOL,  "$(P)$(R)UNITS CP")
+    field(DOL,  "$(P)$(R)UNITS_RBV CP")
     field(OUT,  "$(P)$(R)TOLERANCE.EGU PP")
 }
 
@@ -232,29 +166,27 @@ record(dfanout, "$(P)$(R)TOLERANCE") {
   info(archive, "Monitor, 00:00:01, VAL")
 }
 
-##
-## For user feedback, calculate when all temperature
-## inputs are in tolerance windows
-##
-record(calcout, "$(P)$(R)CALC_IN_WINDOWS") {
+# For user feedback, calculate when all temperature
+# inputs are in tolerance windows
+record(calcout, "$(P)$(R)CALC_IN_WINDOWS_RBV") {
     field(PINI, "YES")
-    field(INPA, "$(P)$(R)OUT1:IN_WINDOW CP MS")
-    field(INPB, "$(P)$(R)OUT2:IN_WINDOW CP MS")
-    field(INPC, "$(P)$(R)OUT3:IN_WINDOW CP MS")
-    field(INPD, "$(P)$(R)OUT4:IN_WINDOW CP MS")
-    field(INPE, "$(P)$(R)OUT5:IN_WINDOW CP MS")
-    field(INPF, "$(P)$(R)OUT6:IN_WINDOW CP MS")
-    field(INPG, "$(P)$(R)OUT7:IN_WINDOW CP MS")
-    field(INPH, "$(P)$(R)OUT8:IN_WINDOW CP MS")
-    field(INPI, "$(P)$(R)OUT9:IN_WINDOW CP MS")
-    field(INPJ, "$(P)$(R)OUT10:IN_WINDOW CP MS")
+    field(INPA, "$(P)$(R)OUT1:IN_WINDOW_RBV CP MS")
+    field(INPB, "$(P)$(R)OUT2:IN_WINDOW_RBV CP MS")
+    field(INPC, "$(P)$(R)OUT3:IN_WINDOW_RBV CP MS")
+    field(INPD, "$(P)$(R)OUT4:IN_WINDOW_RBV CP MS")
+    field(INPE, "$(P)$(R)OUT5:IN_WINDOW_RBV CP MS")
+    field(INPF, "$(P)$(R)OUT6:IN_WINDOW_RBV CP MS")
+    field(INPG, "$(P)$(R)OUT7:IN_WINDOW_RBV CP MS")
+    field(INPH, "$(P)$(R)OUT8:IN_WINDOW_RBV CP MS")
+    field(INPI, "$(P)$(R)OUT9:IN_WINDOW_RBV CP MS")
+    field(INPJ, "$(P)$(R)OUT10:IN_WINDOW_RBV CP MS")
     field(CALC, "A&&B&&C&&D&&E&&F&&G&&H&&I&&J")
     field(OOPT, "Every Time")
     field(DOPT, "Use CALC")
     field(OUT, "$(P)$(R)IN_WINDOWS PP")
 }
 
-record(bo, "$(P)$(R)IN_WINDOWS") {
+record(bo, "$(P)$(R)IN_WINDOWS_RBV") {
     field(DESC, "Temperatures In Windows")
     field(VAL, "0")
     field(PINI, "YES")
@@ -270,9 +202,7 @@ record(bo, "$(P)$(R)ALMRST") {
     field(OUT,  "@ls346.proto cmdALMRST() $(PORT) $(ADDR)")
 }
 
-##
-## Warmup
-##
+# Warmup
 record(ao, "$(P)$(R)WARM:TEMP") {
     field(DESC, "Warmup Temperature")
     field(EGU,  "K")
@@ -293,25 +223,23 @@ record(bo, "$(P)$(R)WARM:CMD") {
     field(OUT,  "@ls346.proto cmdWARM($(P)$(R)WARM) $(PORT) $(ADDR)")
 }
 
-##
-## Status registers
-##
+# Status registers
 
 # ESE, ESR
 #       Bit 7  Bit 6  Bit 5  Bit 4  Bit 3  Bit 2  Bit 1  Bit 0
 #       PON    N.U.   CME    EXE    DSE    QYE    N.U    OPC
 # MASK: 1      0      1      1      1      1      0      1    = 189
-record(mbboDirect, "$(P)$(R)STATUS:ESE_S") {
+record(mbboDirect, "$(P)$(R)STATUS:ESE") {
     field(DESC, "Event Status Enable")
     field(VAL,  "255")
     field(PINI, "YES")
     field(DTYP, "stream")
     field(MASK, "189")
     field(OUT,  "@ls346.proto setESE() $(PORT) $(ADDR)")
-    field(FLNK, "$(P)$(R)STATUS:ESE PP")
+    field(FLNK, "$(P)$(R)STATUS:ESE_RBV PP")
 }
 
-record(mbbiDirect, "$(P)$(R)STATUS:ESE") {
+record(mbbiDirect, "$(P)$(R)STATUS:ESE_RBV") {
     field(DESC, "Event Status Enable")
     field(DTYP, "stream")
     field(MASK, "189")
@@ -319,7 +247,7 @@ record(mbbiDirect, "$(P)$(R)STATUS:ESE") {
     field(PINI, "YES")
 }
 
-record(mbbiDirect, "$(P)$(R)STATUS:ESR") {
+record(mbbiDirect, "$(P)$(R)STATUS:ESR_RBV") {
     field(DESC, "Event Status Register")
     field(DTYP, "stream")
     field(MASK, "189")
@@ -328,42 +256,42 @@ record(mbbiDirect, "$(P)$(R)STATUS:ESR") {
     field(SCAN, "$(SCAN) second")
 }
 
-record(bi, "$(P)$(R)STATUS:ESE:PON")   { field(DESC, "Power On")              field(INP, "$(P)$(R)STATUS:ESE.B7 CP")   }
-record(bi, "$(P)$(R)STATUS:ESE:CME")   { field(DESC, "Command Error")         field(INP, "$(P)$(R)STATUS:ESE.B5 CP")   }
-record(bi, "$(P)$(R)STATUS:ESE:EXE")   { field(DESC, "Execution Error")       field(INP, "$(P)$(R)STATUS:ESE.B4 CP")   }
-record(bi, "$(P)$(R)STATUS:ESE:DSE")   { field(DESC, "Device Specific Error") field(INP, "$(P)$(R)STATUS:ESE.B3 CP")   }
-record(bi, "$(P)$(R)STATUS:ESE:QYE")   { field(DESC, "Query Error")           field(INP, "$(P)$(R)STATUS:ESE.B2 CP")   }
-record(bi, "$(P)$(R)STATUS:ESE:OPC")   { field(DESC, "Operation Complete")    field(INP, "$(P)$(R)STATUS:ESE.B0 CP")   }
+record(bi, "$(P)$(R)STATUS:ESE:PON_RBV") { field(DESC, "Power On")              field(INP, "$(P)$(R)STATUS:ESE_RBV.B7 CP") }
+record(bi, "$(P)$(R)STATUS:ESE:CME_RBV") { field(DESC, "Command Error")         field(INP, "$(P)$(R)STATUS:ESE_RBV.B5 CP") }
+record(bi, "$(P)$(R)STATUS:ESE:EXE_RBV") { field(DESC, "Execution Error")       field(INP, "$(P)$(R)STATUS:ESE_RBV.B4 CP") }
+record(bi, "$(P)$(R)STATUS:ESE:DSE_RBV") { field(DESC, "Device Specific Error") field(INP, "$(P)$(R)STATUS:ESE_RBV.B3 CP") }
+record(bi, "$(P)$(R)STATUS:ESE:QYE_RBV") { field(DESC, "Query Error")           field(INP, "$(P)$(R)STATUS:ESE_RBV.B2 CP") }
+record(bi, "$(P)$(R)STATUS:ESE:OPC_RBV") { field(DESC, "Operation Complete")    field(INP, "$(P)$(R)STATUS:ESE_RBV.B0 CP") }
 
-record(bo, "$(P)$(R)STATUS:ESE:PON_S") { field(DESC, "Power On")              field(OUT, "$(P)$(R)STATUS:ESE_S.B7 PP") }
-record(bo, "$(P)$(R)STATUS:ESE:CME_S") { field(DESC, "Command Error")         field(OUT, "$(P)$(R)STATUS:ESE_S.B5 PP") }
-record(bo, "$(P)$(R)STATUS:ESE:EXE_S") { field(DESC, "Execution Error")       field(OUT, "$(P)$(R)STATUS:ESE_S.B4 PP") }
-record(bo, "$(P)$(R)STATUS:ESE:DSE_S") { field(DESC, "Device Specific Error") field(OUT, "$(P)$(R)STATUS:ESE_S.B3 PP") }
-record(bo, "$(P)$(R)STATUS:ESE:QYE_S") { field(DESC, "Query Error")           field(OUT, "$(P)$(R)STATUS:ESE_S.B2 PP") }
-record(bo, "$(P)$(R)STATUS:ESE:OPC_S") { field(DESC, "Operation Complete")    field(OUT, "$(P)$(R)STATUS:ESE_S.B0 PP") }
+record(bo, "$(P)$(R)STATUS:ESE:PON")     { field(DESC, "Power On")              field(OUT, "$(P)$(R)STATUS:ESE.B7 PP")     }
+record(bo, "$(P)$(R)STATUS:ESE:CME")     { field(DESC, "Command Error")         field(OUT, "$(P)$(R)STATUS:ESE.B5 PP")     }
+record(bo, "$(P)$(R)STATUS:ESE:EXE")     { field(DESC, "Execution Error")       field(OUT, "$(P)$(R)STATUS:ESE.B4 PP")     }
+record(bo, "$(P)$(R)STATUS:ESE:DSE")     { field(DESC, "Device Specific Error") field(OUT, "$(P)$(R)STATUS:ESE.B3 PP")     }
+record(bo, "$(P)$(R)STATUS:ESE:QYE")     { field(DESC, "Query Error")           field(OUT, "$(P)$(R)STATUS:ESE.B2 PP")     }
+record(bo, "$(P)$(R)STATUS:ESE:OPC")     { field(DESC, "Operation Complete")    field(OUT, "$(P)$(R)STATUS:ESE.B0 PP")     }
 
-record(bi, "$(P)$(R)STATUS:ESR:PON")   { field(DESC, "Power On")              field(INP, "$(P)$(R)STATUS:ESR.B7 CP")   }
-record(bi, "$(P)$(R)STATUS:ESR:CME")   { field(DESC, "Command Error")         field(INP, "$(P)$(R)STATUS:ESR.B5 CP")   }
-record(bi, "$(P)$(R)STATUS:ESR:EXE")   { field(DESC, "Execution Error")       field(INP, "$(P)$(R)STATUS:ESR.B4 CP")   }
-record(bi, "$(P)$(R)STATUS:ESR:DSE")   { field(DESC, "Device Specific Error") field(INP, "$(P)$(R)STATUS:ESR.B3 CP")   }
-record(bi, "$(P)$(R)STATUS:ESR:QYE")   { field(DESC, "Query Error")           field(INP, "$(P)$(R)STATUS:ESR.B2 CP")   }
-record(bi, "$(P)$(R)STATUS:ESR:OPC")   { field(DESC, "Operation Complete")    field(INP, "$(P)$(R)STATUS:ESR.B0 CP")   }
+record(bi, "$(P)$(R)STATUS:ESR:PON_RBV") { field(DESC, "Power On")              field(INP, "$(P)$(R)STATUS:ESR_RBV.B7 CP") }
+record(bi, "$(P)$(R)STATUS:ESR:CME_RBV") { field(DESC, "Command Error")         field(INP, "$(P)$(R)STATUS:ESR_RBV.B5 CP") }
+record(bi, "$(P)$(R)STATUS:ESR:EXE_RBV") { field(DESC, "Execution Error")       field(INP, "$(P)$(R)STATUS:ESR_RBV.B4 CP") }
+record(bi, "$(P)$(R)STATUS:ESR:DSE_RBV") { field(DESC, "Device Specific Error") field(INP, "$(P)$(R)STATUS:ESR_RBV.B3 CP") }
+record(bi, "$(P)$(R)STATUS:ESR:QYE_RBV") { field(DESC, "Query Error")           field(INP, "$(P)$(R)STATUS:ESR_RBV.B2 CP") }
+record(bi, "$(P)$(R)STATUS:ESR:OPC_RBV") { field(DESC, "Operation Complete")    field(INP, "$(P)$(R)STATUS:ESR_RBV.B0 CP") }
 
 # SRE, STB
 #       Bit 7  Bit 6  Bit 5  Bit 4  Bit 3  Bit 2  Bit 1  Bit 0
 #       OSB    MSS    ESB    MAV    QSB    EAV    N.U    N.U
 # MASK: 1      1      1      1      1      1      0      0    = 252
-record(mbboDirect, "$(P)$(R)STATUS:SRE_S") {
+record(mbboDirect, "$(P)$(R)STATUS:SRE") {
     field(DESC, "Service Request Enable")
     field(VAL,  "255")
     field(PINI, "YES")
     field(DTYP, "stream")
     field(MASK, "252")
     field(OUT,  "@ls346.proto setSRE() $(PORT) $(ADDR)")
-    field(FLNK, "$(P)$(R)STATUS:SRE PP")
+    field(FLNK, "$(P)$(R)STATUS:SRE_RBV PP")
 }
 
-record(mbbiDirect, "$(P)$(R)STATUS:SRE") {
+record(mbbiDirect, "$(P)$(R)STATUS:SRE_RBV") {
     field(DESC, "Service Request Enable")
     field(DTYP, "stream")
     field(MASK, "252")
@@ -371,7 +299,7 @@ record(mbbiDirect, "$(P)$(R)STATUS:SRE") {
     field(PINI, "YES")
 }
 
-record(mbbiDirect, "$(P)$(R)STATUS:STB") {
+record(mbbiDirect, "$(P)$(R)STATUS:STB_RBV") {
     field(DESC, "Event Status Register")
     field(DTYP, "stream")
     field(MASK, "189")
@@ -380,26 +308,26 @@ record(mbbiDirect, "$(P)$(R)STATUS:STB") {
     field(SCAN, "$(SCAN) second")
 }
 
-record(bi, "$(P)$(R)STATUS:SRE:OSB")   { field(DESC, "Operation Summary")           field(INP, "$(P)$(R)STATUS:SRE.B7 CP")   }
-record(bi, "$(P)$(R)STATUS:SRE:MSS")   { field(DESC, "Master Summary Status")       field(INP, "$(P)$(R)STATUS:SRE.B6 CP")   }
-record(bi, "$(P)$(R)STATUS:SRE:ESB")   { field(DESC, "Event Status Summary")        field(INP, "$(P)$(R)STATUS:SRE.B5 CP")   }
-record(bi, "$(P)$(R)STATUS:SRE:MAV")   { field(DESC, "Message Available Summary")   field(INP, "$(P)$(R)STATUS:SRE.B4 CP")   }
-record(bi, "$(P)$(R)STATUS:SRE:QSB")   { field(DESC, "Questionable Summary")        field(INP, "$(P)$(R)STATUS:SRE.B3 CP")   }
-record(bi, "$(P)$(R)STATUS:SRE:EAV")   { field(DESC, "Error Available Summary")     field(INP, "$(P)$(R)STATUS:SRE.B2 CP")   }
+record(bi, "$(P)$(R)STATUS:SRE:OSB_RBV") { field(DESC, "Operation Summary")         field(INP, "$(P)$(R)STATUS:SRE_RBV.B7 CP") }
+record(bi, "$(P)$(R)STATUS:SRE:MSS_RBV") { field(DESC, "Master Summary Status")     field(INP, "$(P)$(R)STATUS:SRE_RBV.B6 CP") }
+record(bi, "$(P)$(R)STATUS:SRE:ESB_RBV") { field(DESC, "Event Status Summary")      field(INP, "$(P)$(R)STATUS:SRE_RBV.B5 CP") }
+record(bi, "$(P)$(R)STATUS:SRE:MAV_RBV") { field(DESC, "Message Available Summary") field(INP, "$(P)$(R)STATUS:SRE_RBV.B4 CP") }
+record(bi, "$(P)$(R)STATUS:SRE:QSB_RBV") { field(DESC, "Questionable Summary")      field(INP, "$(P)$(R)STATUS:SRE_RBV.B3 CP") }
+record(bi, "$(P)$(R)STATUS:SRE:EAV_RBV") { field(DESC, "Error Available Summary")   field(INP, "$(P)$(R)STATUS:SRE_RBV.B2 CP") }
 
-record(bo, "$(P)$(R)STATUS:SRE:OSB_S") { field(DESC, "Operation Summary")           field(OUT, "$(P)$(R)STATUS:SRE_S.B7 PP") }
-record(bo, "$(P)$(R)STATUS:SRE:MSS_S") { field(DESC, "Master Summary Status")       field(OUT, "$(P)$(R)STATUS:SRE_S.B6 PP") }
-record(bo, "$(P)$(R)STATUS:SRE:ESB_S") { field(DESC, "Event Status Summary")        field(OUT, "$(P)$(R)STATUS:SRE_S.B5 PP") }
-record(bo, "$(P)$(R)STATUS:SRE:MAV_S") { field(DESC, "Message Available Summary")   field(OUT, "$(P)$(R)STATUS:SRE_S.B4 PP") }
-record(bo, "$(P)$(R)STATUS:SRE:QSB_S") { field(DESC, "Questionable Summary")        field(OUT, "$(P)$(R)STATUS:SRE_S.B3 PP") }
-record(bo, "$(P)$(R)STATUS:SRE:EAV_S") { field(DESC, "Error Available Summary")     field(OUT, "$(P)$(R)STATUS:SRE_S.B2 PP") }
+record(bo, "$(P)$(R)STATUS:SRE:OSB")     { field(DESC, "Operation Summary")         field(OUT, "$(P)$(R)STATUS:SRE.B7 PP")     }
+record(bo, "$(P)$(R)STATUS:SRE:MSS")     { field(DESC, "Master Summary Status")     field(OUT, "$(P)$(R)STATUS:SRE.B6 PP")     }
+record(bo, "$(P)$(R)STATUS:SRE:ESB")     { field(DESC, "Event Status Summary")      field(OUT, "$(P)$(R)STATUS:SRE.B5 PP")     }
+record(bo, "$(P)$(R)STATUS:SRE:MAV")     { field(DESC, "Message Available Summary") field(OUT, "$(P)$(R)STATUS:SRE.B4 PP")     }
+record(bo, "$(P)$(R)STATUS:SRE:QSB")     { field(DESC, "Questionable Summary")      field(OUT, "$(P)$(R)STATUS:SRE.B3 PP")     }
+record(bo, "$(P)$(R)STATUS:SRE:EAV")     { field(DESC, "Error Available Summary")   field(OUT, "$(P)$(R)STATUS:SRE.B2 PP")     }
 
-record(bi, "$(P)$(R)STATUS:STB:OSB")   { field(DESC, "Operation Summary")           field(INP, "$(P)$(R)STATUS:STB.B7 CP")   }
-record(bi, "$(P)$(R)STATUS:STB:MSS")   { field(DESC, "Master Summary Status")       field(INP, "$(P)$(R)STATUS:STB.B6 CP")   }
-record(bi, "$(P)$(R)STATUS:STB:ESB")   { field(DESC, "Event Status Summary")        field(INP, "$(P)$(R)STATUS:STB.B5 CP")   }
-record(bi, "$(P)$(R)STATUS:STB:MAV")   { field(DESC, "Message Available Summary")   field(INP, "$(P)$(R)STATUS:STB.B4 CP")   }
-record(bi, "$(P)$(R)STATUS:STB:QSB")   { field(DESC, "Questionable Summary")        field(INP, "$(P)$(R)STATUS:STB.B3 CP")   }
-record(bi, "$(P)$(R)STATUS:STB:EAV")   { field(DESC, "Error Available Summary")     field(INP, "$(P)$(R)STATUS:STB.B2 CP")   }
+record(bi, "$(P)$(R)STATUS:STB:OSB_RBV") { field(DESC, "Operation Summary")         field(INP, "$(P)$(R)STATUS:STB_RBV.B7 CP") }
+record(bi, "$(P)$(R)STATUS:STB:MSS_RBV") { field(DESC, "Master Summary Status")     field(INP, "$(P)$(R)STATUS:STB_RBV.B6 CP") }
+record(bi, "$(P)$(R)STATUS:STB:ESB_RBV") { field(DESC, "Event Status Summary")      field(INP, "$(P)$(R)STATUS:STB_RBV.B5 CP") }
+record(bi, "$(P)$(R)STATUS:STB:MAV_RBV") { field(DESC, "Message Available Summary") field(INP, "$(P)$(R)STATUS:STB_RBV.B4 CP") }
+record(bi, "$(P)$(R)STATUS:STB:QSB_RBV") { field(DESC, "Questionable Summary")      field(INP, "$(P)$(R)STATUS:STB_RBV.B3 CP") }
+record(bi, "$(P)$(R)STATUS:STB:EAV_RBV") { field(DESC, "Error Available Summary")   field(INP, "$(P)$(R)STATUS:STB_RBV.B2 CP") }
 
 record(bo, "$(P)$(R)STATUS:CLS") {
     field(DESC, "Clear Status")

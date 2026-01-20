@@ -1,4 +1,4 @@
-record(waveform, "$(P)$(R)DIGINALL:STATE") {
+record(waveform, "$(P)$(R)DIGINALL:STATE_RBV") {
     field(DTYP, "stream")
     field(INP,  "@ls346.proto getDIGIN() $(PORT) $(ADDR)")
     field(NELM, "2")
@@ -7,14 +7,14 @@ record(waveform, "$(P)$(R)DIGINALL:STATE") {
     field(SCAN, "$(SCAN) second")
 }
 
-record(bi, "$(P)$(R)DIGIN1:STATE") {
-    field(INP,  "$(P)$(R)DIGINALL:STATE.VAL[0] CP")
+record(bi, "$(P)$(R)DIGIN1:STATE_RBV") {
+    field(INP,  "$(P)$(R)DIGINALL:STATE_RBV.VAL[0] CP")
     field(ZNAM, "Low")
     field(ONAM, "High")
 }
 
-record(bi, "$(P)$(R)DIGIN2:STATE") {
-    field(INP,  "$(P)$(R)DIGINALL:STATE.VAL[1] CP")
+record(bi, "$(P)$(R)DIGIN2:STATE_RBV") {
+    field(INP,  "$(P)$(R)DIGINALL:STATE_RBV.VAL[1] CP")
     field(ZNAM, "Low")
     field(ONAM, "High")
 }

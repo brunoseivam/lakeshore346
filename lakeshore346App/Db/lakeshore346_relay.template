@@ -1,4 +1,4 @@
-record(mbbi, "$(P)$(R)RLY$(RELAY):RELAY_MODE") {
+record(mbbi, "$(P)$(R)RLY$(RELAY):RELAY_MODE_RBV") {
     field(DTYP, "stream")
     field(INP,  "@ls346.proto getRELAY($(RELAY),$(P)$(R)RLY$(RELAY):RELAY) $(PORT) $(ADDR)")
     field(PINI, "YES")
@@ -8,40 +8,40 @@ record(mbbi, "$(P)$(R)RLY$(RELAY):RELAY_MODE") {
     field(THVL, "3") field(THST, "Stability")
 }
 
-record(stringin, "$(P)$(R)RLY$(RELAY):RELAY_INP") {
+record(stringin, "$(P)$(R)RLY$(RELAY):RELAY_INP_RBV") {
 }
 
-record(mbbi, "$(P)$(R)RLY$(RELAY):RELAY_COND") {
+record(mbbi, "$(P)$(R)RLY$(RELAY):RELAY_COND_RBV") {
     field(ZRVL, "0") field(ZRST, "Low Alarm")
     field(ONVL, "1") field(ONST, "High Alarm")
     field(TWVL, "2") field(TWST, "Either Low or High")
     field(THVL, "3") field(THST, "Both Low or High")
 }
 
-record(mbbo, "$(P)$(R)RLY$(RELAY):RELAY_MODE_S") {
+record(mbbo, "$(P)$(R)RLY$(RELAY):RELAY_MODE") {
     field(ZRVL, "0") field(ZRST, "Off")
     field(ONVL, "1") field(ONST, "On")
     field(TWVL, "2") field(TWST, "Alarm")
     field(THVL, "3") field(THST, "Stability")
 }
 
-record(stringout, "$(P)$(R)RLY$(RELAY):RELAY_INP_S") {
+record(stringout, "$(P)$(R)RLY$(RELAY):RELAY_INP") {
 }
 
-record(mbbo, "$(P)$(R)RLY$(RELAY):RELAY_COND_S") {
+record(mbbo, "$(P)$(R)RLY$(RELAY):RELAY_COND") {
     field(ZRVL, "0") field(ZRST, "Low Alarm")
     field(ONVL, "1") field(ONST, "High Alarm")
     field(TWVL, "2") field(TWST, "Either Low or High")
     field(THVL, "3") field(THST, "Both Low or High")
 }
 
-record(bo, "$(P)$(R)RLY$(RELAY):RELAY_S") {
+record(bo, "$(P)$(R)RLY$(RELAY):RELAY") {
     field(DTYP, "stream")
     field(OUT,  "@ls346.proto setRELAY($(RELAY),$(P)$(R)RLY$(RELAY):RELAY) $(PORT) $(ADDR)")
     field(FLNK, "$(P)$(R)RLY$(RELAY):RELAY_MODE PP")
 }
 
-record(bi, "$(P)$(R)RLY$(RELAY):RELAYST") {
+record(bi, "$(P)$(R)RLY$(RELAY):RELAYST_RBV") {
     field(DTYP, "stream")
     field(INP,  "@ls346.proto getRELAYST($(RELAY)) $(PORT) $(ADDR)")
     field(PINI, "YES")

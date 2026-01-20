@@ -57,7 +57,7 @@
         <transparent>true</transparent>
         <widget type="combo" version="2.0.0">
           <name>INP_S Stability</name>
-          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP_S</pv_name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP</pv_name>
           <x>155</x>
           <y>90</y>
           <width>80</width>
@@ -70,7 +70,7 @@
               <exp bool_exp="pvInt0!=3">
                 <value>false</value>
               </exp>
-              <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE_S</pv_name>
+              <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE</pv_name>
             </rule>
           </rules>
           <items>
@@ -108,7 +108,7 @@
               <value>1</value>
             </action>
           </actions>
-          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_S</pv_name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY</pv_name>
           <x>155</x>
           <y>150</y>
           <width>150</width>
@@ -118,7 +118,7 @@
         </widget>
         <widget type="combo" version="2.0.0">
           <name>Combo Box_2</name>
-          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_COND_S</pv_name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_COND</pv_name>
           <x>155</x>
           <y>120</y>
           <width>150</width>
@@ -129,7 +129,7 @@
         </widget>
         <widget type="textupdate" version="2.0.0">
           <name>Text Update_2</name>
-          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_COND</pv_name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_COND_RBV</pv_name>
           <y>120</y>
           <width>150</width>
           <height>25</height>
@@ -138,7 +138,7 @@
         </widget>
         <widget type="textupdate" version="2.0.0">
           <name>Text Update_1</name>
-          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP</pv_name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP_RBV</pv_name>
           <y>90</y>
           <width>150</width>
           <height>25</height>
@@ -147,7 +147,7 @@
         </widget>
         <widget type="combo" version="2.0.0">
           <name>INP_S</name>
-          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP_S</pv_name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP</pv_name>
           <x>155</x>
           <y>90</y>
           <width>80</width>
@@ -160,7 +160,7 @@
               <exp bool_exp="pvInt0!=3">
                 <value>true</value>
               </exp>
-              <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE_S</pv_name>
+              <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE</pv_name>
             </rule>
           </rules>
           <items>
@@ -196,7 +196,7 @@
         </widget>
         <widget type="textupdate" version="2.0.0">
           <name>Text Update_3</name>
-          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP_S</pv_name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP</pv_name>
           <x>245</x>
           <y>90</y>
           <width>60</width>
@@ -206,7 +206,7 @@
         </widget>
         <widget type="combo" version="2.0.0">
           <name>Combo Box_1</name>
-          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE_S</pv_name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE</pv_name>
           <x>155</x>
           <y>60</y>
           <width>150</width>
@@ -217,7 +217,7 @@
         </widget>
         <widget type="textupdate" version="2.0.0">
           <name>Text Update</name>
-          <pv_name>$(P)$(R)RLY$(RELAY):RELAYST</pv_name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAYST_RBV</pv_name>
           <y>30</y>
           <width>305</width>
           <height>25</height>
@@ -226,7 +226,7 @@
         </widget>
         <widget type="textupdate" version="2.0.0">
           <name>Text Update_12</name>
-          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE</pv_name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE_RBV</pv_name>
           <y>60</y>
           <width>150</width>
           <height>25</height>
@@ -311,7 +311,7 @@
         <transparent>true</transparent>
         <widget type="combo" version="2.0.0">
           <name>INP_S Stability_3</name>
-          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP_S</pv_name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP</pv_name>
           <x>155</x>
           <y>90</y>
           <width>80</width>
@@ -324,7 +324,7 @@
               <exp bool_exp="pvInt0!=3">
                 <value>false</value>
               </exp>
-              <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE_S</pv_name>
+              <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE</pv_name>
             </rule>
           </rules>
           <items>
@@ -362,7 +362,7 @@
               <value>1</value>
             </action>
           </actions>
-          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_S</pv_name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY</pv_name>
           <x>155</x>
           <y>150</y>
           <width>150</width>
@@ -372,7 +372,7 @@
         </widget>
         <widget type="combo" version="2.0.0">
           <name>Combo Box_8</name>
-          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_COND_S</pv_name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_COND</pv_name>
           <x>155</x>
           <y>120</y>
           <width>150</width>
@@ -383,7 +383,7 @@
         </widget>
         <widget type="textupdate" version="2.0.0">
           <name>Text Update_13</name>
-          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_COND</pv_name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_COND_RBV</pv_name>
           <y>120</y>
           <width>150</width>
           <height>25</height>
@@ -392,7 +392,7 @@
         </widget>
         <widget type="textupdate" version="2.0.0">
           <name>Text Update_14</name>
-          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP</pv_name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP_RBV</pv_name>
           <y>90</y>
           <width>150</width>
           <height>25</height>
@@ -401,7 +401,7 @@
         </widget>
         <widget type="combo" version="2.0.0">
           <name>INP_S_3</name>
-          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP_S</pv_name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP</pv_name>
           <x>155</x>
           <y>90</y>
           <width>80</width>
@@ -414,7 +414,7 @@
               <exp bool_exp="pvInt0!=3">
                 <value>true</value>
               </exp>
-              <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE_S</pv_name>
+              <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE</pv_name>
             </rule>
           </rules>
           <items>
@@ -450,7 +450,7 @@
         </widget>
         <widget type="textupdate" version="2.0.0">
           <name>Text Update_15</name>
-          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP_S</pv_name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_INP</pv_name>
           <x>245</x>
           <y>90</y>
           <width>60</width>
@@ -460,7 +460,7 @@
         </widget>
         <widget type="combo" version="2.0.0">
           <name>Combo Box_9</name>
-          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE_S</pv_name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE</pv_name>
           <x>155</x>
           <y>60</y>
           <width>150</width>
@@ -471,7 +471,7 @@
         </widget>
         <widget type="textupdate" version="2.0.0">
           <name>Text Update_16</name>
-          <pv_name>$(P)$(R)RLY$(RELAY):RELAYST</pv_name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAYST_RBV</pv_name>
           <y>30</y>
           <width>305</width>
           <height>25</height>
@@ -480,7 +480,7 @@
         </widget>
         <widget type="textupdate" version="2.0.0">
           <name>Text Update_17</name>
-          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE</pv_name>
+          <pv_name>$(P)$(R)RLY$(RELAY):RELAY_MODE_RBV</pv_name>
           <y>60</y>
           <width>150</width>
           <height>25</height>
@@ -529,7 +529,7 @@ The allowed values for "Relay Input" change based on "Relay Mode".</text>
     <transparent>true</transparent>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_26</name>
-      <pv_name>$(P)$(R)DIGIN1:STATE</pv_name>
+      <pv_name>$(P)$(R)DIGIN1:STATE_RBV</pv_name>
       <x>5</x>
       <y>35</y>
       <width>150</width>
@@ -567,7 +567,7 @@ The allowed values for "Relay Input" change based on "Relay Mode".</text>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_28</name>
-      <pv_name>$(P)$(R)DIGIN2:STATE</pv_name>
+      <pv_name>$(P)$(R)DIGIN2:STATE_RBV</pv_name>
       <x>5</x>
       <y>100</y>
       <width>150</width>

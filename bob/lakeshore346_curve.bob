@@ -129,7 +129,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_19</name>
-      <pv_name>$(P)$(R)CURVE:SERIAL</pv_name>
+      <pv_name>$(P)$(R)CURVE:SERIAL_RBV</pv_name>
       <x>130</x>
       <y>125</y>
       <width>150</width>

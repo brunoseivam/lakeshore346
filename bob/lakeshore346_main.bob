@@ -647,7 +647,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_10</name>
-      <pv_name>$(P)$(R)MODEL</pv_name>
+      <pv_name>$(P)$(R)MODEL_RBV</pv_name>
       <x>90</x>
       <y>65</y>
       <width>230</width>
@@ -679,7 +679,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_11</name>
-      <pv_name>$(P)$(R)SERIAL</pv_name>
+      <pv_name>$(P)$(R)SERIAL_RBV</pv_name>
       <x>90</x>
       <y>95</y>
       <width>230</width>
@@ -711,7 +711,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>Text Update_9</name>
-      <pv_name>$(P)$(R)FIRMWARE</pv_name>
+      <pv_name>$(P)$(R)FIRMWARE_RBV</pv_name>
       <x>90</x>
       <y>125</y>
       <width>230</width>
@@ -2085,7 +2085,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
         <transparent>true</transparent>
         <widget type="led" version="2.0.0">
           <name>LED_2</name>
-          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)_RBV</pv_name>
           <width>40</width>
           <off_label>$(BIT)</off_label>
           <on_label>$(BIT)</on_label>
@@ -2113,7 +2113,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
         <transparent>true</transparent>
         <widget type="led" version="2.0.0">
           <name>LED_7</name>
-          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)_RBV</pv_name>
           <width>40</width>
           <off_label>$(BIT)</off_label>
           <on_label>$(BIT)</on_label>
@@ -2141,7 +2141,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
         <transparent>true</transparent>
         <widget type="led" version="2.0.0">
           <name>LED_8</name>
-          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)_RBV</pv_name>
           <width>40</width>
           <off_label>$(BIT)</off_label>
           <on_label>$(BIT)</on_label>
@@ -2169,7 +2169,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
         <transparent>true</transparent>
         <widget type="led" version="2.0.0">
           <name>LED_12</name>
-          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)_RBV</pv_name>
           <width>40</width>
           <off_label>$(BIT)</off_label>
           <on_label>$(BIT)</on_label>
@@ -2197,7 +2197,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
         <transparent>true</transparent>
         <widget type="led" version="2.0.0">
           <name>LED_13</name>
-          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)_RBV</pv_name>
           <width>40</width>
           <off_label>$(BIT)</off_label>
           <on_label>$(BIT)</on_label>
@@ -2225,7 +2225,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
         <transparent>true</transparent>
         <widget type="led" version="2.0.0">
           <name>LED_14</name>
-          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)_RBV</pv_name>
           <width>40</width>
           <off_label>$(BIT)</off_label>
           <on_label>$(BIT)</on_label>
@@ -2274,7 +2274,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
       </widget>
       <widget type="textupdate" version="2.0.0">
         <name>Text Update</name>
-        <pv_name>LS346:STATUS:$(REG)</pv_name>
+        <pv_name>LS346:STATUS:$(REG)_RBV</pv_name>
         <x>325</x>
         <y>30</y>
         <width>60</width>
@@ -2306,7 +2306,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
         <transparent>true</transparent>
         <widget type="led" version="2.0.0">
           <name>LED_3</name>
-          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)_RBV</pv_name>
           <width>40</width>
           <off_label>$(BIT)</off_label>
           <on_label>$(BIT)</on_label>
@@ -2334,7 +2334,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
         <transparent>true</transparent>
         <widget type="led" version="2.0.0">
           <name>LED_9</name>
-          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)_RBV</pv_name>
           <width>40</width>
           <off_label>$(BIT)</off_label>
           <on_label>$(BIT)</on_label>
@@ -2362,7 +2362,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
         <transparent>true</transparent>
         <widget type="led" version="2.0.0">
           <name>LED_10</name>
-          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)_RBV</pv_name>
           <width>40</width>
           <off_label>$(BIT)</off_label>
           <on_label>$(BIT)</on_label>
@@ -2390,7 +2390,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
         <transparent>true</transparent>
         <widget type="led" version="2.0.0">
           <name>LED_24</name>
-          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)_RBV</pv_name>
           <width>40</width>
           <off_label>$(BIT)</off_label>
           <on_label>$(BIT)</on_label>
@@ -2418,7 +2418,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
         <transparent>true</transparent>
         <widget type="led" version="2.0.0">
           <name>LED_25</name>
-          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)_RBV</pv_name>
           <width>40</width>
           <off_label>$(BIT)</off_label>
           <on_label>$(BIT)</on_label>
@@ -2446,7 +2446,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
         <transparent>true</transparent>
         <widget type="led" version="2.0.0">
           <name>LED_26</name>
-          <pv_name>LS346:STATUS:$(REG):$(BIT)</pv_name>
+          <pv_name>LS346:STATUS:$(REG):$(BIT)_RBV</pv_name>
           <width>40</width>
           <off_label>$(BIT)</off_label>
           <on_label>$(BIT)</on_label>
@@ -2495,7 +2495,7 @@ org.phoebus.pv.ca/dbe_property_supported=true</tooltip>
       </widget>
       <widget type="textupdate" version="2.0.0">
         <name>Text Update_1</name>
-        <pv_name>LS346:STATUS:$(REG)</pv_name>
+        <pv_name>LS346:STATUS:$(REG)_RBV</pv_name>
         <x>325</x>
         <y>30</y>
         <width>60</width>

@@ -456,15 +456,15 @@ cmdMNMXRST {
 
 getRELAY {
     out "RELAY? \$1;*OPC?";
-    in "%d,%(\$2_INP)[^,],%(\$2_COND)d;1";
+    in "%d,%(\$2_INP_RBV)[^,],%(\$2_COND_RBV)d;1";
 }
 
 setRELAY {
-    out "RELAY \$1,%(\$2_MODE_S)d,%(\$2_INP_S)s,%(\$2_COND_S)d;*OPC?";
+    out "RELAY \$1,%(\$2_MODE)d,%(\$2_INP)s,%(\$2_COND)d;*OPC?";
     in "1";
     @init {
         out "RELAY? \$1;*OPC?";
-        in "%(\$2_MODE_S)d,%(\$2_INP_S)[^,],%(\$2_COND_S)d;1";
+        in "%(\$2_MODE)d,%(\$2_INP)[^,],%(\$2_COND)d;1";
     }
 }
 
