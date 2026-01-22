@@ -81,7 +81,7 @@ record(bo, "$(P)$(R)OUT$(OUTNUM):HTRLIM_EN") {
 record(ao, "$(P)$(R)OUT$(OUTNUM):HTRLIM_SHRT") {
     field(DESC, "Short Resistance")
     field(DTYP, "stream")
-    field(OUT,  "@ls346.proto setHTRLIM_EN($(OUTNUM),$(P)$(R)OUT$(OUTNUM):HTRLIM) $(PORT) $(ADDR)")
+    field(OUT,  "@ls346.proto setHTRLIM_SHRT($(OUTNUM),$(P)$(R)OUT$(OUTNUM):HTRLIM) $(PORT) $(ADDR)")
     field(EGU,  "ohm")
     field(FLNK, "$(P)$(R)OUT$(OUTNUM):HTRLIM_EN_RBV PP")
 }
@@ -89,7 +89,7 @@ record(ao, "$(P)$(R)OUT$(OUTNUM):HTRLIM_SHRT") {
 record(ao, "$(P)$(R)OUT$(OUTNUM):HTRLIM_OPN") {
     field(DESC, "Open Resistance")
     field(DTYP, "stream")
-    field(OUT,  "@ls346.proto setHTRLIM_EN($(OUTNUM),$(P)$(R)OUT$(OUTNUM):HTRLIM) $(PORT) $(ADDR)")
+    field(OUT,  "@ls346.proto setHTRLIM_OPN($(OUTNUM),$(P)$(R)OUT$(OUTNUM):HTRLIM) $(PORT) $(ADDR)")
     field(EGU,  "ohm")
     field(FLNK, "$(P)$(R)OUT$(OUTNUM):HTRLIM_EN_RBV PP")
 }
