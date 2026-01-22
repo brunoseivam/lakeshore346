@@ -37,9 +37,6 @@ record(calcout, "$(P)$(R)INP$(INPUT):KRDG_") {
     # The temperature reading
     field(INPB, "$(P)$(R)INPALL:KRDG_FOUT.VAL$(CARD)[$(CARDINP)] CP")
 
-    # The offset (K vs C)
-    field(INPC, "$(P)$(R)AOFF_RBV CP")
-
     # Determine the validity
     field(CALC, "A=1")
 
@@ -56,21 +53,13 @@ record(calcout, "$(P)$(R)INP$(INPUT):KRDG_") {
     field(LSV,  "INVALID")
 
     # Output the actual temp reading
-    field(OCAL, "B+C")
+    field(OCAL, "B")
 
     field(DOPT, "Use OCAL")
     field(OUT,  "$(P)$(R)INP$(INPUT):KRDG_RBV PP MS")
 }
 
-record(stringout, "$(P)$(R)INP$(INPUT):KRDG_EGU") {
-    field(OMSL, "closed_loop")
-    field(DOL,  "$(P)$(R)UNITS_RBV CP")
-    field(OUT,  "$(P)$(R)INP$(INPUT):KRDG_RBV.EGU PP")
-}
-
-##
-## Read the temperature on input $(INPUT) in Kelvin.
-##
+# Read the temperature on input $(INPUT) in Kelvin.
 record(ai, "$(P)$(R)INP$(INPUT):KRDG_RBV") {
     field(SDIS, "$(P)$(R)INP$(INPUT):DISABLE")
     field(DESC, "Input $(INPUT) Temperature")
@@ -87,13 +76,11 @@ record(ai, "$(P)$(R)INP$(INPUT):KRDG_RBV") {
     field(LOLO, "-1000")
     field(ADEL, "$(ADEL=1)")
     field(MDEL, "$(MDEL=0)")
-    info(autosaveFields, "HIHI HIGH LOW LOLO ADEL MDEL EGU AOFF")
+    info(autosaveFields, "HIHI HIGH LOW LOLO ADEL MDEL")
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-##
-## Read the extracted voltage input and determine if it is valid
-##
+# Read the extracted voltage input and determine if it is valid
 record(calcout, "$(P)$(R)INP$(INPUT):SRDG_") {
     field(SDIS, "$(P)$(R)INP$(INPUT):DISABLE")
 
@@ -125,9 +112,7 @@ record(calcout, "$(P)$(R)INP$(INPUT):SRDG_") {
     field(OUT, "$(P)$(R)INP$(INPUT):SRDG_RBV PP MS")
 }
 
-##
-## Read the raw voltage on input $(INPUT).
-##
+# Read the raw voltage on input $(INPUT).
 record(ai, "$(P)$(R)INP$(INPUT):SRDG_RBV") {
     field(SDIS, "$(P)$(R)INP$(INPUT):DISABLE")
     field(SCAN, "$(TEMPSCAN) second")
@@ -137,9 +122,7 @@ record(ai, "$(P)$(R)INP$(INPUT):SRDG_RBV") {
     field(MDEL, "$(MDEL=0)")
 }
 
-##
-## Set sensor $(INPUT) name
-##
+# Set sensor $(INPUT) name
 record(stringout, "$(P)$(R)INP$(INPUT):INNAME") {
     field(DESC, "Input $(INPUT) Name")
     field(DTYP, "stream")

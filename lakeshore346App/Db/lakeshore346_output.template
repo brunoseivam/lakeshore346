@@ -18,21 +18,7 @@ record(longin, "$(P)$(R)OUT$(OUTNUM):OUTPUT_RBV") {
     field(PINI, "YES")
 }
 
-record(ao, "$(P)$(R)OUT$(OUTNUM):SETP_AOFF") {
-    field(OMSL, "closed_loop")
-    field(DOL,  "$(P)$(R)AOFF_RBV CP")
-    field(OUT,  "$(P)$(R)OUT$(OUTNUM):SETP.AOFF PP")
-}
-
-record(stringout, "$(P)$(R)OUT$(OUTNUM):SETP_EGU") {
-    field(OMSL, "closed_loop")
-    field(DOL,  "$(P)$(R)UNITS_RBV CP")
-    field(OUT,  "$(P)$(R)OUT$(OUTNUM):SETP.EGU PP")
-}
-
-##
-## Read the setpoint temperature.
-##
+# Read the setpoint temperature.
 record(ai, "$(P)$(R)OUT$(OUTNUM):SETP_RBV") {
     field(DTYP, "stream")
     field(SDIS, "$(P)$(R)DISABLE_POLL")
@@ -44,15 +30,7 @@ record(ai, "$(P)$(R)OUT$(OUTNUM):SETP_RBV") {
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-record(stringout, "$(P)$(R)OUT$(OUTNUM):RAMP_EGU") {
-    field(OMSL, "closed_loop")
-    field(DOL,  "$(P)$(R)UNITS_PER_MIN_RBV CP")
-    field(OUT,  "$(P)$(R)OUT$(OUTNUM):RAMP_RBV.EGU PP")
-}
-
-##
-## Read the ramp parameter. This also populates the ramp status $(P)$(R)OUT$(OUTNUM):RAMPST,
-##
+# Read the ramp parameter. This also populates the ramp status $(P)$(R)OUT$(OUTNUM):RAMPST,
 record(ai, "$(P)$(R)OUT$(OUTNUM):RAMP_RBV") {
     field(DTYP, "stream")
     field(SDIS, "$(P)$(R)DISABLE_POLL")
@@ -64,12 +42,7 @@ record(ai, "$(P)$(R)OUT$(OUTNUM):RAMP_RBV") {
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-##
-## Read the ramp status parameter.
-##
-## 0=off
-## 1=on
-##
+# Read the ramp status parameter. 0=off, 1=on
 record(bi, "$(P)$(R)OUT$(OUTNUM):RAMPST_RBV") {
     field(DTYP, "Soft Channel")
     field(ZNAM, "Off")
@@ -77,18 +50,10 @@ record(bi, "$(P)$(R)OUT$(OUTNUM):RAMPST_RBV") {
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-##
 ## Set the ramp rate parameter.
 ##
 ## This is the desired temperate increase/decrease rate
 ## per second when heating/cooling.
-##
-## The ramp and ramp status parameters are actually one command
-## for the lakeshore. Therefore one must pass into this
-## record the existing/desired ramp status, as well as the
-## desired ramp. This is done automatically by reading the
-## PV which holds the current ramp status.
-##
 record(ao, "$(P)$(R)OUT$(OUTNUM):RAMP") {
     field(DTYP, "stream")
     field(SDIS, "$(P)$(R)DISABLE")
@@ -98,18 +63,7 @@ record(ao, "$(P)$(R)OUT$(OUTNUM):RAMP") {
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-##
-## Set the ramp status parameter.
-##
-## 0=off
-## 1=on
-##
-## The ramp and ramp status parameters are actually one command
-## for the lakeshore. Therefore one must pass into this
-## record the existing/desired ramp, as well as the
-## desired ramp status. This is done automatically by reading the
-## PV which holds the current ramp value.
-##
+# Set the ramp status parameter. 0=off, 1=on
 record(bo, "$(P)$(R)OUT$(OUTNUM):RAMPST") {
     field(DTYP, "stream")
     field(SDIS, "$(P)$(R)DISABLE")
@@ -120,10 +74,8 @@ record(bo, "$(P)$(R)OUT$(OUTNUM):RAMPST") {
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-##
-## Read the range parameter.
-## This is output specific and is defined in another file.
-##
+# Read the range parameter.
+# This is output specific and is defined in another file.
 record(mbbi, "$(P)$(R)OUT$(OUTNUM):RANGE_RBV") {
     field(DTYP, "stream")
     field(SDIS, "$(P)$(R)DISABLE_POLL")
@@ -164,35 +116,21 @@ record(ai, "$(P)$(R)OUT$(OUTNUM):MOUT_RBV") {
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-# Read the PID parameters
-record(waveform, "$(P)$(R)OUT$(OUTNUM):PID_RBV") {
-    field(DTYP, "stream")
-    field(SDIS, "$(P)$(R)DISABLE_POLL")
-    field(NELM, "3")
-    field(FTVL, "DOUBLE")
-    field(INP,  "@ls346.proto getPID($(OUTNUM)) $(PORT) $(ADDR)")
-    field(SCAN, "Passive")
-    field(PINI, "YES")
-}
-
 # Read the PID P parameter.
 record(ai, "$(P)$(R)OUT$(OUTNUM):P_RBV") {
-    field(SDIS, "$(P)$(R)DISABLE_POLL")
-    field(INP,  "$(P)$(R)OUT$(OUTNUM):PID_RBV.VAL[0] CP MS")
+    field(DTYP, "stream")
+    field(INP,  "@ls346.proto getPID($(OUTNUM),$(P)$(R)OUT$(OUTNUM)) $(PORT) $(ADDR)")
+    field(PINI, "YES")
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
 # Read the PID I parameter.
 record(ai, "$(P)$(R)OUT$(OUTNUM):I_RBV") {
-    field(SDIS, "$(P)$(R)DISABLE_POLL")
-    field(INP,  "$(P)$(R)OUT$(OUTNUM):PID_RBV.VAL[1] CP MS")
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
 # Read the PID D parameter.
 record(ai, "$(P)$(R)OUT$(OUTNUM):D_RBV") {
-    field(SDIS, "$(P)$(R)DISABLE_POLL")
-    field(INP,  "$(P)$(R)OUT$(OUTNUM):PID_RBV.VAL[2] CP MS")
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
@@ -262,18 +200,6 @@ record(ai, "$(P)$(R)OUT$(OUTNUM):HTR_RBV") {
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-record(ao, "$(P)$(R)OUT$(OUTNUM):SETP_AOFF") {
-    field(OMSL, "closed_loop")
-    field(DOL,  "$(P)$(R)AOFF_RBV CP")
-    field(OUT,  "$(P)$(R)OUT$(OUTNUM):SETP.AOFF")
-}
-
-record(stringout, "$(P)$(R)OUT$(OUTNUM):SETP_EGU") {
-    field(OMSL, "closed_loop")
-    field(DOL,  "$(P)$(R)UNITS_RBV CP")
-    field(OUT,  "$(P)$(R)OUT$(OUTNUM):SETP.EGU")
-}
-
 # Set the setpoint temperature.
 record(ao, "$(P)$(R)OUT$(OUTNUM):SETP") {
     field(DTYP, "stream")
@@ -286,7 +212,6 @@ record(ao, "$(P)$(R)OUT$(OUTNUM):SETP") {
     info(autosaveFields, "EGU")
     info(archive, "Monitor, 00:00:01, VAL")
 }
-
 
 # A few records to support put_callback on the setpoint. We use the busy record.
 # A temperature window is used. The temperature must be within

@@ -39,30 +39,6 @@ record(bo, "$(P)$(R)DISABLE_POLL") {
     field(OSV, "MAJOR")
 }
 
-################################################################
-# Units selection
-################################################################
-
-record(mbbi, "$(P)$(R)UNITS_RBV") {
-    field(PINI, "YES")
-    field(ZRVL, "0") field(ZRST, "K")
-    field(ONVL, "1") field(ONST, "C")
-    info(archive, "Monitor, 00:00:01, VAL")
-}
-
-record(mbbi, "$(P)$(R)UNITS_PER_MIN_RBV") {
-    field(INP,  "$(P)$(R)UNITS_RBV CP")
-    field(PINI, "YES")
-    field(ZRVL, "0") field(ZRST, "K/min")
-    field(ONVL, "1") field(ONST, "C/min")
-}
-
-record(calc, "$(P)$(R)AOFF_RBV") {
-    field(INPA, "$(P)$(R)UNITS_RBV CP")
-    field(CALC, "A=0?0:-273.15")
-    field(PREC, "2")
-}
-
 # Device IDN
 record(waveform, "$(P)$(R)IDN_RBV") {
     field(DTYP, "stream")
@@ -111,12 +87,6 @@ record(stringin, "$(P)$(R)FIRMWARE_RBV") {
 #    field(ONAM, "Error (see manual)")
 #}
 
-record(stringout, "$(P)$(R)OUTALL:SETP_S_EGU") {
-    field(OMSL, "closed_loop")
-    field(DOL,  "$(P)$(R)UNITS_RBV CP")
-    field(OUT,  "$(P)$(R)OUTALL:SETP_S.EGU PP")
-}
-
 # Set all the outputs at the same time
 record(dfanout, "$(P)$(R)OUTALL:SETP_S") {
     field(DESC, "Set all the outputs")
@@ -137,15 +107,7 @@ record(dfanout, "$(P)$(R)OUTALL:SETP_S") {
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-record(stringout, "$(P)$(R)TOLERANCE_EGU") {
-    field(OMSL, "closed_loop")
-    field(DOL,  "$(P)$(R)UNITS_RBV CP")
-    field(OUT,  "$(P)$(R)TOLERANCE.EGU PP")
-}
-
-##
-## Set all the tolerances at the same time
-##
+# Set all the tolerances at the same time
 record(dfanout, "$(P)$(R)TOLERANCE") {
     field(DESC, "Set all the tolerances")
     field(OMSL, "supervisory")
