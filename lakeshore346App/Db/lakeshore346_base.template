@@ -24,18 +24,14 @@ record(stringin, "$(P)$(R)SERIAL_RBV") {
 record(stringin, "$(P)$(R)FIRMWARE_RBV") {
 }
 
-###
-### Read the tuning status from the device.
-###
+## Read the tuning status from the device.
 #record(stringin, "$(P)$(R)TUNEST") {
 #    field(DTYP, "stream")
 #    field(INP,  "@ls346.proto getTUNEST $(PORT) $(ADDR)")
 #    field(SCAN, "$(SCAN) second")
 #}
 #
-###
-### Read the tuning status success parameter
-###
+## Read the tuning status success parameter
 #record(bi, "$(P)$(R)TUNESTSUCCESS") {
 #    field(DTYP, "stream")
 #    field(INP, "@ls346.proto getTUNESTSUCCESS $(PORT) $(ADDR)")

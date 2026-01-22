@@ -29,7 +29,24 @@ record(ai, "$(P)$(R)OUT$(OUTNUM):SETP_RBV") {
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-# Read the ramp parameter. This also populates the ramp status $(P)$(R)OUT$(OUTNUM):RAMPST,
+# Ramp parameters
+record(ao, "$(P)$(R)OUT$(OUTNUM):RAMP") {
+    field(DTYP, "stream")
+    field(OUT,  "@ls346.proto setRAMP($(OUTNUM),$(P)$(R)OUT$(OUTNUM)) $(PORT) $(ADDR)")
+    field(PREC, "3")
+    field(FLNK, "$(P)$(R)OUT$(OUTNUM):RAMP_RBV PP")
+    info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(bo, "$(P)$(R)OUT$(OUTNUM):RAMPST") {
+    field(DTYP, "stream")
+    field(OUT,  "@ls346.proto setRAMPSTATUS($(OUTNUM),$(P)$(R)OUT$(OUTNUM)) $(PORT) $(ADDR)")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(FLNK, "$(P)$(R)OUT$(OUTNUM):RAMP_RBV PP")
+    info(archive, "Monitor, 00:00:01, VAL")
+}
+
 record(ai, "$(P)$(R)OUT$(OUTNUM):RAMP_RBV") {
     field(DTYP, "stream")
     field(INP,  "@ls346.proto getRAMP($(OUTNUM),$(P)$(R)OUT$(OUTNUM)) $(PORT) $(ADDR)")
@@ -40,7 +57,6 @@ record(ai, "$(P)$(R)OUT$(OUTNUM):RAMP_RBV") {
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-# Read the ramp status parameter. 0=off, 1=on
 record(bi, "$(P)$(R)OUT$(OUTNUM):RAMPST_RBV") {
     field(DTYP, "Soft Channel")
     field(ZNAM, "Off")
@@ -48,30 +64,15 @@ record(bi, "$(P)$(R)OUT$(OUTNUM):RAMPST_RBV") {
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-## Set the ramp rate parameter.
-##
-## This is the desired temperate increase/decrease rate
-## per second when heating/cooling.
-record(ao, "$(P)$(R)OUT$(OUTNUM):RAMP") {
-    field(DTYP, "stream")
-    field(OUT,  "@ls346.proto setRAMP($(OUTNUM),$(P)$(R)OUT$(OUTNUM)) $(PORT) $(ADDR)")
-    field(PREC, "3")
-    field(FLNK, "$(P)$(R)OUT$(OUTNUM):RAMP_RBV PP")
-    info(archive, "Monitor, 00:00:01, VAL")
-}
-
-# Set the ramp status parameter. 0=off, 1=on
-record(bo, "$(P)$(R)OUT$(OUTNUM):RAMPST") {
-    field(DTYP, "stream")
-    field(OUT,  "@ls346.proto setRAMPSTATUS($(OUTNUM),$(P)$(R)OUT$(OUTNUM)) $(PORT) $(ADDR)")
-    field(ZNAM, "Off")
-    field(ONAM, "On")
-    field(FLNK, "$(P)$(R)OUT$(OUTNUM):RAMP_RBV PP")
-    info(archive, "Monitor, 00:00:01, VAL")
-}
-
-# Read the range parameter.
+# Range parameter
 # This is output specific and is defined in another file.
+record(mbbo, "$(P)$(R)OUT$(OUTNUM):RANGE") {
+    field(DTYP, "stream")
+    field(OUT,  "@ls346.proto setRANGE($(OUTNUM)) $(PORT) $(ADDR)")
+    field(FLNK, "$(P)$(R)OUT$(OUTNUM):RANGE_RBV PP")
+    info(archive, "Monitor, 00:00:01, VAL")
+}
+
 record(mbbi, "$(P)$(R)OUT$(OUTNUM):RANGE_RBV") {
     field(DTYP, "stream")
     field(INP,  "@ls346.proto getRANGE($(OUTNUM)) $(PORT) $(ADDR)")
@@ -83,105 +84,13 @@ record(mbbi, "$(P)$(R)OUT$(OUTNUM):RANGE_RBV") {
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-# Set the range parameter.
-# The strings are output specific and is defined in another file.
-record(mbbo, "$(P)$(R)OUT$(OUTNUM):RANGE") {
-    field(DTYP, "stream")
-    field(OUT,  "@ls346.proto setRANGE($(OUTNUM)) $(PORT) $(ADDR)")
-    field(FLNK, "$(P)$(R)OUT$(OUTNUM):RANGE_RBV PP")
-    info(archive, "Monitor, 00:00:01, VAL")
-}
-
-
 # Read the mode to use for outmode
 # This is output specific and is defined in another file.
 record(mbbi, "$(P)$(R)OUT$(OUTNUM):OMMODE_RBV") {
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-# Read the manual output parameter.
-record(ai, "$(P)$(R)OUT$(OUTNUM):MOUT_RBV") {
-    field(DTYP, "stream")
-    field(INP,  "@ls346.proto getMOUT($(OUTNUM)) $(PORT) $(ADDR)")
-    field(EGU,  "%")
-    field(PINI, "YES")
-    info(archive, "Monitor, 00:00:01, VAL")
-}
-
-# Read the PID P parameter.
-record(ai, "$(P)$(R)OUT$(OUTNUM):P_RBV") {
-    field(DTYP, "stream")
-    field(INP,  "@ls346.proto getPID($(OUTNUM),$(P)$(R)OUT$(OUTNUM)) $(PORT) $(ADDR)")
-    field(PINI, "YES")
-    info(archive, "Monitor, 00:00:01, VAL")
-}
-
-# Read the PID I parameter.
-record(ai, "$(P)$(R)OUT$(OUTNUM):I_RBV") {
-    info(archive, "Monitor, 00:00:01, VAL")
-}
-
-# Read the PID D parameter.
-record(ai, "$(P)$(R)OUT$(OUTNUM):D_RBV") {
-    info(archive, "Monitor, 00:00:01, VAL")
-}
-
-# Read the mode to use for outmode.
-# This also populates the OMI and OMP records.
-# The mbbi strings and values are defined in the output specific templates.
-record(mbbi, "$(P)$(R)OUT$(OUTNUM):OMM_RBV") {
-    field(DTYP, "stream")
-    field(INP,  "@ls346.proto getOM($(OUTNUM),$(P)$(R)OUT$(OUTNUM)) $(PORT) $(ADDR)")
-    field(ZRVL, "0")
-    field(ZRST, "Off")
-    field(ONVL, "1")
-    field(ONST, "Clsd Loop PID")
-    field(TWVL, "2")
-    field(TWST, "Zone")
-    field(THVL, "3")
-    field(THST, "Open Loop")
-    field(FRVL, "4")
-    field(FRST, "Monitor Out")
-    field(PINI, "YES")
-    info(archive, "Monitor, 00:00:01, VAL")
-}
-
-# Read the input to use for outmode
-record(stringin, "$(P)$(R)OUT$(OUTNUM):OMI_RBV") {
-    info(archive, "Monitor, 00:00:01, VAL")
-}
-
-# Read the power up mode to use for outmode
-record(mbbi, "$(P)$(R)OUT$(OUTNUM):OMP_RBV") {
-    field(DTYP, "Soft Channel")
-    field(ZRST, "Off")
-    field(ZRVL, "0")
-    field(ONST, "On")
-    field(ONVL, "1")
-    info(archive, "Monitor, 00:00:01, VAL")
-}
-
-# Read whether the output will be used for warmup
-record(mbbi, "$(P)$(R)OUT$(OUTNUM):OMW_RBV") {
-    field(DTYP, "Soft Channel")
-    field(ZRST, "Off")
-    field(ZRVL, "0")
-    field(ONST, "On")
-    field(ONVL, "1")
-    info(archive, "Monitor, 00:00:01, VAL")
-}
-
-# Read the heater output value.
-record(ai, "$(P)$(R)OUT$(OUTNUM):HTR_RBV") {
-    field(DTYP, "stream")
-    field(INP,  "@ls346.proto getHTR($(OUTNUM)) $(PORT) $(ADDR)")
-    field(SCAN, "$(SCAN) second")
-    field(PREC, "1")
-    field(EGU,  "%")
-    info(archive, "Monitor, 00:00:01, VAL")
-}
-
-# Set the manual output value.
+# Manual output value
 record(ao, "$(P)$(R)OUT$(OUTNUM):MOUT") {
     field(DTYP, "stream")
     field(OUT,  "@ls346.proto setMOUT($(OUTNUM)) $(PORT) $(ADDR)")
@@ -192,32 +101,53 @@ record(ao, "$(P)$(R)OUT$(OUTNUM):MOUT") {
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-# Set the PID P parameter.
+record(ai, "$(P)$(R)OUT$(OUTNUM):MOUT_RBV") {
+    field(DTYP, "stream")
+    field(INP,  "@ls346.proto getMOUT($(OUTNUM)) $(PORT) $(ADDR)")
+    field(EGU,  "%")
+    field(PINI, "YES")
+    info(archive, "Monitor, 00:00:01, VAL")
+}
+
+# PID P parameters
 record(ao, "$(P)$(R)OUT$(OUTNUM):P") {
     field(DTYP, "stream")
     field(OUT,  "@ls346.proto setP($(OUTNUM),$(P)$(R)OUT$(OUTNUM)) $(PORT) $(ADDR)")
-    field(FLNK, "$(P)$(R)OUT$(OUTNUM):PID_RBV PP")
+    field(FLNK, "$(P)$(R)OUT$(OUTNUM):P_RBV PP")
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-# Set the PID I parameter.
 record(ao, "$(P)$(R)OUT$(OUTNUM):I") {
     field(DTYP, "stream")
     field(OUT,  "@ls346.proto setI($(OUTNUM),$(P)$(R)OUT$(OUTNUM)) $(PORT) $(ADDR)")
-    field(FLNK, "$(P)$(R)OUT$(OUTNUM):PID_RBV PP")
+    field(FLNK, "$(P)$(R)OUT$(OUTNUM):P_RBV PP")
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-# Set the PID D parameter.
 record(ao, "$(P)$(R)OUT$(OUTNUM):D") {
     field(DTYP, "stream")
     field(OUT,  "@ls346.proto setD($(OUTNUM),$(P)$(R)OUT$(OUTNUM)) $(PORT) $(ADDR)")
-    field(FLNK, "$(P)$(R)OUT$(OUTNUM):PID_RBV PP")
+    field(FLNK, "$(P)$(R)OUT$(OUTNUM):P_RBV PP")
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-# Set the mode to use for outmode
-# The strings are output specific. This is defined in another file.
+record(ai, "$(P)$(R)OUT$(OUTNUM):P_RBV") {
+    field(DTYP, "stream")
+    field(INP,  "@ls346.proto getPID($(OUTNUM),$(P)$(R)OUT$(OUTNUM)) $(PORT) $(ADDR)")
+    field(PINI, "YES")
+    info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(ai, "$(P)$(R)OUT$(OUTNUM):I_RBV") {
+    info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(ai, "$(P)$(R)OUT$(OUTNUM):D_RBV") {
+    info(archive, "Monitor, 00:00:01, VAL")
+}
+
+# Outmode
+# The mbbi/mbbo strings and values are defined in the output specific templates
 record(mbbo, "$(P)$(R)OUT$(OUTNUM):OMM") {
     field(DTYP, "stream")
     field(OUT,  "@ls346.proto setOM($(OUTNUM),$(P)$(R)OUT$(OUTNUM)) $(PORT) $(ADDR)")
@@ -235,7 +165,6 @@ record(mbbo, "$(P)$(R)OUT$(OUTNUM):OMM") {
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-# Set the input to use for outmode
 record(stringout, "$(P)$(R)OUT$(OUTNUM):OMI") {
     field(DTYP, "stream")
     field(OUT,  "@ls346.proto setOMI($(OUTNUM),$(P)$(R)OUT$(OUTNUM)) $(PORT) $(ADDR)")
@@ -243,7 +172,6 @@ record(stringout, "$(P)$(R)OUT$(OUTNUM):OMI") {
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-# Set the power up mode to use for outmode
 record(mbbo, "$(P)$(R)OUT$(OUTNUM):OMP") {
     field(DTYP, "stream")
     field(OUT, "@ls346.proto setOMP($(OUTNUM),$(P)$(R)OUT$(OUTNUM)) $(PORT) $(ADDR)")
@@ -251,11 +179,10 @@ record(mbbo, "$(P)$(R)OUT$(OUTNUM):OMP") {
     field(ZRVL, "0")
     field(ONST, "On")
     field(ONVL, "1")
-    field(FLNK, "$(P)$(R)OUT$(OUTNUM):OMM PP")
+    field(FLNK, "$(P)$(R)OUT$(OUTNUM):OMM_RBV PP")
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-# Set whether the output will be used for warmup
 record(mbbo, "$(P)$(R)OUT$(OUTNUM):OMW") {
     field(DTYP, "stream")
     field(OUT,  "@ls346.proto setOMW($(OUTNUM),$(P)$(R)OUT$(OUTNUM)) $(PORT) $(ADDR)")
@@ -264,6 +191,55 @@ record(mbbo, "$(P)$(R)OUT$(OUTNUM):OMW") {
     field(ONST, "On")
     field(ONVL, "1")
     field(FLNK, "$(P)$(R)OUT$(OUTNUM):OMM_RBV PP")
+    info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(mbbi, "$(P)$(R)OUT$(OUTNUM):OMM_RBV") {
+    field(DTYP, "stream")
+    field(INP,  "@ls346.proto getOM($(OUTNUM),$(P)$(R)OUT$(OUTNUM)) $(PORT) $(ADDR)")
+    field(ZRVL, "0")
+    field(ZRST, "Off")
+    field(ONVL, "1")
+    field(ONST, "Clsd Loop PID")
+    field(TWVL, "2")
+    field(TWST, "Zone")
+    field(THVL, "3")
+    field(THST, "Open Loop")
+    field(FRVL, "4")
+    field(FRST, "Monitor Out")
+    field(PINI, "YES")
+    info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(stringin, "$(P)$(R)OUT$(OUTNUM):OMI_RBV") {
+    info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(mbbi, "$(P)$(R)OUT$(OUTNUM):OMP_RBV") {
+    field(DTYP, "Soft Channel")
+    field(ZRST, "Off")
+    field(ZRVL, "0")
+    field(ONST, "On")
+    field(ONVL, "1")
+    info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(mbbi, "$(P)$(R)OUT$(OUTNUM):OMW_RBV") {
+    field(DTYP, "Soft Channel")
+    field(ZRST, "Off")
+    field(ZRVL, "0")
+    field(ONST, "On")
+    field(ONVL, "1")
+    info(archive, "Monitor, 00:00:01, VAL")
+}
+
+# Heater output value.
+record(ai, "$(P)$(R)OUT$(OUTNUM):HTR_RBV") {
+    field(DTYP, "stream")
+    field(INP,  "@ls346.proto getHTR($(OUTNUM)) $(PORT) $(ADDR)")
+    field(SCAN, "$(SCAN) second")
+    field(PREC, "1")
+    field(EGU,  "%")
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
@@ -287,15 +263,6 @@ record(mbbo, "$(P)$(R)OUT$(OUTNUM):OMW") {
 #  field(OUT, "@ls346.proto setATUNE($(OUTNUM),$(P)$(R)OUT$(OUTNUM):TUNEMODE_S) $(PORT) $(ADDR)")
 #}
 
-record(bi, "$(P)$(R)OUT$(OUTNUM):HTRAUTO_RBV") {
-    field(DESC, "Autorange")
-    field(DTYP, "stream")
-    field(INP,  "@ls346.proto getHTRAUTO($(OUTNUM)) $(PORT) $(ADDR)")
-    field(ZNAM, "Disabled")
-    field(ONAM, "Enabled")
-    field(PINI, "YES")
-}
-
 record(bo, "$(P)$(R)OUT$(OUTNUM):HTRAUTO") {
     field(DESC, "Autorange")
     field(DTYP, "stream")
@@ -303,6 +270,15 @@ record(bo, "$(P)$(R)OUT$(OUTNUM):HTRAUTO") {
     field(ZNAM, "Disabled")
     field(ONAM, "Enabled")
     field(FLNK, "$(P)$(R)OUT$(OUTNUM):HTRAUTO_RBV PP")
+}
+
+record(bi, "$(P)$(R)OUT$(OUTNUM):HTRAUTO_RBV") {
+    field(DESC, "Autorange")
+    field(DTYP, "stream")
+    field(INP,  "@ls346.proto getHTRAUTO($(OUTNUM)) $(PORT) $(ADDR)")
+    field(ZNAM, "Disabled")
+    field(ONAM, "Enabled")
+    field(PINI, "YES")
 }
 
 record(ai, "$(P)$(R)OUT$(OUTNUM):HTROUT_VAL_RBV") {
@@ -322,44 +298,6 @@ record(ai, "$(P)$(R)OUT$(OUTNUM):HTROUT_PWR_RBV") {
 }
 
 # Output Stability
-record(bi, "$(P)$(R)OUT$(OUTNUM):OUTSTABLE_EN_RBV") {
-    field(DESC, "Out Stability Enabled")
-    field(DTYP, "stream")
-    field(INP,  "@ls346.proto getOUTSTABLE($(OUTNUM),$(P)$(R)OUT$(OUTNUM):OUTSTABLE) $(PORT) $(ADDR)")
-    field(ZNAM, "Off")
-    field(ONAM, "On")
-    field(PINI, "YES")
-}
-
-record(ai, "$(P)$(R)OUT$(OUTNUM):OUTSTABLE_SETPERR_RBV") {
-    field(DESC, "Out Stability Set Pt Err")
-    field(PREC, "3")
-    field(EGU,  "K")
-}
-
-record(longin, "$(P)$(R)OUT$(OUTNUM):OUTSTABLE_STLTIM_RBV") {
-    field(DESC, "Out Stability Settle Time")
-    field(EGU,  "s")
-}
-
-record(bi, "$(P)$(R)OUT$(OUTNUM):OUTSTABLE_LATCH_RBV") {
-    field(DESC, "Out Stability Latch")
-    field(ZNAM, "Off")
-    field(ONAM, "On")
-}
-
-record(bi, "$(P)$(R)OUT$(OUTNUM):OUTSTABLE_AUD_RBV") {
-    field(DESC, "Out Stability Audible")
-    field(ZNAM, "Off")
-    field(ONAM, "On")
-}
-
-record(bi, "$(P)$(R)OUT$(OUTNUM):OUTSTABLE_VIS_RBV") {
-    field(DESC, "Out Stability Visible")
-    field(ZNAM, "Off")
-    field(ONAM, "On")
-}
-
 record(bo, "$(P)$(R)OUT$(OUTNUM):OUTSTABLE_EN") {
     field(DESC, "Out Stability Enabled")
     field(DTYP, "stream")
@@ -411,4 +349,42 @@ record(bo, "$(P)$(R)OUT$(OUTNUM):OUTSTABLE_VIS") {
     field(ZNAM, "Off")
     field(ONAM, "On")
     field(FLNK, "$(P)$(R)OUT$(OUTNUM):OUTSTABLE_EN_RBV PP")
+}
+
+record(bi, "$(P)$(R)OUT$(OUTNUM):OUTSTABLE_EN_RBV") {
+    field(DESC, "Out Stability Enabled")
+    field(DTYP, "stream")
+    field(INP,  "@ls346.proto getOUTSTABLE($(OUTNUM),$(P)$(R)OUT$(OUTNUM):OUTSTABLE) $(PORT) $(ADDR)")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+    field(PINI, "YES")
+}
+
+record(ai, "$(P)$(R)OUT$(OUTNUM):OUTSTABLE_SETPERR_RBV") {
+    field(DESC, "Out Stability Set Pt Err")
+    field(PREC, "3")
+    field(EGU,  "K")
+}
+
+record(longin, "$(P)$(R)OUT$(OUTNUM):OUTSTABLE_STLTIM_RBV") {
+    field(DESC, "Out Stability Settle Time")
+    field(EGU,  "s")
+}
+
+record(bi, "$(P)$(R)OUT$(OUTNUM):OUTSTABLE_LATCH_RBV") {
+    field(DESC, "Out Stability Latch")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+
+record(bi, "$(P)$(R)OUT$(OUTNUM):OUTSTABLE_AUD_RBV") {
+    field(DESC, "Out Stability Audible")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+
+record(bi, "$(P)$(R)OUT$(OUTNUM):OUTSTABLE_VIS_RBV") {
+    field(DESC, "Out Stability Visible")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
 }

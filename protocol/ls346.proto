@@ -18,62 +18,48 @@ getCARDS {
     in "%d,%(\$1F:TYPE_RBV.RVAL)d,%(\$1G:TYPE_RBV.RVAL)d,%(\$1H:TYPE_RBV.RVAL)d;1";
 }
 
-# /// Read the heater status for outputs
+# Read the heater status for outputs
 getHTR {
     out "HTR? \$1;*OPC?";
     in "%f;1";
 }
 
-# /// Read the setpoint for the given output
+# Setpoint for the given output
 getSETP {
     out "SETP? \$1;*OPC?";
     in "%f;1";
 }
 
-# /// Read the temperature in Kelvin for the given input
-getKRDG {
-    out "KRDG? \$1;*OPC?";
-    in "%f;1";
+setSETP {
+    out "SETP \$1,%f;*OPC?";
+    in "1";
+    @init { getSETP; }
 }
 
-# /// Read all temperatures in Kelvin
-# /// This is read into a waveform
+# Read all temperatures in Kelvin into a waveform
 getKRDGALL {
     out "KRDG? ALL";
     separator=",";
     in "%f";
 }
 
-# /// Read the temperature in Celsius for the given input
-getCRDG {
-    out "CRDG? \$1;*OPC?";
-    in "%f;1";
-}
-
-# /// Read all temperatures in Celsius
-# /// This is read into a waveform
-getCRDGALL {
-    out "CRDG? ALL";
-    separator=",";
-    in "%f";
-}
-
-# /// Read the voltage input for the given input
-getSRDG {
-    out "SRDG? \$1;*OPC?";
-    in "%f;1";
-}
-
+# Read all sensor raw readings into a waveform
 getSRDGALL {
     out "SRDG? ALL";
     separator=",";
     in "%f";
 }
 
-# /// Read the range parameter (power range) for the given output
+# Range parameter (power range) for the given output
 getRANGE {
     out "RANGE? \$1;*OPC?";
     in "%d;1";
+}
+
+setRANGE {
+    out "RANGE \$1,%d;*OPC?";
+    in "1";
+    @init { getRANGE; }
 }
 
 # Ramp parameters
@@ -95,6 +81,12 @@ getMOUT {
     in "%f;1";
 }
 
+setMOUT {
+    out "MOUT \$1,%f;*OPC?";
+    in "1";
+    @init { getMOUT; }
+}
+
 # PID
 getPID {
     out "PID? \$1;*OPC?";
@@ -106,10 +98,7 @@ setP { out "PID \$1,%f,%(\$2:I_RBV.VAL)f,%(\$2:D_RBV.VAL)f;*OPC?"; in "1"; }
 setI { out "PID \$1,%(\$2:P_RBV.VAL)f,%f,%(\$2:D_RBV.VAL)f;*OPC?"; in "1"; }
 setD { out "PID \$1,%(\$2:P_RBV.VAL)f,%(\$2:I_RBV.VAL)f,%f;*OPC?"; in "1"; }
 
-# Combine getOUTMODEMODE, getOUTMODEINPUT and getOUTMODEPE into one function.
-# The first argument is the output number.
-# The second argument is the output mode intput record.
-# The third argument is the output mode powerup enable record.
+# Outmode
 getOM {
     out "OUTMODE? \$1;*OPC?";
     in "%d,%(\$2:OMI_RBV)[^,],%(\$2:OMP_RBV)d,%(\$2:OMW_RBV)d;1";
@@ -119,50 +108,36 @@ getOM {
     }
 }
 
-# Set the output mode [mode],[input],[power up enable],[warm up]
-setOM {
-    out "OUTMODE \$1,%d,%(\$2:OMI.VAL)s,%(\$2:OMP.VAL)d,%(\$2:OMW.VAL)d;*OPC?";
-    in "1";
-}
+setOM  { out "OUTMODE \$1,%d,%(\$2:OMI_RBV.VAL)s,%(\$2:OMP_RBV.RVAL)d,%(\$2:OMW_RBV.RVAL)d;*OPC?"; in "1"; }
+setOMI { out "OUTMODE \$1,%(\$2:OMM_RBV.RVAL)d,%s,%(\$2:OMP_RBV.RVAL)d,%(\$2:OMW_RBV.RVAL)d;*OPC?"; in "1"; }
+setOMP { out "OUTMODE \$1,%(\$2:OMM_RBV.RVAL)d,%(\$2:OMI_RBV.VAL)s,%d,%(\$2:OMW_RBV.RVAL)d;*OPC?"; in "1"; }
+setOMW { out "OUTMODE \$1,%(\$2:OMM_RBV.RVAL)d,%(\$2:OMI_RBV.VAL)s,%(\$2:OMP_RBV.RVAL)d,%d;*OPC?"; in "1"; }
 
-# Set the output mode input [mode],[input],[power up enable],[warm up]
-setOMI {
-    out "OUTMODE \$1,%(\$2:OMM.VAL)d,%s,%(\$2:OMP.VAL)d,%(\$2:OMW.VAL)d;*OPC?";
-    in "1";
-}
-
-# /// Set the output mode power up enable [mode],[input],[power up enable],[warm up]
-setOMP {
-    out "OUTMODE \$1,%(\$2:OMM.VAL)d,%(\$2:OMI.VAL)s,%d,%(\$2:OMW.VAL)d;*OPC?";
-    in "1";
-}
-
-# /// Set the output mode warm up [mode],[input],[power up enable],[warm up]
-setOMW {
-    out "OUTMODE \$1,%(\$2:OMM.VAL)d,%(\$2:OMI.VAL)s,%(\$2:OMP.VAL)d,%d;*OPC?";
-    in "1";
-}
-
-# Read the tuning status
 getTUNEST {
     out "TUNEST?;*OPC?";
     in "%[^;];1";
 }
 
-# /// Read the tuning status success param
+# Read the tuning status success param
 getTUNESTSUCCESS {
     out "TUNEST?*OPC?";
     in "%*d,%*d,%d,%*d;1";
 }
 
-# Read the input sensor name
+# Input sensor name
 getINNAME {
     out "INNAME? \$1;*OPC?";
     in "\"%[^\"]\";1";
     @mismatch { in "1"; }
 }
 
-# Read Input Reading Operation Status Query
+setINNAME {
+    out "INNAME \$1,\"%s\";*OPC?";
+    in "1";
+    @init { getINNAME; }
+}
+
+# Input Reading Operation Status Query
 getRDGOPR {
     out "RDGOPR? \$1;*OPC?";
     in "%d;1";
@@ -179,106 +154,50 @@ getALARM {
     }
 }
 
-setALARM_ONOFF {
-    out "ALARM \$1,%d,%(\$2_HIGHVAL_RBV.VAL)f,%(\$2_LOWVAL_RBV.VAL)f,%(\$2_DB_RBV.VAL)f,%(\$2_LE_RBV.VAL)d,%(\$2_AU_RBV.VAL)d,%(\$2_VIS_RBV.VAL)d;*OPC?";
-    in "1";
-}
+setALARM_ONOFF   { out "ALARM \$1,%d,%(\$2_HIGHVAL_RBV.VAL)f,%(\$2_LOWVAL_RBV.VAL)f,%(\$2_DB_RBV.VAL)f,%(\$2_LE_RBV.VAL)d,%(\$2_AU_RBV.VAL)d,%(\$2_VIS_RBV.VAL)d;*OPC?"; in "1"; }
+setALARM_HIGHVAL { out "ALARM \$1,%(\$2_ONOFF_RBV)d,%f,%(\$2_LOWVAL_RBV.VAL)f,%(\$2_DB_RBV.VAL)f,%(\$2_LE_RBV.VAL)d,%(\$2_AU_RBV.VAL)d,%(\$2_VIS_RBV.VAL)d;*OPC?";       in "1"; }
+setALARM_LOWVAL  { out "ALARM \$1,%(\$2_ONOFF_RBV)d,%(\$2_HIGHVAL_RBV.VAL)f,%f,%(\$2_DB_RBV.VAL)f,%(\$2_LE_RBV.VAL)d,%(\$2_AU_RBV.VAL)d,%(\$2_VIS_RBV.VAL)d;*OPC?";      in "1"; }
+setALARM_DB      { out "ALARM \$1,%(\$2_ONOFF_RBV)d,%(\$2_HIGHVAL_RBV.VAL)f,%(\$2_LOWVAL_RBV.VAL)f,%f,%(\$2_LE_RBV.VAL)d,%(\$2_AU_RBV.VAL)d,%(\$2_VIS_RBV.VAL)d;*OPC?";  in "1"; }
+setALARM_LE      { out "ALARM \$1,%(\$2_ONOFF_RBV)d,%(\$2_HIGHVAL_RBV.VAL)f,%(\$2_LOWVAL_RBV.VAL)f,%(\$2_DB_RBV.VAL)f,%d,%(\$2_AU_RBV.VAL)d,%(\$2_VIS_RBV.VAL)d;*OPC?";  in "1"; }
+setALARM_AU      { out "ALARM \$1,%(\$2_ONOFF_RBV)d,%(\$2_HIGHVAL_RBV.VAL)f,%(\$2_LOWVAL_RBV.VAL)f,%(\$2_DB_RBV.VAL)f,%(\$2_LE_RBV.VAL)d,%d,%(\$2_VIS_RBV.VAL)d;*OPC?";  in "1"; }
+setALARM_VIS     { out "ALARM \$1,%(\$2_ONOFF_RBV)d,%(\$2_HIGHVAL_RBV.VAL)f,%(\$2_LOWVAL_RBV.VAL)f,%(\$2_DB_RBV.VAL)f,%(\$2_LE_RBV.VAL)d,%(\$2_AU_RBV.VAL)d,%d;*OPC?";   in "1"; }
 
-setALARM_HIGHVAL {
-    out "ALARM \$1,%(\$2_ONOFF_RBV)d,%f,%(\$2_LOWVAL_RBV.VAL)f,%(\$2_DB_RBV.VAL)f,%(\$2_LE_RBV.VAL)d,%(\$2_AU_RBV.VAL)d,%(\$2_VIS_RBV.VAL)d;*OPC?";
-    in "1";
-}
-
-setALARM_LOWVAL {
-    out "ALARM \$1,%(\$2_ONOFF_RBV)d,%(\$2_HIGHVAL_RBV.VAL)f,%f,%(\$2_DB_RBV.VAL)f,%(\$2_LE_RBV.VAL)d,%(\$2_AU_RBV.VAL)d,%(\$2_VIS_RBV.VAL)d;*OPC?";
-    in "1";
-}
-
-setALARM_DB {
-    out "ALARM \$1,%(\$2_ONOFF_RBV)d,%(\$2_HIGHVAL_RBV.VAL)f,%(\$2_LOWVAL_RBV.VAL)f,%f,%(\$2_LE_RBV.VAL)d,%(\$2_AU_RBV.VAL)d,%(\$2_VIS_RBV.VAL)d;*OPC?";
-    in "1";
-}
-
-setALARM_LE {
-    out "ALARM \$1,%(\$2_ONOFF_RBV)d,%(\$2_HIGHVAL_RBV.VAL)f,%(\$2_LOWVAL_RBV.VAL)f,%(\$2_DB_RBV.VAL)f,%d,%(\$2_AU_RBV.VAL)d,%(\$2_VIS_RBV.VAL)d;*OPC?";
-    in "1";
-}
-
-setALARM_AU {
-    out "ALARM \$1,%(\$2_ONOFF_RBV)d,%(\$2_HIGHVAL_RBV.VAL)f,%(\$2_LOWVAL_RBV.VAL)f,%(\$2_DB_RBV.VAL)f,%(\$2_LE_RBV.VAL)d,%d,%(\$2_VIS_RBV.VAL)d;*OPC?";
-    in "1";
-}
-
-setALARM_VIS {
-    out "ALARM \$1,%(\$2_ONOFF_RBV)d,%(\$2_HIGHVAL_RBV.VAL)f,%(\$2_LOWVAL_RBV.VAL)f,%(\$2_DB_RBV.VAL)f,%(\$2_LE_RBV.VAL)d,%(\$2_AU_RBV.VAL)d,%d;*OPC?";
-    in "1";
-}
-
-# /// Read the input reading status
+# Read the input reading status
 getRDGST {
     out "RDGST? \$1;*OPC?";
     in "%d;1"
 }
 
-# /// Read the heater status for outputs 1-8
+# Read the heater status for given output
 getHTRST {
     out "HTRST? \$1;*OPC?";
     in "%d;1"
 }
 
-# /// Input curve number
+#  Input curve number
 getINCRV {
     out "INCRV? \$1;*OPC?";
     in "%d;1";
     @mismatch { in "1"; }
 }
 
-# /// Input curve number
 setINCRV {
     out "INCRV \$1,%d;*OPC?";
     in "1";
     @init { getINCRV; }
 }
 
-# /// Read the input type params. I put the ends of the PV names here
-# /// to make the initial record INP link short.
+# Read the input type params
 getINTYPE {
     out "INTYPE? \$1;*OPC?";
     in "%(\$2_S_RBV)d,%(\$2_AR_RBV)d,%(\$2_R_RBV)d,%(\$2_C_RBV)d,%(\$2_U_RBV)d;1";
     @mismatch { in "1"; }
 }
 
-# /// Set the setpoint for outputs 1-4
-setSETP {
-    out "SETP \$1,%f;*OPC?";
-    in "1";
-    @init { getSETP; }
-}
-
-# /// Set the range parameter for outputs 1-4
-setRANGE {
-    out "RANGE \$1,%d;*OPC?";
-    in "1";
-    @init { getRANGE; }
-}
-
-# /// Set the manual output value for outputs 1-4
-setMOUT {
-    out "MOUT \$1,%f;*OPC?";
-    in "1";
-    @init { getMOUT; }
-}
-
-# /// Start the auto tune process.
+# Start the auto tune process.
 setATUNE {
     out "ATUNE \$1,%(\$2.VAL)d;*OPC?";
     in "1";
-}
-# /// Set the input sensor name
-setINNAME {
-    out "INNAME \$1,\"%s\";*OPC?";
-    in "1";
-    @init { getINNAME; }
 }
 
 getTLIMIT {
@@ -302,17 +221,17 @@ getFILTER {
     }
 }
 
-setFILTER_EN   { out "FILTER \$1,%d,%(\$2_NPTS.VAL)d,%(\$2_WND.VAL)d;*OPC?"; in "1"; }
-setFILTER_NPTS { out "FILTER \$1,%(\$2_EN)d,%d,%(\$2_WND.VAL)d;*OPC?";       in "1"; }
-setFILTER_WND  { out "FILTER \$1,%(\$2_EN)d,%(\$2_NPTS)d,%d;*OPC?";          in "1"; }
+setFILTER_EN   { out "FILTER \$1,%d,%(\$2_NPTS_RBV)d,%(\$2_WND_RBV)d;*OPC?"; in "1"; }
+setFILTER_NPTS { out "FILTER \$1,%(\$2_EN_RBV)d,%d,%(\$2_WND_RBV)d;*OPC?";   in "1"; }
+setFILTER_WND  { out "FILTER \$1,%(\$2_EN_RBV)d,%(\$2_NPTS_RBV)d,%d;*OPC?";  in "1"; }
 
-# /// Reset all alarms
+# Reset all alarms
 cmdALMRST {
     out "ALMRST;*OPC?";
     in "1";
 }
 
-# /// Minimum/Maximum
+# Minimum/Maximum
 
 getMDAT {
     out "MDAT? \$1;*OPC?";
@@ -401,9 +320,7 @@ setHTRLIM_EN   { out "HTRLIM \$1,%d,%(\$2_SHRT_RBV)f,%(\$2_OPN_RBV)f;*OPC?"; in 
 setHTRLIM_SHRT { out "HTRLIM \$1,%(\$2_EN_RBV)d,%f,%(\$2_OPN_RBV)f;*OPC?";   in "1"; }
 setHTRLIM_OPN  { out "HTRLIM \$1,%(\$2_EN_RBV)d,%(\$2_SHRT_RBV)f,%f;*OPC?";  in "1"; }
 
-#
 # Heater Autorange
-#
 getHTRAUTO {
     out "HTRAUTO? \$1;*OPC?";
     in "%d;1";

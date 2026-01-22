@@ -87,7 +87,7 @@ record(calcout, "$(P)$(R)INP$(INPUT):SRDG_") {
     field(OUT, "$(P)$(R)INP$(INPUT):SRDG_RBV PP MS")
 }
 
-# Read the raw voltage on input $(INPUT).
+# Read the raw voltage on input $(INPUT)
 record(ai, "$(P)$(R)INP$(INPUT):SRDG_RBV") {
     field(SCAN, "$(TEMPSCAN) second")
     field(PREC, "3")
@@ -141,48 +141,6 @@ record(bi, "$(P)$(R)INP$(INPUT):ALARM_LOW_RBV") {
 }
 
 # Alarm parameters
-record(bi, "$(P)$(R)INP$(INPUT):ALARM_ONOFF_RBV") {
-    field(DESC, "Alarm Enabled")
-    field(DTYP, "stream")
-    field(INP,  "@ls346.proto getALARM($(INPUT),$(P)$(R)INP$(INPUT):ALARM) $(PORT) $(ADDR)")
-    field(PINI, "YES")
-    field(ZNAM, "Disabled")
-    field(ONAM, "Enabled")
-}
-
-record(ai, "$(P)$(R)INP$(INPUT):ALARM_HIGHVAL_RBV") {
-    field(DESC, "Alarm High Value")
-    field(EGU,  "K")
-}
-
-record(ai, "$(P)$(R)INP$(INPUT):ALARM_LOWVAL_RBV") {
-    field(DESC, "Alarm Low Value")
-    field(EGU,  "K")
-}
-
-record(ai, "$(P)$(R)INP$(INPUT):ALARM_DB_RBV") {
-    field(DESC, "Alarm Deadband")
-    field(EGU,  "K")
-}
-
-record(bi, "$(P)$(R)INP$(INPUT):ALARM_LE_RBV") {
-    field(DESC, "Alarm Latch Enable")
-    field(ZNAM, "Non Latching")
-    field(ONAM, "Latching")
-}
-
-record(bi, "$(P)$(R)INP$(INPUT):ALARM_AU_RBV") {
-    field(DESC, "Alarm Audible")
-    field(ZNAM, "Quiet")
-    field(ONAM, "Audible")
-}
-
-record(bi, "$(P)$(R)INP$(INPUT):ALARM_VIS_RBV") {
-    field(DESC, "Alarm Visible")
-    field(ZNAM, "Non Visible")
-    field(ONAM, "Visible")
-}
-
 record(bo, "$(P)$(R)INP$(INPUT):ALARM_ONOFF") {
     field(DESC, "Alarm Enabled")
     field(DTYP, "stream")
@@ -243,6 +201,48 @@ record(bo, "$(P)$(R)INP$(INPUT):ALARM_VIS") {
     field(FLNK, "$(P)$(R)INP$(INPUT):ALARM_ONOFF_RBV PP")
 }
 
+record(bi, "$(P)$(R)INP$(INPUT):ALARM_ONOFF_RBV") {
+    field(DESC, "Alarm Enabled")
+    field(DTYP, "stream")
+    field(INP,  "@ls346.proto getALARM($(INPUT),$(P)$(R)INP$(INPUT):ALARM) $(PORT) $(ADDR)")
+    field(PINI, "YES")
+    field(ZNAM, "Disabled")
+    field(ONAM, "Enabled")
+}
+
+record(ai, "$(P)$(R)INP$(INPUT):ALARM_HIGHVAL_RBV") {
+    field(DESC, "Alarm High Value")
+    field(EGU,  "K")
+}
+
+record(ai, "$(P)$(R)INP$(INPUT):ALARM_LOWVAL_RBV") {
+    field(DESC, "Alarm Low Value")
+    field(EGU,  "K")
+}
+
+record(ai, "$(P)$(R)INP$(INPUT):ALARM_DB_RBV") {
+    field(DESC, "Alarm Deadband")
+    field(EGU,  "K")
+}
+
+record(bi, "$(P)$(R)INP$(INPUT):ALARM_LE_RBV") {
+    field(DESC, "Alarm Latch Enable")
+    field(ZNAM, "Non Latching")
+    field(ONAM, "Latching")
+}
+
+record(bi, "$(P)$(R)INP$(INPUT):ALARM_AU_RBV") {
+    field(DESC, "Alarm Audible")
+    field(ZNAM, "Quiet")
+    field(ONAM, "Audible")
+}
+
+record(bi, "$(P)$(R)INP$(INPUT):ALARM_VIS_RBV") {
+    field(DESC, "Alarm Visible")
+    field(ZNAM, "Non Visible")
+    field(ONAM, "Visible")
+}
+
 # Read the input reading status
 record(mbbi, "$(P)$(R)INP$(INPUT):RDGST_RBV") {
     field(DTYP, "stream")
@@ -257,17 +257,17 @@ record(mbbi, "$(P)$(R)INP$(INPUT):RDGST_RBV") {
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
+record(longout, "$(P)$(R)INP$(INPUT):INCRV") {
+    field(DTYP, "stream")
+    field(OUT, "@ls346.proto setINCRV($(INPUT)) $(PORT) $(ADDR)")
+    field(FLNK, "$(P)$(R)INP$(INPUT):INCRV_RBV PP")
+}
+
 # Input curve number
 record(longin, "$(P)$(R)INP$(INPUT):INCRV_RBV") {
     field(DTYP, "stream")
     field(PINI, "YES")
     field(INP, "@ls346.proto getINCRV($(INPUT)) $(PORT) $(ADDR)")
-}
-
-record(longout, "$(P)$(R)INP$(INPUT):INCRV") {
-    field(DTYP, "stream")
-    field(OUT, "@ls346.proto setINCRV($(INPUT)) $(PORT) $(ADDR)")
-    field(FLNK, "$(P)$(R)INP$(INPUT):INCRV_RBV PP")
 }
 
 # Read the input type information.
@@ -323,15 +323,6 @@ record(mbbi, "$(P)$(R)INP$(INPUT):INTYPE_U_RBV") {
     field(THVL, "3") field(THST, "Sensor")
 }
 
-record(ai, "$(P)$(R)INP$(INPUT):TLIMIT_RBV") {
-    field(DESC, "Temp Limit")
-    field(DTYP, "stream")
-    field(INP,  "@ls346.proto getTLIMIT($(INPUT)) $(PORT) $(ADDR)")
-    field(PREC, "3")
-    field(EGU,  "K")
-    field(PINI, "YES")
-}
-
 record(ao, "$(P)$(R)INP$(INPUT):TLIMIT") {
     field(DESC, "Temp Limit")
     field(DTYP, "stream")
@@ -341,28 +332,16 @@ record(ao, "$(P)$(R)INP$(INPUT):TLIMIT") {
     field(FLNK, "$(P)$(R)INP$(INPUT):TLIMIT_RBV PP")
 }
 
-# Temperature Filter
-record(bi, "$(P)$(R)INP$(INPUT):FILTER_EN_RBV") {
-    field(DESC, "Filter Enabled")
+record(ai, "$(P)$(R)INP$(INPUT):TLIMIT_RBV") {
+    field(DESC, "Temp Limit")
     field(DTYP, "stream")
-    field(INP,  "@ls346.proto getFILTER($(INPUT),$(P)$(R)INP$(INPUT):FILTER) $(PORT) $(ADDR)")
-    field(ZNAM, "Disabled")
-    field(ONAM, "Enabled")
+    field(INP,  "@ls346.proto getTLIMIT($(INPUT)) $(PORT) $(ADDR)")
+    field(PREC, "3")
+    field(EGU,  "K")
     field(PINI, "YES")
-    info(archive, "Monitor, 00:00:01, VAL")
 }
 
-record(longin, "$(P)$(R)INP$(INPUT):FILTER_NPTS_RBV") {
-    field(DESC, "Filter Num Points")
-    info(archive, "Monitor, 00:00:01, VAL")
-}
-
-record(longin, "$(P)$(R)INP$(INPUT):FILTER_WND_RBV") {
-    field(DESC, "Filter Window")
-    field(EGU,  "%")
-    info(archive, "Monitor, 00:00:01, VAL")
-}
-
+# Temperature Filter
 record(bo, "$(P)$(R)INP$(INPUT):FILTER_EN") {
     field(DESC, "Filter Enabled")
     field(DTYP, "stream")
@@ -391,6 +370,27 @@ record(longout, "$(P)$(R)INP$(INPUT):FILTER_WND") {
     field(DRVL, "1")
     field(DRVL, "10")
     field(FLNK, "$(P)$(R)INP$(INPUT):FILTER_EN_RBV PP")
+    info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(bi, "$(P)$(R)INP$(INPUT):FILTER_EN_RBV") {
+    field(DESC, "Filter Enabled")
+    field(DTYP, "stream")
+    field(INP,  "@ls346.proto getFILTER($(INPUT),$(P)$(R)INP$(INPUT):FILTER) $(PORT) $(ADDR)")
+    field(ZNAM, "Disabled")
+    field(ONAM, "Enabled")
+    field(PINI, "YES")
+    info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(longin, "$(P)$(R)INP$(INPUT):FILTER_NPTS_RBV") {
+    field(DESC, "Filter Num Points")
+    info(archive, "Monitor, 00:00:01, VAL")
+}
+
+record(longin, "$(P)$(R)INP$(INPUT):FILTER_WND_RBV") {
+    field(DESC, "Filter Window")
+    field(EGU,  "%")
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
