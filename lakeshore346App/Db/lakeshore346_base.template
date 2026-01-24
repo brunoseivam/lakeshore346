@@ -41,24 +41,6 @@ record(stringin, "$(P)$(R)SERIAL_RBV") {
 record(stringin, "$(P)$(R)FIRMWARE_RBV") {
 }
 
-## Read the tuning status from the device.
-#record(stringin, "$(P)$(R)TUNEST") {
-#    field(DTYP, "stream")
-#    field(INP,  "@ls346.proto getTUNEST $(PORT) $(ADDR)")
-#    field(SCAN, "Event")
-#    field(EVNT, "scan")
-#}
-#
-## Read the tuning status success parameter
-#record(bi, "$(P)$(R)TUNESTSUCCESS") {
-#    field(DTYP, "stream")
-#    field(INP, "@ls346.proto getTUNESTSUCCESS $(PORT) $(ADDR)")
-#    field(SCAN, "Event")
-#    field(EVNT, "scan")
-#    field(ZNAM, "No Error")
-#    field(ONAM, "Error (see manual)")
-#}
-
 # Set all the outputs at the same time
 record(dfanout, "$(P)$(R)OUTALL:SETP_S") {
     field(DESC, "Set all the outputs")

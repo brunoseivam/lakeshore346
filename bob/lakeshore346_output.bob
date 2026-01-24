@@ -1077,53 +1077,6 @@
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
   </widget>
-  <widget type="combo" version="2.0.0">
-    <name>Menu Button_3</name>
-    <pv_name>$(P)$(R)OUT$(OUTNUM):TUNEMODE_S</pv_name>
-    <x>435</x>
-    <y>716</y>
-    <height>25</height>
-    <background_color>
-      <color red="240" green="240" blue="240">
-      </color>
-    </background_color>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>Action Button</name>
-    <actions>
-      <action type="write_pv">
-        <description>Start Tune</description>
-        <pv_name>$(P)$(R)OUT$(OUTNUM):TUNESTART.PROC</pv_name>
-        <value>1</value>
-      </action>
-    </actions>
-    <x>540</x>
-    <y>716</y>
-    <height>25</height>
-    <background_color>
-      <color red="240" green="240" blue="240">
-      </color>
-    </background_color>
-    <tooltip>$(actions)</tooltip>
-    <border_alarm_sensitive>false</border_alarm_sensitive>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label_20</name>
-    <text>Tuning Mode</text>
-    <x>230</x>
-    <y>716</y>
-    <width>200</width>
-    <height>25</height>
-    <horizontal_alignment>2</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
-  </widget>
   <widget type="group" version="3.0.0">
     <name>Group_17</name>
     <x>440</x>

@@ -113,17 +113,6 @@ setOMI { out "OUTMODE \$1,%(\$2:OMM_RBV.RVAL)d,%s,%(\$2:OMP_RBV.RVAL)d,%(\$2:OMW
 setOMP { out "OUTMODE \$1,%(\$2:OMM_RBV.RVAL)d,%(\$2:OMI_RBV.VAL)s,%d,%(\$2:OMW_RBV.RVAL)d;*OPC?"; in "1"; }
 setOMW { out "OUTMODE \$1,%(\$2:OMM_RBV.RVAL)d,%(\$2:OMI_RBV.VAL)s,%(\$2:OMP_RBV.RVAL)d,%d;*OPC?"; in "1"; }
 
-getTUNEST {
-    out "TUNEST?;*OPC?";
-    in "%[^;];1";
-}
-
-# Read the tuning status success param
-getTUNESTSUCCESS {
-    out "TUNEST?*OPC?";
-    in "%*d,%*d,%d,%*d;1";
-}
-
 # Input sensor name
 getINNAME {
     out "INNAME? \$1;*OPC?";
@@ -199,12 +188,6 @@ getINTYPE {
 
 setINTYPE {
     out "INTTYPE \$1,%(\$2_S.RVAL)d,%(\$2_AR)d,%(\$2_R.RVAL)d,%(\$2_C)d,%(\$2_U.RVAL)d;*OPC?";
-    in "1";
-}
-
-# Start the auto tune process.
-setATUNE {
-    out "ATUNE \$1,%(\$2.VAL)d;*OPC?";
     in "1";
 }
 

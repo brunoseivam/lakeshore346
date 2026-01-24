@@ -258,26 +258,6 @@ record(ai, "$(P)$(R)OUT$(OUTNUM):HTR_RBV") {
     info(archive, "Monitor, 00:00:01, VAL")
 }
 
-### Set the type of tuning mode
-#record(mbbo, "$(P)$(R)OUT$(OUTNUM):TUNEMODE_S") {
-#  field(ZRST, "P Only")
-#  field(ZRVL, "0")
-#  field(ONST, "P and I")
-#  field(ONVL, "1")
-#  field(TWST, "P, I and D")
-#  field(TWVL, "2")
-#}
-#
-#
-###
-### Start the tuning process
-###
-#record(ao, "$(P)$(R)OUT$(OUTNUM):TUNESTART") {
-#  field(DTYP, "stream")
-#  field(DESC, "Start the auto tuning")
-#  field(OUT, "@ls346.proto setATUNE($(OUTNUM),$(P)$(R)OUT$(OUTNUM):TUNEMODE_S) $(PORT) $(ADDR)")
-#}
-
 record(bo, "$(P)$(R)OUT$(OUTNUM):HTRAUTO") {
     field(DESC, "Autorange")
     field(DTYP, "stream")
