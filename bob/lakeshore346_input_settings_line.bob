@@ -11,7 +11,7 @@
     <name>Label</name>
     <text></text>
     <x>35</x>
-    <width>1225</width>
+    <width>1250</width>
     <height>55</height>
     <font>
       <font name="Default Bold" family="Liberation Sans" style="BOLD" size="14.0">
@@ -325,7 +325,7 @@
     <width>130</width>
     <height>25</height>
     <rules>
-      <rule name="New Rule" prop_id="background_color" out_exp="false">
+      <rule name="SP_not_equal_RBV" prop_id="background_color" out_exp="false">
         <exp bool_exp="pvInt0 != pvInt1">
           <value>
             <color red="153" green="153" blue="0">
@@ -334,6 +334,26 @@
         </exp>
         <pv_name>$(pv_name)</pv_name>
         <pv_name>$(pv_name)_RBV</pv_name>
+      </rule>
+      <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV</pv_name>
+      </rule>
+      <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value></value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV</pv_name>
       </rule>
     </rules>
   </widget>
@@ -345,7 +365,7 @@
     <width>90</width>
     <height>25</height>
     <rules>
-      <rule name="New Rule" prop_id="background_color" out_exp="false">
+      <rule name="SP_not_equal_RBV" prop_id="background_color" out_exp="false">
         <exp bool_exp="pvInt0 != pvInt1">
           <value>
             <color red="153" green="153" blue="0">
@@ -354,6 +374,26 @@
         </exp>
         <pv_name>$(pv_name)</pv_name>
         <pv_name>$(pv_name)_RBV</pv_name>
+      </rule>
+      <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV</pv_name>
+      </rule>
+      <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value></value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV</pv_name>
       </rule>
     </rules>
   </widget>
@@ -365,7 +405,7 @@
     <width>190</width>
     <height>25</height>
     <rules>
-      <rule name="New Rule" prop_id="background_color" out_exp="false">
+      <rule name="SP_not_equal_RBV" prop_id="background_color" out_exp="false">
         <exp bool_exp="pvInt0 != pvInt1">
           <value>
             <color red="153" green="153" blue="0">
@@ -374,6 +414,26 @@
         </exp>
         <pv_name>$(pv_name)</pv_name>
         <pv_name>$(pv_name)_RBV</pv_name>
+      </rule>
+      <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value>false</value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV</pv_name>
+      </rule>
+      <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+        <exp bool_exp="pvInt0==0">
+          <value></value>
+        </exp>
+        <exp bool_exp="pvInt1&lt;$(INPNUM)">
+          <value></value>
+        </exp>
+        <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV</pv_name>
+        <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV</pv_name>
       </rule>
     </rules>
   </widget>
@@ -464,7 +524,7 @@
       <width>80</width>
       <height>25</height>
       <rules>
-        <rule name="New Rule" prop_id="background_color" out_exp="false">
+        <rule name="SP_not_equal_RBV" prop_id="background_color" out_exp="false">
           <exp bool_exp="pvInt0 != pvInt1">
             <value>
               <color red="153" green="153" blue="0">
@@ -473,6 +533,26 @@
           </exp>
           <pv_name>$(pv_name)</pv_name>
           <pv_name>$(pv_name)_RBV</pv_name>
+        </rule>
+        <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0==0">
+            <value>false</value>
+          </exp>
+          <exp bool_exp="pvInt1&lt;$(INPNUM)">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV</pv_name>
+          <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV</pv_name>
+        </rule>
+        <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0==0">
+            <value></value>
+          </exp>
+          <exp bool_exp="pvInt1&lt;$(INPNUM)">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV</pv_name>
+          <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV</pv_name>
         </rule>
       </rules>
     </widget>
@@ -484,7 +564,7 @@
       <width>80</width>
       <height>25</height>
       <rules>
-        <rule name="New Rule" prop_id="background_color" out_exp="false">
+        <rule name="SP_not_equal_RBV" prop_id="background_color" out_exp="false">
           <exp bool_exp="pvInt0 != pvInt1">
             <value>
               <color red="153" green="153" blue="0">
@@ -493,6 +573,26 @@
           </exp>
           <pv_name>$(pv_name)</pv_name>
           <pv_name>$(pv_name)_RBV</pv_name>
+        </rule>
+        <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0==0">
+            <value>false</value>
+          </exp>
+          <exp bool_exp="pvInt1&lt;$(INPNUM)">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV</pv_name>
+          <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV</pv_name>
+        </rule>
+        <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0==0">
+            <value></value>
+          </exp>
+          <exp bool_exp="pvInt1&lt;$(INPNUM)">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV</pv_name>
+          <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV</pv_name>
         </rule>
       </rules>
     </widget>
@@ -520,6 +620,28 @@
         <y>30</y>
         <width>95</width>
         <height>25</height>
+        <rules>
+          <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+            <exp bool_exp="pvInt0==0">
+              <value>false</value>
+            </exp>
+            <exp bool_exp="pvInt1&lt;$(INPNUM)">
+              <value>false</value>
+            </exp>
+            <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV</pv_name>
+            <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV</pv_name>
+          </rule>
+          <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+            <exp bool_exp="pvInt0==0">
+              <value></value>
+            </exp>
+            <exp bool_exp="pvInt1&lt;$(INPNUM)">
+              <value></value>
+            </exp>
+            <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV</pv_name>
+            <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV</pv_name>
+          </rule>
+        </rules>
         <tooltip>$(actions)</tooltip>
         <border_alarm_sensitive>false</border_alarm_sensitive>
       </widget>
@@ -598,7 +720,7 @@
       <y>30</y>
       <height>25</height>
       <rules>
-        <rule name="New Rule" prop_id="background_color" out_exp="false">
+        <rule name="SP_not_equal_RBV" prop_id="background_color" out_exp="false">
           <exp bool_exp="pvInt0 != pvInt1">
             <value>
               <color red="153" green="153" blue="0">
@@ -607,6 +729,26 @@
           </exp>
           <pv_name>$(pv_name)</pv_name>
           <pv_name>$(pv_name)_RBV</pv_name>
+        </rule>
+        <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0==0">
+            <value>false</value>
+          </exp>
+          <exp bool_exp="pvInt1&lt;$(INPNUM)">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV</pv_name>
+          <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV</pv_name>
+        </rule>
+        <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0==0">
+            <value></value>
+          </exp>
+          <exp bool_exp="pvInt1&lt;$(INPNUM)">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV</pv_name>
+          <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV</pv_name>
         </rule>
       </rules>
     </widget>
@@ -691,7 +833,7 @@
       <width>80</width>
       <height>25</height>
       <rules>
-        <rule name="New Rule" prop_id="background_color" out_exp="false">
+        <rule name="SP_not_equal_RBV" prop_id="background_color" out_exp="false">
           <exp bool_exp="pvInt0 != pvInt1">
             <value>
               <color red="153" green="153" blue="0">
@@ -700,6 +842,26 @@
           </exp>
           <pv_name>$(pv_name)</pv_name>
           <pv_name>$(pv_name)_RBV</pv_name>
+        </rule>
+        <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0==0">
+            <value>false</value>
+          </exp>
+          <exp bool_exp="pvInt1&lt;$(INPNUM)">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV</pv_name>
+          <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV</pv_name>
+        </rule>
+        <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0==0">
+            <value></value>
+          </exp>
+          <exp bool_exp="pvInt1&lt;$(INPNUM)">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV</pv_name>
+          <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV</pv_name>
         </rule>
       </rules>
     </widget>
@@ -748,7 +910,7 @@
       <width>80</width>
       <height>25</height>
       <rules>
-        <rule name="New Rule" prop_id="background_color" out_exp="false">
+        <rule name="SP_not_equal_RBV" prop_id="background_color" out_exp="false">
           <exp bool_exp="pvInt0 != pvInt1">
             <value>
               <color red="153" green="153" blue="0">
@@ -757,6 +919,26 @@
           </exp>
           <pv_name>$(pv_name)</pv_name>
           <pv_name>$(pv_name)_RBV</pv_name>
+        </rule>
+        <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0==0">
+            <value>false</value>
+          </exp>
+          <exp bool_exp="pvInt1&lt;$(INPNUM)">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV</pv_name>
+          <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV</pv_name>
+        </rule>
+        <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0==0">
+            <value></value>
+          </exp>
+          <exp bool_exp="pvInt1&lt;$(INPNUM)">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV</pv_name>
+          <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV</pv_name>
         </rule>
       </rules>
     </widget>
@@ -785,6 +967,28 @@
       <y>30</y>
       <width>95</width>
       <height>25</height>
+      <rules>
+        <rule name="No Input-No Card (Visible)" prop_id="visible" out_exp="false">
+          <exp bool_exp="pvInt0==0">
+            <value>false</value>
+          </exp>
+          <exp bool_exp="pvInt1&lt;$(INPNUM)">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV</pv_name>
+          <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV</pv_name>
+        </rule>
+        <rule name="No Input-No Card (PVName)" prop_id="pv_name" out_exp="false">
+          <exp bool_exp="pvInt0==0">
+            <value></value>
+          </exp>
+          <exp bool_exp="pvInt1&lt;$(INPNUM)">
+            <value></value>
+          </exp>
+          <pv_name>$(P)$(R)CARD$(INPGRP):TYPE_RBV</pv_name>
+          <pv_name>$(P)$(R)CARD$(INPGRP):NUMINP_RBV</pv_name>
+        </rule>
+      </rules>
       <tooltip>$(actions)</tooltip>
       <border_alarm_sensitive>false</border_alarm_sensitive>
     </widget>
