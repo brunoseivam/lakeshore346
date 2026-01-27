@@ -34,7 +34,7 @@ static void lakeshore346_autoload_db(const char *db_path, const char *port, int 
     } catch (const std::exception & ex) {
         errlogSevPrintf( errlogMajor, "%s: failed to read installed cards: %s\n", __FUNCTION__, ex.what());
         errlogSevPrintf( errlogMajor, "%s: loading records for ALL potential inputs\n", __FUNCTION__);
-        slots[0] = slots[1] = slots[2] = slots[3] = 4; // Pretend there's a thermocouple card in all slots
+        slots[0] = slots[1] = slots[2] = slots[3] = 1; // Pretend there's a scanner card in all slots
     }
 
     // Load core records
