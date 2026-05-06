@@ -1,9 +1,9 @@
 Lake Shore 346
 ==============
 
-This is an [EPICS](https://epics-controls.org) [StreamDevice](https://paulscherrerinstitute.github.io/StreamDevice) driver for the [Lake Shore](https://www.lakeshore.com/) [Model 346](https://manuals.lakeshore.com/instruments/test/introduction/index.html) controller. This driver is based on Matt Pearson's [Lake Shore 336 EPICS driver](https://github.com/mp49/lakeshore).
+This is an [EPICS](https://epics-controls.org) [StreamDevice](https://paulscherrerinstitute.github.io/StreamDevice) driver for the [Lake Shore](https://www.lakeshore.com/) [Model 346](https://manuals.lakeshore.com/instruments/model346/introduction/index.html) controller. This driver is based on Matt Pearson's [Lake Shore 336 EPICS driver](https://github.com/mp49/lakeshore).
 
-Protocol reference: [Model 346 Remote Operation Manual](https://manuals.lakeshore.com/instruments/test/remote_operation/command_reference.html)
+Protocol reference: [Model 346 Remote Operation Manual](https://manuals.lakeshore.com/instruments/model346/remote_operation/command_reference.html)
 
 ## Dependencies
 
